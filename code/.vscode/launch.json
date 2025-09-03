@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Stress Analysis",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/stress_analysis_debug",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build Stress Analysis (Debug)"
+        },
+        {
+            "name": "Debug Stress Analysis (GDB)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/stress_analysis_debug",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Build Stress Analysis (Debug)"
+        }
+    ]
+}

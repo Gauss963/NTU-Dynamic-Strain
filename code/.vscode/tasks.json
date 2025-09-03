@@ -1,0 +1,69 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CohesiveCrack (Release)",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "-std=c++17",
+                "-O3",
+                "-DNDEBUG",
+                "-Wall",
+                "-Wextra",
+                "-o",
+                "${workspaceFolder}/CohesiveCrack",
+                "${workspaceFolder}/CohesiveCrack.cc"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build with Clang++ (Release mode, optimized)"
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "clang++ -std=c++17 -O2 -Wall -Wextra -o ${workspaceFolder}/CohesiveCrack ${workspaceFolder}/CohesiveCrack.cc && ${workspaceFolder}/CohesiveCrack"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build and immediately run the program"
+        },
+        {
+        "label": "Build Python Module (CohesiveCrack.so)",
+        "type": "shell",
+        "command": "bash",
+        "args": [
+            "-c",
+            "conda run -n LEFM clang++ -O3 -Wall -shared -std=c++17 -fPIC \
+            $(conda run -n LEFM python -m pybind11 --includes) \
+            ${workspaceFolder}/bindings.cc \
+            -o ${workspaceFolder}/CohesiveCrack$(conda run -n LEFM python3-config --extension-suffix) \
+            -undefined dynamic_lookup"
+        ],
+        "group": "build",
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared"
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Build Python module using pybind11 with macOS dynamic symbol lookup"
+        }
+    ]
+}
