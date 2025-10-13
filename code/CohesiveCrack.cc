@@ -101,12 +101,10 @@ public:
         std::complex<double> M_z_s = M_of_z(tau_p, X_c, z_s_value);
         
         std::complex<double> Sxx_tmp, Syy_tmp, Sxy_tmp;
-        compute_stress_components(M_z_d, M_z_s, alpha_s_value, alpha_d_value, 
-                                Sxx_tmp, Syy_tmp, Sxy_tmp);
+        compute_stress_components(M_z_d, M_z_s, alpha_s_value, alpha_d_value, Sxx_tmp, Syy_tmp, Sxy_tmp);
         
         double Sxx, Syy, Sxy;
-        compute_stresses(Sxx_tmp, Syy_tmp, Sxy_tmp, alpha_s_value, D_value, 
-                        Sxx, Syy, Sxy);
+        compute_stresses(Sxx_tmp, Syy_tmp, Sxy_tmp, alpha_s_value, D_value, Sxx, Syy, Sxy);
         
         return Sxy;
     }
@@ -133,8 +131,7 @@ public:
                                 Sxx_tmp, Syy_tmp, Sxy_tmp);
         
         double Sxx, Syy, Sxy;
-        compute_stresses(Sxx_tmp, Syy_tmp, Sxy_tmp, alpha_s_value, D_value, 
-                        Sxx, Syy, Sxy);
+        compute_stresses(Sxx_tmp, Syy_tmp, Sxy_tmp, alpha_s_value, D_value, Sxx, Syy, Sxy);
         
         return Sxx;
     }
