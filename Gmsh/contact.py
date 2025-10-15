@@ -2,25 +2,29 @@ import gmsh
 import Functions
 
 def main():
-    gmsh.initialize()
-    gmsh.model.add("ContactModel")
 
-    mesh_size = 20
-    PMMA_thickness = 100
+    PMMA_THICKNESSES = [50, 100]
 
-    Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, tag_prefix=1)
-    Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, tag_prefix=2)
+    for PMMA_thickness in PMMA_THICKNESSES:
 
-    gmsh.model.geo.synchronize()
+        gmsh.initialize()
+        gmsh.model.add("ContactModel")
 
-    gmsh.option.setNumber("Mesh.Algorithm3D", 1)
-    gmsh.option.setNumber("Mesh.RecombineAll", 1)
-    gmsh.option.setNumber("Mesh.ElementOrder", 1)
+        mesh_size = 2
 
-    gmsh.model.mesh.generate(3)
-    gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.msh")
-    gmsh.fltk.run()
-    gmsh.finalize()
+        Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, tag_prefix=1)
+        Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, tag_prefix=2)
+
+        gmsh.model.geo.synchronize()
+
+        gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
+        gmsh.option.setNumber("Mesh.Algorithm3D", 1)
+        gmsh.option.setNumber("Mesh.RecombineAll", 1)
+        gmsh.option.setNumber("Mesh.ElementOrder", 1)
+
+        gmsh.model.mesh.generate(3)
+        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.msh")
+        gmsh.finalize()
 
 if __name__ == "__main__":
     main()

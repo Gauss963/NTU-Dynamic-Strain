@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/BeamTest.dir/BeamTest.cc.o -o BeamTest   -L/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/lib  -Wl,-rpath,/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/lib -lakantu -liohelper

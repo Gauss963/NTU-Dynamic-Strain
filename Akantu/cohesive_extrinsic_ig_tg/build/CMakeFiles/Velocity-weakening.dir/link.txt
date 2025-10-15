@@ -1,0 +1,1 @@
+/opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o" -o Velocity-weakening   -L/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/lib  -Wl,-rpath,/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/lib -lakantu -liohelper /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/libgomp.dylib

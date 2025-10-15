@@ -1,25 +1,14 @@
 import gmsh
 
 def create_block(origin, dimensions, mesh_size, tag_prefix=1):
-    """
-    建立一個六面體的 block 並使用 Transfinite 結構網格（保證節點對齊），適用於接觸分析。
-
-    Parameters:
-    - origin: (x, y, z) 起點座標
-    - dimensions: (Lx, Ly, Lz) 長寬高
-    - mesh_size: 用於節點密度控制的基準長度
-    - tag_prefix: 用來區分各個 block 的 base ID
-    """
 
     x, y, z = origin
     Lx, Ly, Lz = dimensions
 
-    # 計算各方向節點數量（確保 >= 2）
     nx = max(2, round(Lx / mesh_size))
     ny = max(2, round(Ly / mesh_size))
     nz = max(2, round(Lz / mesh_size))
 
-    # Tag generator
     pt_tag = lambda i: tag_prefix * 100 + i
     line_tag = lambda i: tag_prefix * 1000 + i
     loop_tag = lambda i: tag_prefix * 2000 + i
@@ -109,3 +98,5 @@ def create_block(origin, dimensions, mesh_size, tag_prefix=1):
     gmsh.model.geo.addSurfaceLoop([surface_tag(i) for i in range(1, 7)], loop_tag(7))
     gmsh.model.geo.addVolume([loop_tag(7)], volume_tag)
     gmsh.model.geo.mesh.setTransfiniteVolume(volume_tag)
+
+    gmsh.model.geo.synchronize()

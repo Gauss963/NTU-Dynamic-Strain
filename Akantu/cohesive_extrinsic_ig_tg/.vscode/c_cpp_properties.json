@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include",
+                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu",
+                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators",
+                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3",
+                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}

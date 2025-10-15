@@ -1,0 +1,3 @@
+/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/Velocity-weakening.dir
+/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/edit_cache.dir
+/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/rebuild_cache.dir
