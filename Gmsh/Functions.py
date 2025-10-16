@@ -98,5 +98,18 @@ def create_block(origin, dimensions, mesh_size, tag_prefix=1):
     gmsh.model.geo.addSurfaceLoop([surface_tag(i) for i in range(1, 7)], loop_tag(7))
     gmsh.model.geo.addVolume([loop_tag(7)], volume_tag)
     gmsh.model.geo.mesh.setTransfiniteVolume(volume_tag)
+    gmsh.model.geo.mesh.setRecombine(3, volume_tag)
 
     gmsh.model.geo.synchronize()
+
+    # === 7. Add Physical Groups ===
+    gmsh.model.addPhysicalGroup(3, [volume_tag], tag=tag_prefix * 10 + 1)
+    gmsh.model.setPhysicalName(3, tag_prefix * 10 + 1, "PMMA")
+
+    gmsh.model.addPhysicalGroup(2, [surface_tag(2)], tag=tag_prefix * 10 + 2)
+    gmsh.model.setPhysicalName(2, tag_prefix * 10 + 2, "btop")
+
+    gmsh.model.addPhysicalGroup(2, [surface_tag(1)], tag=tag_prefix * 10 + 3)
+    gmsh.model.setPhysicalName(2, tag_prefix * 10 + 3, "bbottom")
+
+    # gmsh.model.geo.synchronize()

@@ -22,13 +22,14 @@ def main():
 
         mesh_size = 20
 
-        # Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, tag_prefix=1)
-        # Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, tag_prefix=2)
+        blk1 = Test2.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, tag_prefix=1)
+        blk2 = Test2.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, tag_prefix=2)
 
-        box1 = Test.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, tag_prefix=1)
-        box2 = Test.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, tag_prefix=2)
-        gmsh.model.occ.fragment([(3, box1)], [(3, box2)])
-        gmsh.model.geo.synchronize()
+        gmsh.model.addPhysicalGroup(2, [blk1["faces"]["back"]], tag=100)
+        gmsh.model.setPhysicalName(2, 100, "friction_master")
+
+        gmsh.model.addPhysicalGroup(2, [blk2["faces"]["front"]], tag=101)
+        gmsh.model.setPhysicalName(2, 101, "friction_slave")
 
         # gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
         # gmsh.option.setNumber("Mesh.Algorithm3D", 1)

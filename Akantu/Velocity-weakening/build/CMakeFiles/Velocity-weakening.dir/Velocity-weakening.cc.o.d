@@ -983,6 +983,18 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solid_mechanics_model.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector_tmpl.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solid_mechanics_model_cohesive.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/cohesive_element_inserter.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_utils.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_utils_inline_impl.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/cohesive_element_inserter_inline_impl.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector_cohesive.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solid_mechanics_model_cohesive_inline_impl.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_cohesive.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solid_mechanics_model_cohesive.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/cohesive_internal_field.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/cohesive_internal_field_tmpl.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_cohesive_inline_impl.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_elastic.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_thermal.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/plane_stress_toolbox.hh \
