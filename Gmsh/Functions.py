@@ -1,115 +1,60 @@
 import gmsh
 
-def create_block(origin, dimensions, mesh_size, tag_prefix=1):
-
+def create_block(origin, dimensions, mesh_size, block_name, tag_prefix=1):
     x, y, z = origin
-    Lx, Ly, Lz = dimensions
+    dx, dy, dz = dimensions
+    box = gmsh.model.occ.addBox(x, y, z, dx, dy, dz)
 
-    nx = max(2, round(Lx / mesh_size))
-    ny = max(2, round(Ly / mesh_size))
-    nz = max(2, round(Lz / mesh_size))
+    gmsh.model.occ.synchronize()
 
-    pt_tag = lambda i: tag_prefix * 100 + i
-    line_tag = lambda i: tag_prefix * 1000 + i
-    loop_tag = lambda i: tag_prefix * 2000 + i
-    surface_tag = lambda i: tag_prefix * 3000 + i
-    volume_tag = tag_prefix * 4000
+    gmsh.model.mesh.setTransfiniteVolume(box)
+    gmsh.model.mesh.setRecombine(3, box)
 
-    # === 1. Points ===
-    # Bottom face
-    gmsh.model.geo.addPoint(x     , y     , z     , mesh_size, pt_tag(1))
-    gmsh.model.geo.addPoint(x+Lx  , y     , z     , mesh_size, pt_tag(2))
-    gmsh.model.geo.addPoint(x+Lx  , y+Ly , z     , mesh_size, pt_tag(3))
-    gmsh.model.geo.addPoint(x     , y+Ly , z     , mesh_size, pt_tag(4))
+    faces = gmsh.model.getBoundary([(3, box)], oriented=False)
+    face_tags = {}
+    face_phys = {}
 
-    # Top face
-    gmsh.model.geo.addPoint(x     , y     , z+Lz  , mesh_size, pt_tag(5))
-    gmsh.model.geo.addPoint(x+Lx  , y     , z+Lz  , mesh_size, pt_tag(6))
-    gmsh.model.geo.addPoint(x+Lx  , y+Ly , z+Lz  , mesh_size, pt_tag(7))
-    gmsh.model.geo.addPoint(x     , y+Ly , z+Lz  , mesh_size, pt_tag(8))
+    for dim, tag in faces:
+        gmsh.model.mesh.setTransfiniteSurface(tag)
+        gmsh.model.mesh.setRecombine(2, tag)
+        # gmsh.model.mesh.setSize(gmsh.model.getEntities(0), mesh_size)
 
-    # === 2. Lines ===
-    # Bottom
-    gmsh.model.geo.addLine(pt_tag(1), pt_tag(2), line_tag(1))
-    gmsh.model.geo.addLine(pt_tag(2), pt_tag(3), line_tag(2))
-    gmsh.model.geo.addLine(pt_tag(3), pt_tag(4), line_tag(3))
-    gmsh.model.geo.addLine(pt_tag(4), pt_tag(1), line_tag(4))
+    gmsh.model.addPhysicalGroup(3, [box], tag=tag_prefix * 10 + 1)
+    gmsh.model.setPhysicalName(3, tag_prefix * 10 + 1, block_name)
 
-    # Top
-    gmsh.model.geo.addLine(pt_tag(5), pt_tag(6), line_tag(5))
-    gmsh.model.geo.addLine(pt_tag(6), pt_tag(7), line_tag(6))
-    gmsh.model.geo.addLine(pt_tag(7), pt_tag(8), line_tag(7))
-    gmsh.model.geo.addLine(pt_tag(8), pt_tag(5), line_tag(8))
+    gmsh.model.occ.synchronize()
+    gmsh.model.mesh.setSize(gmsh.model.getEntities(0), mesh_size)
 
-    # Vertical
-    gmsh.model.geo.addLine(pt_tag(1), pt_tag(5), line_tag(9))
-    gmsh.model.geo.addLine(pt_tag(2), pt_tag(6), line_tag(10))
-    gmsh.model.geo.addLine(pt_tag(3), pt_tag(7), line_tag(11))
-    gmsh.model.geo.addLine(pt_tag(4), pt_tag(8), line_tag(12))
+    tolerance = 1e-2
 
-    # === 3. Transfinite Lines ===
-    # x direction: 1-2, 5-6, 4-3, 8-7
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(1), nx)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(2), ny)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(3), nx)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(4), ny)
+    for dim, tag in faces:
+        com = gmsh.model.occ.getCenterOfMass(dim, tag)
 
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(5), nx)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(6), ny)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(7), nx)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(8), ny)
+        if abs(com[0] - x) < tolerance:
+            name = f"{block_name}-front"
+            tag_val = tag_prefix * 10 + 4
+        elif abs(com[0] - (x + dx)) < tolerance:
+            name = f"{block_name}-back"
+            tag_val = tag_prefix * 10 + 5
+        elif abs(com[1] - y) < tolerance:
+            name = f"{block_name}-left"
+            tag_val = tag_prefix * 10 + 6
+        elif abs(com[1] - (y + dy)) < tolerance:
+            name = f"{block_name}-right"
+            tag_val = tag_prefix * 10 + 7
+        elif abs(com[2] - z) < tolerance:
+            name = f"{block_name}-bottom"
+            tag_val = tag_prefix * 10 + 2
+        elif abs(com[2] - (z + dz)) < tolerance:
+            name = f"{block_name}-top"
+            tag_val = tag_prefix * 10 + 3
+        else:
+            continue
 
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(9), nz)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(10), nz)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(11), nz)
-    gmsh.model.geo.mesh.setTransfiniteCurve(line_tag(12), nz)
+        gmsh.model.addPhysicalGroup(2, [tag], tag=tag_val)
+        gmsh.model.setPhysicalName(2, tag_val, name)
+        face_tags[name] = tag
+        face_phys[name] = tag_val
 
-    # === 4. Curve Loops + Surfaces ===
-    # Bottom
-    gmsh.model.geo.addCurveLoop([line_tag(1), line_tag(2), line_tag(3), line_tag(4)], loop_tag(1))
-    gmsh.model.geo.addPlaneSurface([loop_tag(1)], surface_tag(1))
-
-    # Top
-    gmsh.model.geo.addCurveLoop([line_tag(5), line_tag(6), line_tag(7), line_tag(8)], loop_tag(2))
-    gmsh.model.geo.addPlaneSurface([loop_tag(2)], surface_tag(2))
-
-    # Front (x-z)
-    gmsh.model.geo.addCurveLoop([line_tag(1), line_tag(10), -line_tag(5), -line_tag(9)], loop_tag(3))
-    gmsh.model.geo.addPlaneSurface([loop_tag(3)], surface_tag(3))
-
-    # Right (y-z)
-    gmsh.model.geo.addCurveLoop([line_tag(2), line_tag(11), -line_tag(6), -line_tag(10)], loop_tag(4))
-    gmsh.model.geo.addPlaneSurface([loop_tag(4)], surface_tag(4))
-
-    # Back (x-z)
-    gmsh.model.geo.addCurveLoop([line_tag(3), line_tag(12), -line_tag(7), -line_tag(11)], loop_tag(5))
-    gmsh.model.geo.addPlaneSurface([loop_tag(5)], surface_tag(5))
-
-    # Left (y-z)
-    gmsh.model.geo.addCurveLoop([line_tag(4), line_tag(9), -line_tag(8), -line_tag(12)], loop_tag(6))
-    gmsh.model.geo.addPlaneSurface([loop_tag(6)], surface_tag(6))
-
-    # === 5. Transfinite Surfaces + Recombine ===
-    for i in range(1, 7):
-        gmsh.model.geo.mesh.setTransfiniteSurface(surface_tag(i))
-        gmsh.model.geo.mesh.setRecombine(2, surface_tag(i))
-
-    # === 6. Volume ===
-    gmsh.model.geo.addSurfaceLoop([surface_tag(i) for i in range(1, 7)], loop_tag(7))
-    gmsh.model.geo.addVolume([loop_tag(7)], volume_tag)
-    gmsh.model.geo.mesh.setTransfiniteVolume(volume_tag)
-    gmsh.model.geo.mesh.setRecombine(3, volume_tag)
-
-    gmsh.model.geo.synchronize()
-
-    # === 7. Add Physical Groups ===
-    gmsh.model.addPhysicalGroup(3, [volume_tag], tag=tag_prefix * 10 + 1)
-    gmsh.model.setPhysicalName(3, tag_prefix * 10 + 1, "PMMA")
-
-    gmsh.model.addPhysicalGroup(2, [surface_tag(2)], tag=tag_prefix * 10 + 2)
-    gmsh.model.setPhysicalName(2, tag_prefix * 10 + 2, "btop")
-
-    gmsh.model.addPhysicalGroup(2, [surface_tag(1)], tag=tag_prefix * 10 + 3)
-    gmsh.model.setPhysicalName(2, tag_prefix * 10 + 3, "bbottom")
-
-    # gmsh.model.geo.synchronize()
+    gmsh.model.occ.synchronize()
+    return {"volume": box, "faces_geo": face_tags, "faces_phys": face_phys}

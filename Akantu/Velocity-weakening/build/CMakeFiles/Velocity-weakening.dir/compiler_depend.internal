@@ -193,6 +193,12 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_laws_handler.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_laws_handler_tmpl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector_inline_impl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_element.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_mechanics_model.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager.hh
@@ -208,11 +214,13 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_generic_elemental_field_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_homogenizing_field.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper_paraview.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_nodal_field.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_type_traits.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_bernoulli_beam_inline_impl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_helper.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hermite_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_20_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_8_inline_impl.hh
@@ -245,6 +253,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/fe_engine_template_tmpl_struct.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/gauss_integration_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometrical_element_property.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/grid_synchronizer.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/grid_synchronizer_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/group_manager.hh
@@ -256,13 +266,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_cohesive.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_cohesive_inline_impl.hh
- /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_elastic.hh
- /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_elastic_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector_cohesive.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_selector_tmpl.hh
- /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_thermal.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_accessor.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_data.hh
@@ -270,6 +277,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_events.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_filter.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_inline_impl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_diana.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh_struct.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_iterators.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_partition.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_partition_scotch.hh
@@ -295,10 +306,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/parsable.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/parser.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/parser_tmpl.hh
- /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/plane_stress_toolbox.hh
- /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/plane_stress_toolbox_tmpl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field_tmpl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution_utils.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_structural.hh
@@ -311,6 +322,7 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solver_vector.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix_inline_impl.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/surface_selector.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer_impl_tmpl.hh
