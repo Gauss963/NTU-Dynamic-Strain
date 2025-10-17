@@ -33,7 +33,6 @@ def main():
 
 
         gmsh.model.occ.synchronize()
-        # gmsh.option.setNumber("Mesh.SaveAll", 1)
 
         gmsh.model.mesh.generate(3)
         gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.msh")
