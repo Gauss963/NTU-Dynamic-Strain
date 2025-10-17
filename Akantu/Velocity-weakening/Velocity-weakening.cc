@@ -1,105 +1,154 @@
-#include "aka_common.hh"
+#include "solid_mechanics_model.hh"
+#include "contact_mechanics_model.hh"
 #include "coupler_solid_contact.hh"
+#include "mesh.hh"
+#include "aka_common.hh"
+#include <omp.h>
+
 #include <iostream>
+#include <algorithm>
+#include <cmath>
 
-// using namespace akantu;
+using namespace akantu;
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-    const akantu::Int sd = 3;
+    // omp_set_num_threads(8);
+    // std::cout << "Using " << omp_get_max_threads() << " OpenMP threads.\n";
 
-    const std::string meshfile = "../../../Models/50mm-PMMA.msh";
-    const std::string matfile = "../../../Materials/material.dat";
+    constexpr Int sd = 3;
 
-    akantu::initialize(matfile, argc, argv);
+    const std::string MESHFILE = "../../../Models/50mm-PMMA.msh";
+    const std::string MATERIALFILE = "../../../Materials/material.dat";
 
-    akantu::Mesh mesh(sd);
-    mesh.read(meshfile);
+    initialize(MATERIALFILE, argc, argv);
+    Mesh mesh(sd);
+    mesh.read(MESHFILE);
 
-    // 建立耦合器：裡面同時有 SolidMechanicsModel 與 ContactMechanicsModel
-    akantu::CouplerSolidContact coupler(mesh);
+    CouplerSolidContact coupler(mesh);
     auto &solid = coupler.getSolidMechanicsModel();
     auto &contact = coupler.getContactMechanicsModel();
 
-    // 若用 Gmsh 的 physical_names 指派材料，建議掛 MaterialSelector
-    auto selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", solid);
-    solid.setMaterialSelector(selector);
+    // 用 Gmsh 的 physical surfaces 當接觸面（需 mesh 內有 friction_master / friction_slave）
+    auto surf_sel = std::make_shared<PhysicalSurfaceSelector>(mesh);
+    contact.getContactDetector().setSurfaceSelector(surf_sel);
 
-    // 告訴 Contact 要用「物理面」當作接觸面來源（對應你在 Gmsh 取的名字）
-    auto surface_selector = std::make_shared<akantu::PhysicalSurfaceSelector>(mesh);
-    contact.getContactDetector().setSurfaceSelector(surface_selector); // v5 官方作法
-    // ↑ master/slave 的實際名稱由 material.dat 的 contact_detector 區塊決定
+    // 顯式初始化
+    coupler.initFull(_analysis_method = _explicit_lumped_mass);
 
-    // 初始化（顯式）
-    coupler.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass);
-
-    // time step（保守地拿固體穩定步長的 10%）
-    akantu::Real dt = solid.getStableTimeStep() * 0.1;
+    // 時間步
+    Real dt = solid.getStableTimeStep() * 0.5;
     coupler.setTimeStep(dt);
-    std::cout << "dt = " << dt << "\n";
+    std::cout << "dt = " << dt << std::endl;
 
-    // 速度弱化參數（你可以改）
-    const akantu::Real mu_s = 0.60;
-    const akantu::Real mu_d = 0.20;
-    const akantu::Real v1 = 0.50;
-    const std::string iface = "friction_slave";
+    // 場變數
+    Array<Real> &vel = solid.getVelocity();            // [nb_nodes x 3]
+    Array<Real> &force = solid.getExternalForce();     // [nb_nodes x 3]
+    Array<Real> &disp = solid.getDisplacement();       // [nb_nodes x 3]
+    const Array<Real> &gaps = contact.getGaps();       // [nb_nodes x 1]（非 slave 結點通常為 0）
+    const Array<Real> &normals = contact.getNormals(); // [nb_nodes x 3]（非 slave 結點通常為 0）
 
-    // 取出需要的陣列
-    auto &vel = solid.getVelocity();
-    auto &gaps = contact.getGaps();       // > 0 表示在 active set（有「穿入」量） [oai_citation:4‡Akantu](https://akantu.readthedocs.io/en/latest/manual/contactmechanicsmodel.html?utm_source=chatgpt.com)
-    auto &normals = contact.getNormals(); // slave 節點法向量（與 gaps 對齊） [oai_citation:5‡Akantu](https://akantu.readthedocs.io/en/latest/manual/contactmechanicsmodel.html?utm_source=chatgpt.com)
+    // slip-weakening 參數（請依需求調整）
+    const Real mu_s = 0.60;   // 初始/靜摩擦
+    const Real mu_d = 0.20;   // 殘餘/動摩擦
+    const Real Dc = 0.20e-3;  // 臨界滑移 (m)
+    const Real epsN = 1.0e10; // 要與 material.dat 的 epsilon_n 一致
+    const Real Aeff = 1.0e-6; // 節點等效面積（可日後精算成每節點不同）
 
-    // （可選）初始條件
+    // 為每個節點建立 slip 累積量（與 gaps 尺寸一致）
+    Array<Real> slip(gaps.size(), 1);
+    slip.set(0.);
+
+    // 初始條件
     vel.set(0.);
-    solid.getDisplacement().set(0.);
+    disp.set(0.);
     solid.getBlockedDOFs().set(false);
 
-    // 這裡省略外力/邊界條件：請在每步迴圈中自行施加位移或力到 solid
-    // 例如：solid.applyBC(BC::Dirichlet::IncrementValue(...), "loading");
 
-    const akantu::Int max_steps = 1000;
-    for (akantu::Int s = 0; s < max_steps; ++s)
+    // Boundary Conditions Here:
+    // I want: stationary-block-right   to be fixed on Y
+    //         stationary-block-back    to be fixed on X
+    //         moving-block-bottom      to be fixed on Z
+    //         stationary-block-bottom  to be fixed on Z
+    //
+    //         A 16MPa acting on moving-block-front on +X
+    //         A 16MPa acting on moving-block-left  on +Y
+
+
+    // Add normal and shearing stress
+    Vector<Real, 3> t_front{16e6, 0., 0.}; // +X
+    Vector<Real, 3> t_left{0., 16e16, 0.};  // +Y
+    solid.applyBC(BC::Neumann::FromTraction(t_front), "moving-block-front");
+    solid.applyBC(BC::Neumann::FromTraction(t_left), "moving-block-left");
+
+    // Fix some surfaces
+    solid.applyBC(BC::Dirichlet::FixedValue(0., _y), "stationary-block-right");
+    solid.applyBC(BC::Dirichlet::FixedValue(0., _x), "stationary-block-back");
+    solid.applyBC(BC::Dirichlet::FixedValue(0., _z), "moving-block-bottom");
+    solid.applyBC(BC::Dirichlet::FixedValue(0., _z), "stationary-block-bottom");
+
+    const Int max_steps = 200000;
+
+    for (Int s = 0; s < max_steps; ++s)
     {
+        force.set(0.);
 
-        akantu::Real sum_vt = 0.;
-        akantu::Int cnt = 0;
+        Real sum_vt = 0.;
+        Int cnt_vt = 0;
 
-        for (auto &&tpl : zip(gaps, make_view(vel, sd), make_view(normals, sd)))
+        const Int N = gaps.size();
+
+        for (Int i = 0; i < N; ++i)
         {
-            const akantu::Real gap = std::get<0>(tpl);
-            const auto &v = std::get<1>(tpl);
-            const auto &n = std::get<2>(tpl);
-            if (gap > 0)
+            const Real g = gaps(i);
+            if (g <= 0.)
+                continue;
+
+            const Real vx = vel(i, 0), vy = vel(i, 1), vz = vel(i, 2);
+            const Real nx = normals(i, 0), ny = normals(i, 1), nz = normals(i, 2);
+
+            // vn = v · n
+            const Real vn = vx * nx + vy * ny + vz * nz;
+            // vt = v - vn * n
+            const Real vtx = vx - vn * nx;
+            const Real vty = vy - vn * ny;
+            const Real vtz = vz - vn * nz;
+            const Real vtn = std::sqrt(vtx * vtx + vty * vty + vtz * vtz);
+
+            slip(i) += vtn * dt;
+
+            const Real mu_now = mu_d + (mu_s - mu_d) * std::max(Real(0.), Real(1.) - slip(i) / Dc);
+
+            const Real Fn = epsN * g * Aeff;
+            const Real Ft_max = mu_now * Fn;
+
+            if (vtn > 0.)
             {
-                akantu::Real vn = v.dot(n);
-                akantu::Vector<akantu::Real> vt = v - vn * n;
-                sum_vt += vt.norm();
-                ++cnt;
+                force(i, 0) += (-Ft_max / vtn) * vtx;
+                force(i, 1) += (-Ft_max / vtn) * vty;
+                force(i, 2) += (-Ft_max / vtn) * vtz;
             }
+
+            sum_vt += vtn;
+            ++cnt_vt;
         }
-        const akantu::Real vbar = (cnt > 0) ? (sum_vt / cnt) : 0.;
 
-        // === 速度弱化：更新目前的 μ ===
-        akantu::Real mu_now = mu_d + (mu_s - mu_d) * std::max(0., 1. - vbar / v1);
-
-        // v5 用 ParameterRegistry 路徑設定 contact_resolution 的參數
-        // 兩種路徑字串擇一會生效（都呼叫不影響正確性）
-        // contact.set("contact_resolution:friction_slave:mu", mu_now);
-        contact.set("contact_resolution.friction_slave.mu", mu_now);
-
-        // === 你的載入條件（位移/力）請放在 solveStep() 前後合適位置 ===
-        // solid.applyBC(...); // ← 依你的案例加
-
-        // 前進一步
         coupler.solveStep();
 
-        if (s % 50 == 0)
+        if (s % 100 == 0)
         {
-            std::cout << "step " << s << "  vbar=" << vbar << "  mu=" << mu_now << "\n";
-            // 可選：coupler.dump();
+            Real slip_avg = 0.;
+            for (Int i = 0; i < N; ++i)
+                slip_avg += slip(i);
+            if (N)
+                slip_avg /= N;
+
+            const Real vbar = (cnt_vt ? sum_vt / cnt_vt : 0.);
+            std::cout << "step " << s << "  vbar=" << vbar << "  <slip>=" << slip_avg << std::endl;
+            // Maybe: coupler.dump();
         }
     }
 
-    akantu::finalize();
+    finalize();
     return 0;
 }

@@ -16,8 +16,8 @@ contact_detector [
 
 contact_resolution penalty_linear [
   name = friction_slave
-  mu = 0.60
+  mu = 0.0
   epsilon_n = 1e10
-  epsilon_t = 1e9
+  epsilon_t = 0.0
   is_master_deformable = true
 ]

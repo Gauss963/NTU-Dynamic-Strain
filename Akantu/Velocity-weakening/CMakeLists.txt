@@ -21,6 +21,7 @@ include_directories(${AKANTU_ROOT}/include/iohelper)
 link_directories(${AKANTU_ROOT}/lib)
 
 # ───── Find OpenMP ─────
+find_package(MPI REQUIRED)
 find_package(OpenMP REQUIRED COMPONENTS CXX)
 
 # ───── Build target ─────
@@ -28,10 +29,13 @@ add_executable(${TARGET_NAME} ${TARGET_NAME}.cc)
 
 # ───── Link libraries ─────
 target_link_libraries(${TARGET_NAME}
+    ${MPI_CXX_LIBRARIES}
     akantu
     iohelper
     OpenMP::OpenMP_CXX
 )
+
+target_compile_options(${TARGET_NAME} PRIVATE ${MPI_CXX_COMPILE_FLAGS})
 
 # ───── Compile features ─────
 target_compile_features(${TARGET_NAME} PRIVATE cxx_std_17)
