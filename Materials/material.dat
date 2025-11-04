@@ -1,23 +1,41 @@
-material elastic [
-  name = pmma
-  rho = 1180
-  E   = 3.0e9
-  nu  = 0.35
-]
+model solid_mechanics_model_cohesive [
 
-contact_detector [
-  type = explicit
-  master = friction_master
-  slave  = friction_slave
-  projection_tolerance = 1e-10
-  max_iterations       = 200
-  extension_tolerance  = 1e-6
-]
+  material elastic [
+    name = moving_block
+    rho = 1180
+    E   = 3.0e9
+    nu  = 0.35
+  ]
 
-contact_resolution penalty_linear [
-  name = friction_slave
-  mu = 0.0
-  epsilon_n = 3.0e3
-  epsilon_t = 0.0
-  is_master_deformable = true
+  material elastic [
+    name = stationary_block
+    rho = 1180
+    E   = 3.0e9
+    nu  = 0.35
+  ]
+
+  material cohesive_linear [
+    name = interface_mat
+    beta = 0
+    G_c = 100
+    sigma_c = 3e7
+  ]
+
+  cohesive_inserter [
+    cohesive_zones = [friction_master, friction_slave]
+  ]
+
+  contact_detector [
+    type = explicit
+    master = friction_master
+    slave  = friction_slave
+  ]
+
+  contact_resolution penalty_linear [
+    name = friction_slave
+    mu = 0.0
+    epsilon_n = 3.0e3
+    epsilon_t = 0.0
+    is_master_deformable = true
+  ]
 ]

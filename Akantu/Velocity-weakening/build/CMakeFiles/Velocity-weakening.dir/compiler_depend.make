@@ -192,12 +192,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_laws_handler.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_laws_handler_tmpl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector_inline_impl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_element.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_mechanics_model.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager.hh \
@@ -213,13 +207,11 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_generic_elemental_field_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_homogenizing_field.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper_paraview.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_nodal_field.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_type_traits.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_bernoulli_beam_inline_impl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_helper.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hermite_inline_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_20_inline_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_8_inline_impl.hh \
@@ -252,8 +244,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/fe_engine_template_tmpl_struct.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/gauss_integration_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometrical_element_property.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils_inline_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/grid_synchronizer.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/grid_synchronizer_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/group_manager.hh \
@@ -276,10 +266,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_events.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_filter.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_inline_impl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_diana.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh_struct.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_iterators.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_partition.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_partition_scotch.hh \
@@ -307,8 +293,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/parser_tmpl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field_tmpl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution_utils.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions_inline_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_structural.hh \
@@ -321,7 +305,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solver_vector.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix_inline_impl.hh \
-  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/surface_selector.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer_impl_tmpl.hh \
@@ -1216,6 +1199,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/postypes.h:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/ostream_insert.h:
+
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/ostream.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/node_handle.h:
@@ -1254,35 +1239,13 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/fstream.tcc:
 
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception_defines.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception.h:
-
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/erase_if.h:
 
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/enable_special_members.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/cxxabi_init_exception.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/regex_compiler.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/cxxabi_forced.h:
-
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/concept_check.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/codecvt.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/charconv.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/ext/numeric_traits.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/char_traits.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_ios.tcc:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_ios.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/atomic_lockfree_defines.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/cstdio:
 
@@ -1369,8 +1332,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution_utils.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/LU/Determinant.h:
 
@@ -1460,8 +1421,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/machine/signal.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io.hh:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_structural_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
@@ -1486,9 +1445,9 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/Swap.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_types.hh:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/AvailabilityVersions.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_types.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/StlIterators.h:
 
@@ -1639,8 +1598,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/comparison.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/variadic/to_list.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/variadic/limits/size_64.hpp:
 
@@ -1846,6 +1803,14 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/repetition/deduce_r.hpp:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/unique_ptr.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_fwd.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/compl.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/punctuation/remove_parens.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/paraview_helper.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/punctuation/paren_if.hpp:
@@ -1872,6 +1837,14 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/or.hpp:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/MatrixBase.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/variadic_seq_to_seq.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/fold_left.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/bool.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/bitor.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/bitnor.hpp:
@@ -1893,14 +1866,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/limits/size_256.hpp:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/atomic_word.h:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/unique_ptr.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/punctuation/remove_parens.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_fwd.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/compl.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/list/rest_n.hpp:
 
@@ -1978,55 +1943,29 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/limits/intercept_256.hpp:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_safe_enum.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/limits/while_256.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_nodal_field.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/is_empty_variadic.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/is_empty.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/cat.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/is_1.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/intercept.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/QR/HouseholderQR.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/identity.hpp:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/Transform.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/communicator_inline_impl.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/xor.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/expand.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/empty.hpp:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/detail/is_empty.hpp:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/apply.hpp:
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/limits/auto_rec_256.hpp:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/subseq.hpp:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/is_unary.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/is_binary.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/check.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/list/filter.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_quadrangle_4_inline_impl.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/div.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/for_each_product.hpp:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/std_function.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/debug/line.hpp:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
 
@@ -2046,7 +1985,17 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/iif.hpp:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/is_1.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/cat.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/if.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/communicator_inline_impl.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/xor.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/expr_if.hpp:
 
@@ -2063,6 +2012,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/c++allocator.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/deduce_d.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/empty.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
 
@@ -2093,6 +2044,16 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/comparison/less.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/comparison/greater_equal.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/list.tcc:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_selector_tmpl.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/internal_field_tmpl.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
 
@@ -2132,10 +2093,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/bool.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/fold_left.hpp:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/array/insert.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/array/elem.hpp:
@@ -2146,6 +2103,14 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/for_each_product.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/list/filter.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_quadrangle_4_inline_impl.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/div.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_endian.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_array_view.hh:
@@ -2154,15 +2119,11 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/detail/is_1_number.hpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/stl_iterator_base_funcs.h:
 
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/list.tcc:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_structural.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_selector_tmpl.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/internal_field_tmpl.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor.hpp:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/add.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/iterators/aka_iterator_tools.hh:
 
@@ -2172,9 +2133,13 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/aka_tuple_tools.hh:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/intercept.hpp:
+
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/ostream.tcc:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/aka_str_hash.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/check.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/aka_iterators.hh:
 
@@ -2202,17 +2167,23 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/surface_selector.hh:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/sparse_matrix.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/Geometry:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/resource.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_structural.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/is_unary.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/variadic/size.hpp:
 
@@ -2228,15 +2199,17 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/shape_functions.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/variadic/to_seq.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/resolution.hh:
-
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/stdlib.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field_tmpl.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/Random.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/repetition/enum_binary_params.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_va_list.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field.hh:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/stringfwd.h:
 
@@ -2294,6 +2267,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/neighborhood_base.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/atomic_lockfree_defines.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/model_solver.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/synchronizer_tmpl.hh:
@@ -2311,16 +2286,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/list/enum.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_partition.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh_struct.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/MatrixBase.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/variadic_seq_to_seq.hpp:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/ostream_insert.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_diana.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/io_helper.hh:
 
@@ -2346,10 +2311,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_inline_impl.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/subseq.hpp:
-
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_string.tcc:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/Availability.h:
@@ -2369,20 +2330,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/integration_scheme.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/config/config.hpp:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/stl_iterator_base_funcs.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_structural.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/arithmetic/add.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_triangle_3_inline_impl.hh:
 
@@ -2410,11 +2357,11 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/fe_engine_template_tmpl.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/charconv.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/replace.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/MathFunctions.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_element.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/fe_engine.hh:
 
@@ -2454,6 +2401,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_tetrahedron_4_inline_impl.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/cxxabi_init_exception.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/SVD:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
@@ -2472,13 +2421,19 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/time_members.h:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/ext/aligned_buffer.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/libkern/arm/_OSByteOrder.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/check_empty.hpp:
+
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/vector.tcc:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/machine/endian.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_point_1_inline_impl.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_io_msh.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/_types/_uint8_t.h:
 
@@ -2496,10 +2451,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/for_each_i.hpp:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/errno.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_helper.hh:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element.hh:
@@ -2512,43 +2463,33 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/debug/error.hpp:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/is_empty_variadic.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_safe_enum.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/limits/while_256.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_nodal_field.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/Random.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/repetition/enum_binary_params.hpp:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_va_list.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/random_internal_field.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper_paraview.hh:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/mach/machine/_structs.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_homogenizing_field.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/limits/auto_rec_256.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_segment_2_inline_impl.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_ios.tcc:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/malloc/_malloc_type.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_elemental_field.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/MapBase.h:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager.hh:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumpable.hh:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_mechanics_model.hh:
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/codecvt.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/contact_detector.hh:
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/qos.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/array/to_list.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager_inline_impl.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_mach_port_t.h:
 
@@ -2562,15 +2503,19 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_non_local_interface_tmpl.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception.h:
+
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/c++config.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumpable.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/communications_tmpl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_non_local_interface.hh:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/assert.h:
+
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/shared_ptr.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor_tmpl.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_size_t.h:
 
@@ -2628,6 +2573,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/_strings.h:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/std_function.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/debug/line.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/not.hpp:
@@ -2637,6 +2586,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_type_map_tmpl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_math.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/detail/is_binary.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/nor.hpp:
 
@@ -2664,11 +2615,19 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/aka_named_tuple.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/regex_compiler.h:
+
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/cxxabi_forced.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_enum_macros.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/SolveTriangular.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_element_classes_info.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/and.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_8_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
 
@@ -2679,12 +2638,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/communication_descriptor_tmpl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_compute.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact.hh:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/and.hpp:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_hexahedron_8_inline_impl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/pop_front.hpp:
 
@@ -2736,6 +2689,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators/iterators/aka_concatenate_iterator.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_ios.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/non_local_manager_callback.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/arm/_mcontext.h:
@@ -2759,12 +2714,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/element_class_bernoulli_beam_inline_impl.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_time_t.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager_inline_impl.hh:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/qos.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/array/to_list.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/_types/_locale_t.h:
 
@@ -2799,6 +2748,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/math.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solver_callback.hh:
+
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/enable_special_members.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/memoryfwd.h:
 
@@ -2876,11 +2827,17 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/communication_tag.hh:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception_defines.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_array_tmpl.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_bbox.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_selector.hh:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/variadic/to_seq.hpp:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/ctype.h:
 
@@ -2900,6 +2857,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/machine/_types.h:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/Transform.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/expand.hpp:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_int8_t.h:
@@ -2914,14 +2875,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/locale.h:
 
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/ext/aligned_buffer.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/check_empty.hpp:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/libkern/arm/_OSByteOrder.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/control/detail/while.hpp:
@@ -2932,15 +2885,7 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/non_local_neighborhood_inline_impl.hh:
 
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/shared_ptr.h:
-
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/data_accessor_tmpl.hh:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/assert.h:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/comparison/limits/not_equal_256.hpp:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh_iterators.hh:
 
@@ -2986,15 +2931,19 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/_printf.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/geometry_utils_inline_impl.hh:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/_types/_uintmax_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/errno.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/seq/remove.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Core/MapBase.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dof_manager.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/logical/limits/bool_256.hpp:
 
@@ -3004,6 +2953,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/machine/_mcontext.h:
 
-/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/coupler_solid_contact_tmpl.hh:
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/facilities/apply.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/arm/_types.h:
