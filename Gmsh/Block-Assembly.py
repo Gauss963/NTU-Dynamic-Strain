@@ -36,7 +36,7 @@ def main():
 
         gmsh.model.mesh.generate(3)
         gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.msh")
-        gmsh.fltk.run()
+        # gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":

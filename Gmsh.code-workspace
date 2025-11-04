@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "Gmsh"
+		},
+		{
+			"path": "Akantu/Velocity-weakening"
+		},
+		{
+			"path": "Materials"
+		},
+		{
+			"path": "Models"
+		}
+	],
+	"settings": {
+		"python-envs.defaultEnvManager": "ms-python.python:conda",
+		"python-envs.defaultPackageManager": "ms-python.python:conda"
+	}
+}
