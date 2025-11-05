@@ -22,6 +22,6 @@ model solid_mechanics_model_cohesive [
   ]
 
   cohesive_inserter [
-    cohesive_zones = [friction_master, friction_slave]
+    cohesive_zones = [interface_zone]
   ]
 ]

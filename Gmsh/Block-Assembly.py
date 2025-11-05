@@ -31,6 +31,7 @@ def main():
         master_pg = gmsh.model.addPhysicalGroup(2, [blk2["faces_geo"]["stationary-block-front"]])
         gmsh.model.setPhysicalName(2, slave_pg,  "friction_slave")
         gmsh.model.setPhysicalName(2, master_pg, "friction_master")
+        
 
 
         gmsh.model.occ.synchronize()
