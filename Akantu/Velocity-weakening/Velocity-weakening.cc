@@ -101,8 +101,8 @@ int main(int argc, char *argv[])
     disp.set(0.);
     std::cout << "After setting vel and disp" << std::endl;
 
-    Vector<Real, 3> t_front{2.0, 0.0, 0.0}; // MPa traction (+X)
-    Vector<Real, 3> t_left{0.0, 5.0, 0.0};  // MPa traction (+Y)
+    Vector<Real, 3> t_front{32.0, 0.0, 0.0}; // MPa traction (+X)
+    Vector<Real, 3> t_left{  0.0, 5.0, 0.0}; // MPa traction (+Y)
 
     model.applyBC(BC::Neumann::FromTraction(t_front), "moving-block-front");
     model.applyBC(BC::Neumann::FromTraction(t_left), "moving-block-left");

@@ -172,26 +172,19 @@ def main():
             gmsh.model.setPhysicalName(2, 26, "stationary-block-right")
         else:
             print("⚠️ 無法找到 stationary-block-right")
+    
         
-        # ... 為所有其他需要的邊界重複此操作 ...
-        
-        
-        # 步驟 7：生成網格
+    
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
         
         gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA-CZM.msh")
-        
+        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.brep")
         print(f"成功生成 {PMMA_thickness}mm-PMMA-CZM.msh")
         print("CZM 介面 (Slave/Master) 已在共形網格上創建。")
         
-        # 取消註解以查看
-        # if 'fltk' in sys.argv:
-        #    gmsh.fltk.run()
         gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":
-    # 添加 'fltk' 參數可以在 GUI 中打開
-    # 例如: python your_script.py fltk
     main()

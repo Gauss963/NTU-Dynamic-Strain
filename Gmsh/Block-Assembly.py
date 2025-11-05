@@ -37,7 +37,8 @@ def main():
         gmsh.model.occ.synchronize()
 
         gmsh.model.mesh.generate(3)
-        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.msh")
+        gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.msh")
+        # gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.brep")
         # gmsh.fltk.run()
         gmsh.finalize()
 
