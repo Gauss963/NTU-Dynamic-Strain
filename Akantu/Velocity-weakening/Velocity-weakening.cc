@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 
     MaterialCohesiveRules rules{
         {{"friction_master", "friction_slave"}, "interface_mat"},
-        {{"friction_slave", "friction_master"}, "interface_mat"}};
+        {{"friction_slave", "friction_slave"}, "interface_mat"},
+        {{"friction_master", "friction_master"}, "interface_mat"}};
     std::cout << "Got material" << std::endl;
 
     auto cohesive_selector = std::make_shared<MaterialCohesiveRulesSelector>(model, rules);
@@ -39,44 +40,44 @@ int main(int argc, char *argv[])
     std::cout << "Set material selector" << std::endl;
 
     
-    model.initFull(_analysis_method = _explicit_lumped_mass, _is_extrinsic = true); 
-    // This is where went WRONG!!
-
+    // model.initFull(_analysis_method = _explicit_lumped_mass, _is_extrinsic = true);
+    model.initFull(_analysis_method = _explicit_lumped_mass, _is_extrinsic = false);
+    // This is where went WRONG if I use "_is_extrinsic = true" !!
 
     std::cout << "After model initialization" << std::endl;
 
-    Real dt = model.getStableTimeStep() * 0.5;
+    Real dt = model.getStableTimeStep() * 0.05;
     model.setTimeStep(dt);
     std::cout << "dt = " << dt << std::endl;
 
 
     
 
-    std::map<std::string, akantu::Int> material_counts;
-    const int dim = mesh.getSpatialDimension();
-    for (auto type : mesh.elementTypes(dim))
-    {
-        const auto &mat_by_el = model.getMaterialByElement(type);
-        for (akantu::Idx e = 0; e < mat_by_el.size(); ++e)
-        {
-            akantu::Idx mid = mat_by_el(e);
-            const auto &mat = model.getMaterial(mid);
-            material_counts[mat.getName()]++;
-        }
-    }
-    for (auto &&kv : material_counts)
-    {
-        std::cout << "Material \"" << kv.first << "\" assigned to "
-                  << kv.second << " bulk elements.\n";
-    }
-    akantu::Int sum = 0;
-    for (auto &&kv : material_counts)
-        sum += kv.second;
-    if (sum != mesh.getNbElement(dim))
-    {
-        std::cerr << "[WARN] material count != total 3D elements (" << sum
-                  << " vs " << mesh.getNbElement(dim) << ")\n";
-    }
+    // std::map<std::string, akantu::Int> material_counts;
+    // const int dim = mesh.getSpatialDimension();
+    // for (auto type : mesh.elementTypes(dim))
+    // {
+    //     const auto &mat_by_el = model.getMaterialByElement(type);
+    //     for (akantu::Idx e = 0; e < mat_by_el.size(); ++e)
+    //     {
+    //         akantu::Idx mid = mat_by_el(e);
+    //         const auto &mat = model.getMaterial(mid);
+    //         material_counts[mat.getName()]++;
+    //     }
+    // }
+    // for (auto &&kv : material_counts)
+    // {
+    //     std::cout << "Material \"" << kv.first << "\" assigned to "
+    //               << kv.second << " bulk elements.\n";
+    // }
+    // akantu::Int sum = 0;
+    // for (auto &&kv : material_counts)
+    //     sum += kv.second;
+    // if (sum != mesh.getNbElement(dim))
+    // {
+    //     std::cerr << "[WARN] material count != total 3D elements (" << sum
+    //               << " vs " << mesh.getNbElement(dim) << ")\n";
+    // }
 
 
 
@@ -113,51 +114,51 @@ int main(int argc, char *argv[])
     std::cout << "set B.C. successful." << std::endl;
 
     const Int max_steps = 200000;
-    // for (Int s = 0; s < max_steps; ++s)
-    // {
-    //     model.solveStep();
-
-    //     if (s % 100 == 0)
-    //     {
-    //         std::cout << "Step: " << s << " / " << max_steps << std::endl;
-    //         model.dump();
-    //     }
-    // }
-    bool czm_fields_added = false;
-    auto has_elem_type = [&](const akantu::Mesh &m, akantu::ElementType t) -> bool
-    {
-        const int sd = m.getSpatialDimension();
-        for (int d = 0; d <= sd; ++d)
-            for (auto et : m.elementTypes(d))
-                if (et == t)
-                    return true;
-        return false;
-    };
     for (Int s = 0; s < max_steps; ++s)
     {
-        model.checkCohesiveStress();
         model.solveStep();
-
-        if (!czm_fields_added)
-        {
-            int n6 = has_elem_type(mesh, _cohesive_3d_6) ? mesh.getNbElement(_cohesive_3d_6, _not_ghost) : 0;
-            int n8 = has_elem_type(mesh, _cohesive_3d_8) ? mesh.getNbElement(_cohesive_3d_8, _not_ghost) : 0;
-            if (n6 + n8 > 0)
-            {
-                model.addDumpField("cohesive_opening");
-                model.addDumpField("cohesive_traction");
-                model.addDumpField("material_index");
-                czm_fields_added = true;
-                std::cout << "[INFO] cohesive inserted: tri6=" << n6 << ", quad8=" << n8 << "\n";
-            }
-        }
 
         if (s % 100 == 0)
         {
+            std::cout << "Step: " << s << " / " << max_steps << std::endl;
             model.dump();
-            std::cout << "Step: " << s << "\n";
         }
     }
+    // bool czm_fields_added = false;
+    // auto has_elem_type = [&](const akantu::Mesh &m, akantu::ElementType t) -> bool
+    // {
+    //     const int sd = m.getSpatialDimension();
+    //     for (int d = 0; d <= sd; ++d)
+    //         for (auto et : m.elementTypes(d))
+    //             if (et == t)
+    //                 return true;
+    //     return false;
+    // };
+    // for (Int s = 0; s < max_steps; ++s)
+    // {
+    //     model.checkCohesiveStress();
+    //     model.solveStep();
+
+    //     if (!czm_fields_added)
+    //     {
+    //         int n6 = has_elem_type(mesh, _cohesive_3d_6) ? mesh.getNbElement(_cohesive_3d_6, _not_ghost) : 0;
+    //         int n8 = has_elem_type(mesh, _cohesive_3d_8) ? mesh.getNbElement(_cohesive_3d_8, _not_ghost) : 0;
+    //         if (n6 + n8 > 0)
+    //         {
+    //             model.addDumpField("cohesive_opening");
+    //             model.addDumpField("cohesive_traction");
+    //             model.addDumpField("material_index");
+    //             czm_fields_added = true;
+    //             std::cout << "[INFO] cohesive inserted: tri6=" << n6 << ", quad8=" << n8 << "\n";
+    //         }
+    //     }
+
+    //     if (s % 100 == 0)
+    //     {
+    //         model.dump();
+    //         std::cout << "Step: " << s << "\n";
+    //     }
+    // }
 
     finalize();
     return 0;

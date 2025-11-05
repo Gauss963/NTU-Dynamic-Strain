@@ -1,5 +1,9 @@
 model solid_mechanics_model_cohesive [
 
+  cohesive_inserter [
+     cohesive_zones = [friction_master, friction_slave]
+   ]
+
   material elastic [
     name = moving-block
     rho = 1180
@@ -19,9 +23,5 @@ model solid_mechanics_model_cohesive [
     beta = 0
     G_c = 100
     sigma_c = 3e7
-  ]
-
-  cohesive_inserter [
-    cohesive_zones = [interface_zone]
   ]
 ]
