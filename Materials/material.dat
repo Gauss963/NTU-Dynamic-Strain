@@ -1,14 +1,14 @@
 model solid_mechanics_model_cohesive [
 
   material elastic [
-    name = moving_block
+    name = moving-block
     rho = 1180
     E   = 3.0e9
     nu  = 0.35
   ]
 
   material elastic [
-    name = stationary_block
+    name = stationary-block
     rho = 1180
     E   = 3.0e9
     nu  = 0.35
@@ -23,19 +23,5 @@ model solid_mechanics_model_cohesive [
 
   cohesive_inserter [
     cohesive_zones = [friction_master, friction_slave]
-  ]
-
-  contact_detector [
-    type = explicit
-    master = friction_master
-    slave  = friction_slave
-  ]
-
-  contact_resolution penalty_linear [
-    name = friction_slave
-    mu = 0.0
-    epsilon_n = 3.0e3
-    epsilon_t = 0.0
-    is_master_deformable = true
   ]
 ]

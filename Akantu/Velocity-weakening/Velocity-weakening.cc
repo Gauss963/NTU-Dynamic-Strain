@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 
     const std::string mesh_file = "../../../Models/50mm-PMMA.msh";
     const std::string mat_file = "../../../Materials/material.dat";
-
     std::cout << "Load files successful." << std::endl;
 
     std::cout << "Before initialize" << std::endl;
@@ -20,20 +19,43 @@ int main(int argc, char *argv[])
 
     Mesh mesh(sd);
     mesh.read(mesh_file);
-    std::cout << "Mesh spatial dimension: " << mesh.getSpatialDimension() << std::endl;
-    std::cout << "Number of elements (bulk): " << mesh.getNbElement(0) << std::endl;
+
+    auto check = [&](const std::string &name) {
+        try {
+            (void)mesh.getElementGroup(name);
+            std::cout << "[OK] ElementGroup exists: " << name << "\n";
+        }
+        catch (std::exception &e) {
+            std::cerr << "[MISS] ElementGroup not found: " << name << "\n";
+        }
+    };
+
+    check("moving-block-front");
+    check("moving-block-left");
+    check("stationary-block-right");
+    check("stationary-block-back");
+    check("friction_master");
+    check("friction_slave");
+    check("moving-block");
+    check("stationary-block");
+
+    std::cout << "Cells (3D): "
+              << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
+    std::cout << "Faces (2D): "
+              << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
+    std::cout << "Edges (1D): "
+              << mesh.getNbElement(1) << std::endl;
 
     SolidMechanicsModelCohesive model(mesh);
 
-    MaterialCohesiveRules rules{
-        {{"friction_master", "friction_slave"}, "interface_mat"}};
+    MaterialCohesiveRules rules{{{"friction_master", "friction_slave"}, "interface_mat"}};
     std::cout << "After getting material" << std::endl;
 
     auto cohesive_selector = std::make_shared<MaterialCohesiveRulesSelector>(model, rules);
     auto bulk_selector = std::make_shared<MeshDataMaterialSelector<std::string>>("physical_names", model);
 
     cohesive_selector->setFallback(bulk_selector);
-    bulk_selector->setFallback(model.getMaterialSelector());
+    // bulk_selector->setFallback(model.getMaterialSelector());
     model.setMaterialSelector(cohesive_selector);
 
     std::map<std::string, Int> material_counts;
@@ -42,6 +64,23 @@ int main(int argc, char *argv[])
     {
         std::cout << "Material \"" << name << "\" assigned to " << count << " elements." << std::endl;
     }
+
+    auto &gmv = mesh.getElementGroup("moving-block");
+    auto &gst = mesh.getElementGroup("stationary-block");
+
+    const auto n3d_all = mesh.getNbElement(mesh.getSpatialDimension());
+    const auto n3d_mv = static_cast<Int>(gmv.size());
+    const auto n3d_st = static_cast<Int>(gst.size());
+    std::cout << "[CHK] 3D total=" << n3d_all
+              << ", moving-block=" << n3d_mv
+              << ", stationary-block=" << n3d_st << "\n";
+
+    if (n3d_mv + n3d_st != n3d_all)
+    {
+        std::cerr << "[FATAL] Some 3D cells are not covered by bulk groups.\n";
+        return 1;
+    }
+    
 
     model.initFull(_analysis_method = _explicit_lumped_mass, _is_extrinsic = true);
 
@@ -58,11 +97,6 @@ int main(int argc, char *argv[])
     model.addDumpField("grad_u");
     model.addDumpField("cohesive_opening");
     model.addDumpField("cohesive_traction");
-
-    // auto &vel = model.getVelocity();
-    // auto &disp = model.getDisplacement();
-    // vel.set(0.);
-    // disp.set(0.);
 
     std::cout << "Before getVelocity" << std::endl;
     auto &vel = model.getVelocity();

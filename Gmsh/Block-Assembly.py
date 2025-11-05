@@ -5,13 +5,13 @@ def main():
 
     PMMA_THICKNESSES = [50, 100]
     mesh_size = 5
-    mesh_size = 20
+    # mesh_size = 20
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
         gmsh.initialize()
-        # gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
-        gmsh.option.setNumber("Mesh.MshFileVersion", 4.1)
+        gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
+        # gmsh.option.setNumber("Mesh.MshFileVersion", 4.1)
         gmsh.option.setNumber("Mesh.Algorithm3D", 1)
         gmsh.option.setNumber("Mesh.RecombineAll", 1)
         gmsh.option.setNumber("Mesh.ElementOrder", 1)
