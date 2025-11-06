@@ -50,38 +50,6 @@ int main(int argc, char *argv[])
     model.setTimeStep(dt);
     std::cout << "dt = " << dt << std::endl;
 
-
-    
-
-    // std::map<std::string, akantu::Int> material_counts;
-    // const int dim = mesh.getSpatialDimension();
-    // for (auto type : mesh.elementTypes(dim))
-    // {
-    //     const auto &mat_by_el = model.getMaterialByElement(type);
-    //     for (akantu::Idx e = 0; e < mat_by_el.size(); ++e)
-    //     {
-    //         akantu::Idx mid = mat_by_el(e);
-    //         const auto &mat = model.getMaterial(mid);
-    //         material_counts[mat.getName()]++;
-    //     }
-    // }
-    // for (auto &&kv : material_counts)
-    // {
-    //     std::cout << "Material \"" << kv.first << "\" assigned to "
-    //               << kv.second << " bulk elements.\n";
-    // }
-    // akantu::Int sum = 0;
-    // for (auto &&kv : material_counts)
-    //     sum += kv.second;
-    // if (sum != mesh.getNbElement(dim))
-    // {
-    //     std::cerr << "[WARN] material count != total 3D elements (" << sum
-    //               << " vs " << mesh.getNbElement(dim) << ")\n";
-    // }
-
-
-
-
     model.assembleMassLumped();
     // model.setBaseName("czm_debug");
     model.addDumpFieldVector("displacement");
@@ -102,8 +70,8 @@ int main(int argc, char *argv[])
     disp.set(0.);
     std::cout << "After setting vel and disp" << std::endl;
 
-    Vector<Real, 3> t_front{32.0, 0.0, 0.0}; // MPa traction (+X)
-    Vector<Real, 3> t_left{  0.0, 5.0, 0.0}; // MPa traction (+Y)
+    Vector<Real, 3> t_front{8.0, 0.0, 0.0}; // MPa traction (+X)
+    Vector<Real, 3> t_left{  0.0, 6.0, 0.0}; // MPa traction (+Y)
 
     model.applyBC(BC::Neumann::FromTraction(t_front), "moving-block-front");
     model.applyBC(BC::Neumann::FromTraction(t_left), "moving-block-left");
@@ -117,48 +85,13 @@ int main(int argc, char *argv[])
     for (Int s = 0; s < max_steps; ++s)
     {
         model.solveStep();
+        std::cout << "Step: " << s << " / " << max_steps << std::endl;
 
         if (s % 100 == 0)
         {
-            std::cout << "Step: " << s << " / " << max_steps << std::endl;
             model.dump();
         }
     }
-    // bool czm_fields_added = false;
-    // auto has_elem_type = [&](const akantu::Mesh &m, akantu::ElementType t) -> bool
-    // {
-    //     const int sd = m.getSpatialDimension();
-    //     for (int d = 0; d <= sd; ++d)
-    //         for (auto et : m.elementTypes(d))
-    //             if (et == t)
-    //                 return true;
-    //     return false;
-    // };
-    // for (Int s = 0; s < max_steps; ++s)
-    // {
-    //     model.checkCohesiveStress();
-    //     model.solveStep();
-
-    //     if (!czm_fields_added)
-    //     {
-    //         int n6 = has_elem_type(mesh, _cohesive_3d_6) ? mesh.getNbElement(_cohesive_3d_6, _not_ghost) : 0;
-    //         int n8 = has_elem_type(mesh, _cohesive_3d_8) ? mesh.getNbElement(_cohesive_3d_8, _not_ghost) : 0;
-    //         if (n6 + n8 > 0)
-    //         {
-    //             model.addDumpField("cohesive_opening");
-    //             model.addDumpField("cohesive_traction");
-    //             model.addDumpField("material_index");
-    //             czm_fields_added = true;
-    //             std::cout << "[INFO] cohesive inserted: tri6=" << n6 << ", quad8=" << n8 << "\n";
-    //         }
-    //     }
-
-    //     if (s % 100 == 0)
-    //     {
-    //         model.dump();
-    //         std::cout << "Step: " << s << "\n";
-    //     }
-    // }
 
     finalize();
     return 0;
