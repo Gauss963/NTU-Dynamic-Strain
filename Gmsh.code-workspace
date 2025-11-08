@@ -1,15 +1,23 @@
 {
 	"folders": [
 		{
+			"name": "Gmsh",
 			"path": "Gmsh"
 		},
 		{
+			"name": "Velocity-weakening",
 			"path": "Akantu/Velocity-weakening"
 		},
 		{
+			"name": "Materials",
 			"path": "Materials"
 		},
 		{
+			"name": "code",
+			"path": "code"
+		},
+		{
+			"name": "Models",
 			"path": "Models"
 		}
 	],

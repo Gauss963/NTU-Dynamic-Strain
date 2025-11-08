@@ -2,6 +2,7 @@
 #include "mesh.hh"
 #include "aka_common.hh"
 #include <iostream>
+#include <chrono>
 
 using namespace akantu;
 
@@ -9,7 +10,7 @@ int main(int argc, char *argv[])
 {
     constexpr Int sd = 3;
     const std::string mesh_file = "../../../Models/50mm-PMMA-CZM.msh";
-    const std::string mat_file = "../../../Materials/material.dat";
+    const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     initialize(mat_file, argc, argv);
     std::cout << "Initialized" << std::endl;
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
 
     std::cout << "After model initialization" << std::endl;
 
-    Real dt = model.getStableTimeStep() * 0.05;
+    Real dt = model.getStableTimeStep() * 0.5;
     model.setTimeStep(dt);
     std::cout << "dt = " << dt << std::endl;
 
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
     std::cout << "After setting vel and disp" << std::endl;
 
     Vector<Real, 3> t_front{8.0, 0.0, 0.0}; // MPa traction (+X)
-    Vector<Real, 3> t_left{  0.0, 6.0, 0.0}; // MPa traction (+Y)
+    Vector<Real, 3> t_left{ 0.0, 6.0, 0.0}; // MPa traction (+Y)
 
     model.applyBC(BC::Neumann::FromTraction(t_front), "moving-block-front");
     model.applyBC(BC::Neumann::FromTraction(t_left), "moving-block-left");
@@ -81,17 +82,32 @@ int main(int argc, char *argv[])
 
     std::cout << "set B.C. successful." << std::endl;
 
-    const Int max_steps = 200000;
+    const Int SIMULATION_TIME = 10;             // total simulation time in ms
+    const Int max_steps = SIMULATION_TIME / dt; // total number of time steps
+    std::cout << "Starting time integration for " << SIMULATION_TIME
+              << " ms (" << max_steps << " steps)" << std::endl;
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     for (Int s = 0; s < max_steps; ++s)
     {
         model.solveStep();
-        std::cout << "Step: " << s << " / " << max_steps << std::endl;
-
-        if (s % 100 == 0)
-        {
+        if (s % 100 == 0) {
             model.dump();
         }
+        auto current_time = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = current_time - start_time;
+
+        double time_per_iter = elapsed.count() / s;
+        double estimated_total = time_per_iter * max_steps;
+        double remaining = estimated_total - elapsed.count();
+
+        std::cout << "Step " << s << "/" << max_steps
+                  << " | Elapsed: " << elapsed.count() << " s"
+                  << " | ETA: " << remaining << " s" << std::endl;
     }
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> total_elapsed = end_time - start_time;
+    std::cout << "Total elapsed time: " << total_elapsed.count() << " s" << std::endl;
 
     finalize();
     return 0;

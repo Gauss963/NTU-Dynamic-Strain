@@ -6,6 +6,13 @@ import CohesiveCrack
 
 def main():
 
+    materials = FolderActions.read_materials("../Materials/material-mm-MPa.dat")
+
+    Gamma = materials["interface_mat"]["parameters"]["G_c"]  # Fracture energy (J/m^2)
+    E = materials["moving-block"]["parameters"]["E"]         # Young's modulus (MPa)
+    nu = materials["moving-block"]["parameters"]["nu"]       # Poisson's ratio
+
+
     Gamma = 0.21  # Fracture energy (J/m^2)
     E = 51e9      # Young's modulus (Pa)
     nu = 0.25     # Poisson's ratio
