@@ -101,5 +101,6 @@
     <DataSet timestep="0.00366978" group="" part="0" file="solid_mechanics_model_cohesive_0097.pvtu"/>
     <DataSet timestep="0.00370761" group="" part="0" file="solid_mechanics_model_cohesive_0098.pvtu"/>
     <DataSet timestep="0.00374544" group="" part="0" file="solid_mechanics_model_cohesive_0099.pvtu"/>
+    <DataSet timestep="0.00378328" group="" part="0" file="solid_mechanics_model_cohesive_0100.pvtu"/>
   </Collection>
 </VTKFile>
