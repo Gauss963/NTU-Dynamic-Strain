@@ -2,33 +2,41 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import FolderActions
-import CohesiveCrack
+# import CohesiveCrack
+import CohesiveCrackPY
 
 def main():
 
     materials = FolderActions.read_materials("../Materials/material-mm-MPa.dat")
+    Gamma = materials["interface_mat"]["parameters"]["G_c"]  * 1e3  # MPa·mm → J/m² (SI)
+    E = materials["moving-block"]["parameters"]["E"] * 1e6          # MPa → Pa
+    nu = materials["moving-block"]["parameters"]["nu"]              # Poisson's ratio
+    rho = materials["moving-block"]["parameters"]["rho"] * 1e9      # g/mm³ → kg/m³
 
-    Gamma = materials["interface_mat"]["parameters"]["G_c"]  # Fracture energy (J/m^2)
-    E = materials["moving-block"]["parameters"]["E"]         # Young's modulus (MPa)
-    nu = materials["moving-block"]["parameters"]["nu"]       # Poisson's ratio
+    C_s = CohesiveCrackPY.get_Cs(E, nu, rho)            # Shear wave speed (m/s)
+    C_d = CohesiveCrackPY.get_Cd(E, nu, rho)            # Longitudinal wave speed (m/s
+    C_f = 0.9 * C_s                                     # Rupture speed (m/s)
+    print(f"Fracture energy (Gamma): {Gamma} J/m^2")
+    print(f"Young's modulus (E): {E} Pa")
+    print(f"Poisson's ratio (nu): {nu}")
+    print(f"Density (rho): {rho} kg/m³")
+    print(f"Rupture speed (C_f): {C_f:.1f} m/s")
+    print(f"Shear wave speed (C_s): {C_s:.1f} m/s")
+    print(f"Longitudinal wave speed (C_d): {C_d:.1f} m/s")
 
 
-    Gamma = 0.21  # Fracture energy (J/m^2)
-    E = 51e9      # Young's modulus (Pa)
-    nu = 0.25     # Poisson's ratio
-    C_f = 2404    # Rupture speed (m/s)
-    C_s = 2760    # Shear wave speed (m/s)
-    C_d = 4790    # Longitudinal wave speed (m/s)
     X_c = 13.8e-3 # Cohesive zone size (m)
     y_values = [1e-8, 0.1e-3, 0.5e-3, 1.0e-3, 2.0e-3, 5e-3, 10e-3, 15e-3]
 
     x = np.linspace(-50e-3, 50e-3, 8192)
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=True)
+    shift_scale = 5  # To convert Pa to MPa
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True, sharey=True)
 
     for i, y in enumerate(y_values):
-        delta_sigma_xx = CohesiveCrack.delta_sigma_xx(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
-        axes[0].plot(x * 1000, delta_sigma_xx / 1e5 + i * 5, '-.', label=f'y = {y * 1e3:.1f} mm')
+        delta_sigma_xx = CohesiveCrackPY.delta_sigma_xx(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
+        axes[0].plot(x * 1000, delta_sigma_xx / 1e6 + i * shift_scale, '-.', label=f'y = {y * 1e3:.1f} mm')
 
     axes[0].set_xlabel('Rupture tip position x (mm)')
     axes[0].set_ylabel('Shear stress fluctuation $\\Delta \\sigma_{xx}$ (MPa)')
@@ -38,9 +46,9 @@ def main():
     axes[0].grid()
 
     for i, y in enumerate(y_values):
-        delta_sigma_xy = CohesiveCrack.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
-        axes[1].plot(x * 1000, delta_sigma_xy / 1e5 + i * 5, '-.', label=f'y = {y * 1e3:.1f} mm')
-
+        delta_sigma_xy = CohesiveCrackPY.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
+        axes[1].plot(x * 1000, delta_sigma_xy / 1e6 + i * shift_scale, '-.', label=f'y = {y * 1e3:.1f} mm')
+    
     axes[1].set_xlabel('Rupture tip position x (mm)')
     axes[1].set_ylabel('Shear stress fluctuation $\\Delta \\sigma_{xy}$ (MPa)')
     axes[1].set_title('Shear stress fluctuation (xy)')
@@ -48,10 +56,11 @@ def main():
     axes[1].legend(loc = "lower right")
     axes[1].grid()
 
-    plt.suptitle(f'Stress fluctuations along the fault | E = {E/1e9}GPa | ν = {nu} | $C_f$ = {C_f}m/s, $C_s$ = {C_s}m/s, $C_d$ = {C_d}m/s', fontsize=14, fontweight='bold')
+    plt.suptitle(f'Stress fluctuations along the fault | E = {E/1e9}GPa | ν = {nu} | $C_f$ = {C_f:.3f}m/s, $C_s$ = {C_s:.3f}m/s, $C_d$ = {C_d:.3f}m/s', fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('./Plot/example_xx_xy.pdf', dpi=900)
-    # plt.show()
+    plt.savefig('../Plot/example_xx_xy.png', dpi=900)
+    plt.savefig('../Plot/example_xx_xy.pdf', dpi=900)
+    plt.show()
     
     return 0
 

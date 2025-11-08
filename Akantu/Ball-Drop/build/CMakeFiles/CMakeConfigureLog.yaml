@@ -250,7 +250,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/4.1.2/CompilerIdC/a.out
+        /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/4.1.2/CompilerIdC/a.out
       
   -
     kind: "find-v1"
@@ -1167,7 +1167,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/4.1.2/CompilerIdCXX/a.out
+        /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/4.1.2/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -1375,8 +1375,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw"
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1388,12 +1388,12 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw'
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c4184/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c4184.dir/build.make CMakeFiles/cmTC_c4184.dir/build
-        Building C object CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o
-        /opt/homebrew/bin/mpicc   -arch arm64   -v -Wl,-v -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c1ecf/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c1ecf.dir/build.make CMakeFiles/cmTC_c1ecf.dir/build
+        Building C object CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o
+        /opt/homebrew/bin/mpicc   -arch arm64   -v -Wl,-v -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/opt/homebrew/bin/gcc-15
         Target: aarch64-apple-darwin24
@@ -1401,8 +1401,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Homebrew GCC 15.2.0) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1 -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpdir CMakeFiles/cmTC_c4184.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1 -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpdir CMakeFiles/cmTC_c1ecf.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s
         GNU C23 (Homebrew GCC 15.2.0) version 15.2.0 (aarch64-apple-darwin24)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1422,18 +1422,18 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
         End of search list.
         Compiler executable checksum: 590848cf046ff263fef562eaacbfb117
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/'
-         as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/'
+         as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cch9hqge.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name ccJNoym9.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s
         COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
         LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_c4184
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4184.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_c1ecf
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1ecf.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/opt/homebrew/bin/gcc-15
         COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
@@ -1444,10 +1444,10 @@ events:
         gcc version 15.2.0 (Homebrew GCC 15.2.0) 
         COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
         LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c4184' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_c4184.'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c4184 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c1ecf' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_c1ecf.'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c1ecf -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
         collect2 version 15.2.0
-        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c4184 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c1ecf -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
         @(#)PROGRAM:ld PROJECT:ld-1221.4
         BUILD 16:29:08 Aug 11 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1463,7 +1463,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
-        /opt/homebrew/bin/mpicc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -o cmTC_c4184
+        /opt/homebrew/bin/mpicc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -o cmTC_c1ecf
         
       exitCode: 0
   -
@@ -1509,12 +1509,12 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw']
+        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c4184/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c4184.dir/build.make CMakeFiles/cmTC_c4184.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/opt/homebrew/bin/mpicc   -arch arm64   -v -Wl -v -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c1ecf/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c1ecf.dir/build.make CMakeFiles/cmTC_c1ecf.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/homebrew/bin/mpicc   -arch arm64   -v -Wl -v -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/homebrew/bin/gcc-15]
         ignore line: [Target: aarch64-apple-darwin24]
@@ -1522,8 +1522,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/']
-        ignore line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1 -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpdir CMakeFiles/cmTC_c4184.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/']
+        ignore line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1 -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpdir CMakeFiles/cmTC_c1ecf.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s]
         ignore line: [GNU C23 (Homebrew GCC 15.2.0) version 15.2.0 (aarch64-apple-darwin24)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1543,18 +1543,18 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 590848cf046ff263fef562eaacbfb117]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/']
-        ignore line: [ as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/']
+        ignore line: [ as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cch9hqge.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-b8DzHw -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cch9hqge.s]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name ccJNoym9.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P2z0Bb -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//ccJNoym9.s]
         ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
         ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_c4184]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4184.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_c1ecf]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1ecf.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/homebrew/bin/gcc-15]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
@@ -1565,8 +1565,8 @@ events:
         ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
         ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
         ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c4184' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_c4184.']
-        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c4184 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c1ecf' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_c1ecf.']
+        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c1ecf -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
           arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
           arg [-demangle] ==> ignore
           arg [-syslibroot] ==> ignore
@@ -1577,7 +1577,7 @@ events:
           arg [-macos_version_min] ==> ignore
           arg [15.0.0] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_c4184] ==> ignore
+          arg [cmTC_c1ecf] ==> ignore
           arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
           arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
           arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
@@ -1587,7 +1587,7 @@ events:
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lmpi] ==> lib [mpi]
           arg [-lgcc] ==> lib [gcc]
           arg [-lSystem] ==> lib [System]
@@ -1601,7 +1601,7 @@ events:
           arg [-rpath] ==> ignore
           arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
         ignore line: [collect2 version 15.2.0]
-        ignore line: [/usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c4184 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c4184.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        ignore line: [/usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_c1ecf -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c1ecf.dir/CMakeCCompilerABI.c.o -lmpi -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
         linker tool for 'C': /usr/bin/ld
         Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
         Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
@@ -1647,8 +1647,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72"
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1661,12 +1661,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72'
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_608b1/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_608b1.dir/build.make CMakeFiles/cmTC_608b1.dir/build
-        Building CXX object CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o
-        /opt/homebrew/bin/mpicxx   -arch arm64   -v -Wl,-v -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b0190/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b0190.dir/build.make CMakeFiles/cmTC_b0190.dir/build
+        Building CXX object CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/homebrew/bin/mpicxx   -arch arm64   -v -Wl,-v -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/opt/homebrew/bin/g++-15
         Target: aarch64-apple-darwin24
@@ -1674,8 +1674,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Homebrew GCC 15.2.0) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1plus -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpdir CMakeFiles/cmTC_608b1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1plus -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpdir CMakeFiles/cmTC_b0190.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s
         GNU C++17 (Homebrew GCC 15.2.0) version 15.2.0 (aarch64-apple-darwin24)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1701,18 +1701,18 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
         End of search list.
         Compiler executable checksum: c0d2228552a9f1b5b77f767c05db2ca5
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/'
-         as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/'
+         as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cc6WtNaU.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72 -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cc5McsfU.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536 -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s
         COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
         LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_608b1
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_608b1.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_b0190
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0190.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/opt/homebrew/bin/g++-15
         COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
@@ -1723,10 +1723,10 @@ events:
         gcc version 15.2.0 (Homebrew GCC 15.2.0) 
         COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
         LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_608b1' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_608b1.'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_608b1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b0190' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_b0190.'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_b0190 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
         collect2 version 15.2.0
-        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_608b1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_b0190 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
         @(#)PROGRAM:ld PROJECT:ld-1221.4
         BUILD 16:29:08 Aug 11 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1742,7 +1742,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
-        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_608b1
+        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b0190
         
       exitCode: 0
   -
@@ -1794,12 +1794,12 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72']
+        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_608b1/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_608b1.dir/build.make CMakeFiles/cmTC_608b1.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/opt/homebrew/bin/mpicxx   -arch arm64   -v -Wl -v -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b0190/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b0190.dir/build.make CMakeFiles/cmTC_b0190.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/homebrew/bin/mpicxx   -arch arm64   -v -Wl -v -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/homebrew/bin/g++-15]
         ignore line: [Target: aarch64-apple-darwin24]
@@ -1807,8 +1807,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/']
-        ignore line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1plus -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpdir CMakeFiles/cmTC_608b1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/']
+        ignore line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/cc1plus -quiet -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -iprefix /opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpdir CMakeFiles/cmTC_b0190.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -version -o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s]
         ignore line: [GNU C++17 (Homebrew GCC 15.2.0) version 15.2.0 (aarch64-apple-darwin24)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1834,18 +1834,18 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c0d2228552a9f1b5b77f767c05db2ca5]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/']
-        ignore line: [ as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/']
+        ignore line: [ as -arch arm64 -v -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -mmacosx-version-min=15.0 -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cc6WtNaU.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Hjkc72 -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc6WtNaU.s]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple arm64-apple-macosx15.0.0 -target-sdk-version=26.0 -filetype obj -main-file-name cc5McsfU.s -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -fdebug-compilation-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-xKi536 -dwarf-debug-producer "Apple clang version 17.0.0 (clang-1700.3.19.1)" -I /opt/homebrew/Cellar/open-mpi/5.0.8/include -dwarf-version=5 -mrelocation-model pic -o CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o /var/folders/3_/nmxnf4m14bq6l5lt8nd299xh0000gp/T//cc5McsfU.s]
         ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
         ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_608b1]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_608b1.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-mmacosx-version-min=15.0.0'  '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_b0190]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0190.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/homebrew/bin/g++-15]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
@@ -1856,8 +1856,8 @@ events:
         ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
         ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
         ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_608b1' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_608b1.']
-        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_608b1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b0190' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_b0190.']
+        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_b0190 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
           arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
           arg [-demangle] ==> ignore
           arg [-syslibroot] ==> ignore
@@ -1868,7 +1868,7 @@ events:
           arg [-macos_version_min] ==> ignore
           arg [15.0.0] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_608b1] ==> ignore
+          arg [cmTC_b0190] ==> ignore
           arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
           arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
           arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
@@ -1878,7 +1878,7 @@ events:
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lmpi] ==> lib [mpi]
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lgcc] ==> lib [gcc]
@@ -1893,7 +1893,7 @@ events:
           arg [-rpath] ==> ignore
           arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
         ignore line: [collect2 version 15.2.0]
-        ignore line: [/usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_608b1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_608b1.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        ignore line: [/usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_b0190 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b0190.dir/CMakeCXXCompilerABI.cpp.o -lmpi -lstdc++ -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
         linker tool for 'CXX': /usr/bin/ld
         Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
         Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
@@ -1931,428 +1931,6 @@ events:
       LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
   -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:251 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:24 (find_package)"
-    description: "Detecting C OpenMP compiler info"
-    directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI"
-    cmakeVariables:
-      CMAKE_C_FLAGS: ""
-      CMAKE_C_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-    buildResult:
-      variable: "OpenMP_COMPILE_RESULT_C_fopenmp"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f36f1/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f36f1.dir/build.make CMakeFiles/cmTC_f36f1.dir/build
-        Building C object CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o
-        /opt/homebrew/bin/mpicc   -fopenmp -arch arm64 -o CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI/OpenMPTryFlag.c
-        Linking C executable cmTC_f36f1
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f36f1.dir/link.txt --verbose=1
-        Using built-in specs.
-        COLLECT_GCC=/opt/homebrew/bin/gcc-15
-        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
-        Target: aarch64-apple-darwin24
-        Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk
-        Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 15.2.0 (Homebrew GCC 15.2.0) 
-        COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
-        LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_f36f1' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_f36f1.'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_f36f1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        collect2 version 15.2.0
-        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_f36f1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        @(#)PROGRAM:ld PROJECT:ld-1221.4
-        BUILD 16:29:08 Aug 11 2025
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
-        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
-        Library search paths:
-        	/opt/homebrew/Cellar/open-mpi/5.0.8/lib
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
-        Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
-        /opt/homebrew/bin/mpicc  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -o cmTC_f36f1
-        
-      exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:295 (message)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:24 (find_package)"
-    message: |
-      Parsed C OpenMP implicit link information from above output:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI']
-        ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f36f1/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f36f1.dir/build.make CMakeFiles/cmTC_f36f1.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o]
-        ignore line: [/opt/homebrew/bin/mpicc   -fopenmp -arch arm64 -o CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-ZChuEI/OpenMPTryFlag.c]
-        ignore line: [Linking C executable cmTC_f36f1]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f36f1.dir/link.txt --verbose=1]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/opt/homebrew/bin/gcc-15]
-        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
-        ignore line: [Target: aarch64-apple-darwin24]
-        ignore line: [Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk]
-        ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
-        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
-        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_f36f1' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_f36f1.']
-        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_f36f1 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/] ==> ignore
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-macos_version_min] ==> ignore
-          arg [15.0.0] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_f36f1] ==> ignore
-          arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..]
-          arg [-lemutls_w] ==> lib [emutls_w]
-          arg [-lheapt_w] ==> lib [heapt_w]
-          arg [-search_paths_first] ==> ignore
-          arg [-headerpad_max_install_names] ==> ignore
-          arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_f36f1.dir/OpenMPTryFlag.c.o] ==> ignore
-          arg [-lmpi] ==> lib [mpi]
-          arg [-lgomp] ==> lib [gomp]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lSystem] ==> lib [System]
-          arg [-no_compact_unwind] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [@loader_path] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
-        Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-        remove lib [System]
-        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-        implicit libs: [emutls_w;heapt_w;mpi;gomp;gcc]
-        implicit objs: []
-        implicit dirs: [/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-      
-      
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:313 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:24 (find_package)"
-    mode: "library"
-    variable: "OpenMP_gomp_LIBRARY"
-    description: "Path to the gomp library for OpenMP"
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "gomp"
-    candidate_directories:
-      - "/opt/homebrew/Cellar/open-mpi/5.0.8/lib/"
-      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15/"
-      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/"
-      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/opt/"
-      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/homebrew/Cellar/open-mpi/5.0.8/lib/"
-      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15/"
-      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/"
-    found: "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/libgomp.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/Applications/VisIt.app/Contents/MacOS"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:251 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:24 (find_package)"
-    description: "Detecting CXX OpenMP compiler info"
-    directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-    buildResult:
-      variable: "OpenMP_COMPILE_RESULT_CXX_fopenmp"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_72318/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_72318.dir/build.make CMakeFiles/cmTC_72318.dir/build
-        Building CXX object CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o
-        /opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw/OpenMPTryFlag.cpp
-        Linking CXX executable cmTC_72318
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72318.dir/link.txt --verbose=1
-        Using built-in specs.
-        COLLECT_GCC=/opt/homebrew/bin/g++-15
-        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
-        Target: aarch64-apple-darwin24
-        Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk
-        Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 15.2.0 (Homebrew GCC 15.2.0) 
-        COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
-        LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
-        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_72318' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_72318.'
-         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_72318 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        collect2 version 15.2.0
-        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_72318 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        @(#)PROGRAM:ld PROJECT:ld-1221.4
-        BUILD 16:29:08 Aug 11 2025
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
-        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
-        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
-        Library search paths:
-        	/opt/homebrew/Cellar/open-mpi/5.0.8/lib
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc
-        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
-        Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
-        /opt/homebrew/bin/mpicxx  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -o cmTC_72318
-        
-      exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:295 (message)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
-      - "CMakeLists.txt:24 (find_package)"
-    message: |
-      Parsed CXX OpenMP implicit link information from above output:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw']
-        ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_72318/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_72318.dir/build.make CMakeFiles/cmTC_72318.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o]
-        ignore line: [/opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-Ai57dw/OpenMPTryFlag.cpp]
-        ignore line: [Linking CXX executable cmTC_72318]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72318.dir/link.txt --verbose=1]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/opt/homebrew/bin/g++-15]
-        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
-        ignore line: [Target: aarch64-apple-darwin24]
-        ignore line: [Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk]
-        ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
-        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
-        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_72318' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_72318.']
-        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_72318 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/] ==> ignore
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-macos_version_min] ==> ignore
-          arg [15.0.0] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_72318] ==> ignore
-          arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
-          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..]
-          arg [-lemutls_w] ==> lib [emutls_w]
-          arg [-lheapt_w] ==> lib [heapt_w]
-          arg [-search_paths_first] ==> ignore
-          arg [-headerpad_max_install_names] ==> ignore
-          arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_72318.dir/OpenMPTryFlag.cpp.o] ==> ignore
-          arg [-lmpi] ==> lib [mpi]
-          arg [-lstdc++] ==> lib [stdc++]
-          arg [-lgomp] ==> lib [gomp]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lSystem] ==> lib [System]
-          arg [-no_compact_unwind] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [@loader_path] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> ignore
-          arg [-rpath] ==> ignore
-          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
-        Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-        remove lib [System]
-        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
-        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-        implicit libs: [emutls_w;heapt_w;mpi;stdc++;gomp;gcc]
-        implicit objs: []
-        implicit dirs: [/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
-        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
-      
-      
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:492 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:632 (_OPENMP_GET_SPEC_DATE)"
-      - "CMakeLists.txt:24 (find_package)"
-    description: "Detecting CXX OpenMP version"
-    directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-KQAJON"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-KQAJON"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-    buildResult:
-      variable: "OpenMP_SPECTEST_CXX_"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-KQAJON'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8be23/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8be23.dir/build.make CMakeFiles/cmTC_8be23.dir/build
-        Building CXX object CMakeFiles/cmTC_8be23.dir/OpenMPCheckVersion.cpp.o
-        /opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_8be23.dir/OpenMPCheckVersion.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-KQAJON/OpenMPCheckVersion.cpp
-        Linking CXX executable cmTC_8be23
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8be23.dir/link.txt --verbose=1
-        /opt/homebrew/bin/mpicxx  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8be23.dir/OpenMPCheckVersion.cpp.o -o cmTC_8be23
-        
-      exitCode: 0
-...
-
----
-events:
-  -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:69 (find_program)"
@@ -2373,6 +1951,8 @@ events:
       - "pkg-config"
       - "pkgconf"
     candidate_directories:
+      - "/Applications/VisIt.app/Contents/MacOS/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/usr/local/bin/"
@@ -2384,9 +1964,6 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/Applications/VisIt.app/Contents/MacOS/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
@@ -2423,6 +2000,10 @@ events:
       - "/Users/b09501028/Applications/"
       - "/Applications/"
     searched_directories:
+      - "/Applications/VisIt.app/Contents/MacOS/pkg-config"
+      - "/Applications/VisIt.app/Contents/MacOS/pkgconf"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/pkg-config"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/pkgconf"
       - "/opt/homebrew/bin/pkg-config"
       - "/opt/homebrew/bin/pkgconf"
       - "/opt/homebrew/sbin/pkg-config"
@@ -2445,12 +2026,6 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/pkgconf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/pkg-config"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/pkgconf"
-      - "/Applications/VisIt.app/Contents/MacOS/pkg-config"
-      - "/Applications/VisIt.app/Contents/MacOS/pkgconf"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/pkg-config"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/pkgconf"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/pkg-config"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/pkgconf"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/pkg-config"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/pkgconf"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/pkg-config"
@@ -2524,6 +2099,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Applications/VisIt.app/Contents/MacOS"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/usr/local/bin"
@@ -2535,9 +2112,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Applications/VisIt.app/Contents/MacOS"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2581,6 +2155,12 @@ events:
       - "lamexec"
       - "srun"
     candidate_directories:
+      - "/Applications/VisIt.app/Contents/MacOS/bin/"
+      - "/Applications/VisIt.app/Contents/MacOS/sbin/"
+      - "/Applications/VisIt.app/Contents/MacOS/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/sbin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/bin/"
       - "/opt/homebrew/bin/sbin/"
       - "/opt/homebrew/bin/"
@@ -2614,15 +2194,6 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/sbin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/Applications/VisIt.app/Contents/MacOS/bin/"
-      - "/Applications/VisIt.app/Contents/MacOS/sbin/"
-      - "/Applications/VisIt.app/Contents/MacOS/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/bin/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/sbin/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/bin/"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/sbin/"
-      - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/bin/"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/sbin/"
       - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
@@ -2729,11 +2300,19 @@ events:
       - "/Applications/sbin/"
       - "/Applications/"
     searched_directories:
+      - "/Applications/VisIt.app/Contents/MacOS/bin/mpiexec"
+      - "/Applications/VisIt.app/Contents/MacOS/sbin/mpiexec"
+      - "/Applications/VisIt.app/Contents/MacOS/mpiexec"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/bin/mpiexec"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/sbin/mpiexec"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/mpiexec"
       - "/opt/homebrew/bin/bin/mpiexec"
       - "/opt/homebrew/bin/sbin/mpiexec"
     found: "/opt/homebrew/bin/mpiexec"
     search_context:
       ENV{PATH}:
+        - "/Applications/VisIt.app/Contents/MacOS"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/usr/local/bin"
@@ -2745,9 +2324,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Applications/VisIt.app/Contents/MacOS"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/Users/b09501028/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2775,8 +2351,8 @@ events:
       - "CMakeLists.txt:24 (find_package)"
     description: "The MPI test test_mpi for CXX in mode MPICXX"
     directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-8TsC35"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-8TsC35"
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-qR0jrB"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-qR0jrB"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2788,63 +2364,27 @@ events:
       variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
       cached: true
       stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-8TsC35'
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-qR0jrB'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_aa52d/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_aa52d.dir/build.make CMakeFiles/cmTC_aa52d.dir/build
-        Building CXX object CMakeFiles/cmTC_aa52d.dir/test_mpi.cpp.o
-        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_aa52d.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-8TsC35/test_mpi.cpp
-        Linking CXX executable cmTC_aa52d
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa52d.dir/link.txt --verbose=1
-        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_aa52d.dir/test_mpi.cpp.o -o cmTC_aa52d
-        
-      exitCode: 0
-...
-
----
-events:
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1680 (_MPI_try_staged_settings)"
-      - "CMakeLists.txt:24 (find_package)"
-    description: "The MPI test test_mpi for CXX in mode MPICXX"
-    directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-oEcOQB"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-oEcOQB"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-    buildResult:
-      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-oEcOQB'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_24771/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_24771.dir/build.make CMakeFiles/cmTC_24771.dir/build
-        Building CXX object CMakeFiles/cmTC_24771.dir/test_mpi.cpp.o
-        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_24771.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-oEcOQB/test_mpi.cpp
-        Linking CXX executable cmTC_24771
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24771.dir/link.txt --verbose=1
-        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_24771.dir/test_mpi.cpp.o -o cmTC_24771
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_969de/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_969de.dir/build.make CMakeFiles/cmTC_969de.dir/build
+        Building CXX object CMakeFiles/cmTC_969de.dir/test_mpi.cpp.o
+        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_969de.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-qR0jrB/test_mpi.cpp
+        Linking CXX executable cmTC_969de
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_969de.dir/link.txt --verbose=1
+        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_969de.dir/test_mpi.cpp.o -o cmTC_969de
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:492 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:632 (_OPENMP_GET_SPEC_DATE)"
-      - "CMakeLists.txt:26 (find_package)"
-    description: "Detecting C OpenMP version"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:251 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:25 (find_package)"
+    description: "Detecting C OpenMP compiler info"
     directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-l6OqCO"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-l6OqCO"
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2853,34 +2393,239 @@ events:
       CMAKE_OSX_DEPLOYMENT_TARGET: ""
       CMAKE_OSX_SYSROOT: ""
     buildResult:
-      variable: "OpenMP_SPECTEST_C_"
+      variable: "OpenMP_COMPILE_RESULT_C_fopenmp"
       cached: true
       stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-l6OqCO'
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04ccb/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_04ccb.dir/build.make CMakeFiles/cmTC_04ccb.dir/build
-        Building C object CMakeFiles/cmTC_04ccb.dir/OpenMPCheckVersion.c.o
-        /opt/homebrew/bin/mpicc   -fopenmp -arch arm64 -o CMakeFiles/cmTC_04ccb.dir/OpenMPCheckVersion.c.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-l6OqCO/OpenMPCheckVersion.c
-        Linking C executable cmTC_04ccb
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04ccb.dir/link.txt --verbose=1
-        /opt/homebrew/bin/mpicc  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_04ccb.dir/OpenMPCheckVersion.c.o -o cmTC_04ccb
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4be24/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4be24.dir/build.make CMakeFiles/cmTC_4be24.dir/build
+        Building C object CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o
+        /opt/homebrew/bin/mpicc   -fopenmp -arch arm64 -o CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01/OpenMPTryFlag.c
+        Linking C executable cmTC_4be24
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4be24.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/gcc-15
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
+        Target: aarch64-apple-darwin24
+        Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Homebrew GCC 15.2.0) 
+        COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_4be24' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_4be24.'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_4be24 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        collect2 version 15.2.0
+        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_4be24 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        @(#)PROGRAM:ld PROJECT:ld-1221.4
+        BUILD 16:29:08 Aug 11 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+        Library search paths:
+        	/opt/homebrew/Cellar/open-mpi/5.0.8/lib
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
+        /opt/homebrew/bin/mpicc  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -o cmTC_4be24
         
       exitCode: 0
-...
-
----
-events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:295 (message)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:25 (find_package)"
+    message: |
+      Parsed C OpenMP implicit link information from above output:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4be24/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4be24.dir/build.make CMakeFiles/cmTC_4be24.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o]
+        ignore line: [/opt/homebrew/bin/mpicc   -fopenmp -arch arm64 -o CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-nNNZ01/OpenMPTryFlag.c]
+        ignore line: [Linking C executable cmTC_4be24]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4be24.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/gcc-15]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
+        ignore line: [Target: aarch64-apple-darwin24]
+        ignore line: [Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_4be24' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_4be24.']
+        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_4be24 -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o -lmpi -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/] ==> ignore
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-macos_version_min] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_4be24] ==> ignore
+          arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..]
+          arg [-lemutls_w] ==> lib [emutls_w]
+          arg [-lheapt_w] ==> lib [heapt_w]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_4be24.dir/OpenMPTryFlag.c.o] ==> ignore
+          arg [-lmpi] ==> lib [mpi]
+          arg [-lgomp] ==> lib [gomp]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lSystem] ==> lib [System]
+          arg [-no_compact_unwind] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [@loader_path] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
+        Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+        remove lib [System]
+        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+        implicit libs: [emutls_w;heapt_w;mpi;gomp;gcc]
+        implicit objs: []
+        implicit dirs: [/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:313 (find_library)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:25 (find_package)"
+    mode: "library"
+    variable: "OpenMP_gomp_LIBRARY"
+    description: "Path to the gomp library for OpenMP"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gomp"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/open-mpi/5.0.8/lib/"
+      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15/"
+      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/"
+      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/opt/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/opt/homebrew/Cellar/open-mpi/5.0.8/lib/"
+      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15/"
+      - "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/"
+    found: "/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/libgomp.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/Applications/VisIt.app/Contents/MacOS"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/Users/b09501028/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1680 (_MPI_try_staged_settings)"
-      - "CMakeLists.txt:24 (find_package)"
-    description: "The MPI test test_mpi for CXX in mode MPICXX"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:251 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:25 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
     directories:
-      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-tn6IPb"
-      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-tn6IPb"
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2889,18 +2634,163 @@ events:
       CMAKE_OSX_DEPLOYMENT_TARGET: ""
       CMAKE_OSX_SYSROOT: ""
     buildResult:
-      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      variable: "OpenMP_COMPILE_RESULT_CXX_fopenmp"
       cached: true
       stdout: |
-        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-tn6IPb'
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5946d/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5946d.dir/build.make CMakeFiles/cmTC_5946d.dir/build
-        Building CXX object CMakeFiles/cmTC_5946d.dir/test_mpi.cpp.o
-        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_5946d.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-tn6IPb/test_mpi.cpp
-        Linking CXX executable cmTC_5946d
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5946d.dir/link.txt --verbose=1
-        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5946d.dir/test_mpi.cpp.o -o cmTC_5946d
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_15fda/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_15fda.dir/build.make CMakeFiles/cmTC_15fda.dir/build
+        Building CXX object CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o
+        /opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK/OpenMPTryFlag.cpp
+        Linking CXX executable cmTC_15fda
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15fda.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/g++-15
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper
+        Target: aarch64-apple-darwin24
+        Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c,c++,objc,obj-c++,fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Homebrew GCC 15.2.0) 
+        COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_15fda' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_15fda.'
+         /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_15fda -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        collect2 version 15.2.0
+        /usr/bin/ld -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_15fda -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        @(#)PROGRAM:ld PROJECT:ld-1221.4
+        BUILD 16:29:08 Aug 11 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+        Library search paths:
+        	/opt/homebrew/Cellar/open-mpi/5.0.8/lib
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc
+        	/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks
+        /opt/homebrew/bin/mpicxx  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -o cmTC_15fda
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:295 (message)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:558 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:25 (find_package)"
+    message: |
+      Parsed CXX OpenMP implicit link information from above output:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_15fda/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_15fda.dir/build.make CMakeFiles/cmTC_15fda.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o]
+        ignore line: [/opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-mOCebK/OpenMPTryFlag.cpp]
+        ignore line: [Linking CXX executable cmTC_15fda]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15fda.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/g++-15]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/lto-wrapper]
+        ignore line: [Target: aarch64-apple-darwin24]
+        ignore line: [Configured with: ../configure --prefix=/opt/homebrew/opt/gcc --libdir=/opt/homebrew/opt/gcc/lib/gcc/current --disable-nls --enable-checking=release --with-gcc-major-version-only --enable-languages=c c++ objc obj-c++ fortran --program-suffix=-15 --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-zstd=/opt/homebrew/opt/zstd --with-pkgversion='Homebrew GCC 15.2.0' --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --with-system-zlib --build=aarch64-apple-darwin24 --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Homebrew GCC 15.2.0) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/:/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_15fda' '-I' '/opt/homebrew/Cellar/open-mpi/5.0.8/include' '-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib' '-mmacosx-version-min=15.0.0' '-asm_macosx_version_min=15.0' '-nodefaultexport' '-mcpu=apple-m1' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_15fda.']
+        link line: [ /opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2 -demangle -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/ -dynamic -arch arm64 -macos_version_min 15.0.0 -o cmTC_15fda -L/opt/homebrew/Cellar/open-mpi/5.0.8/lib -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15 -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc -L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../.. -lemutls_w -lheapt_w -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o -lmpi -lstdc++ -lgomp -lgcc -lSystem -no_compact_unwind -rpath @loader_path -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15 -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc -rpath /opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/bin/../libexec/gcc/aarch64-apple-darwin24/15/collect2] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/] ==> ignore
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-macos_version_min] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_15fda] ==> ignore
+          arg [-L/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc]
+          arg [-L/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..]
+          arg [-lemutls_w] ==> lib [emutls_w]
+          arg [-lheapt_w] ==> lib [heapt_w]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_15fda.dir/OpenMPTryFlag.cpp.o] ==> ignore
+          arg [-lmpi] ==> lib [mpi]
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lgomp] ==> lib [gomp]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lSystem] ==> lib [System]
+          arg [-no_compact_unwind] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [@loader_path] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> ignore
+        Library search paths: [;/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+        remove lib [System]
+        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/../../..] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        collapse library dir [/opt/homebrew/Cellar/open-mpi/5.0.8/lib] ==> [/opt/homebrew/Cellar/open-mpi/5.0.8/lib]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc]
+        collapse library dir [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current] ==> [/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+        implicit libs: [emutls_w;heapt_w;mpi;stdc++;gomp;gcc]
+        implicit objs: []
+        implicit dirs: [/opt/homebrew/Cellar/open-mpi/5.0.8/lib;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc/aarch64-apple-darwin24/15;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/15.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/lib/swift]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:492 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:632 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:25 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P1JnvV"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P1JnvV"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P1JnvV'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c7646/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c7646.dir/build.make CMakeFiles/cmTC_c7646.dir/build
+        Building CXX object CMakeFiles/cmTC_c7646.dir/OpenMPCheckVersion.cpp.o
+        /opt/homebrew/bin/mpicxx   -fopenmp -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_c7646.dir/OpenMPCheckVersion.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Ball-Drop/build/CMakeFiles/CMakeScratch/TryCompile-P1JnvV/OpenMPCheckVersion.cpp
+        Linking CXX executable cmTC_c7646
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7646.dir/link.txt --verbose=1
+        /opt/homebrew/bin/mpicxx  -fopenmp -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c7646.dir/OpenMPCheckVersion.cpp.o -o cmTC_c7646
         
       exitCode: 0
 ...

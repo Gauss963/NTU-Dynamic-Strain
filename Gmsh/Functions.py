@@ -30,16 +30,16 @@ def create_block(origin, dimensions, mesh_size, block_name, tag_prefix=1):
         com = gmsh.model.occ.getCenterOfMass(dim, tag)
 
         if abs(com[0] - x) < tolerance:
-            name = f"{block_name}-front"
+            name = f"{block_name}-back"
             tag_val = tag_prefix * 10 + 4
         elif abs(com[0] - (x + dx)) < tolerance:
-            name = f"{block_name}-back"
+            name = f"{block_name}-front"
             tag_val = tag_prefix * 10 + 5
         elif abs(com[1] - y) < tolerance:
-            name = f"{block_name}-left"
+            name = f"{block_name}-right"
             tag_val = tag_prefix * 10 + 6
         elif abs(com[1] - (y + dy)) < tolerance:
-            name = f"{block_name}-right"
+            name = f"{block_name}-left"
             tag_val = tag_prefix * 10 + 7
         elif abs(com[2] - z) < tolerance:
             name = f"{block_name}-bottom"

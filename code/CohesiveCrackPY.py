@@ -1,6 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def get_Cs(E: float, nu: float, rho: float) -> float:
+    G = E / (2 * (1 + nu))
+    Cs = np.sqrt(G / rho)
+    return Cs
+
+def get_Cd(E: float, nu: float, rho: float) -> float:
+    if nu >= 0.5 or nu <= -1.0:
+        raise ValueError("Poisson's ratio must be between -1.0 and 0.5 (non-inclusive)")
+
+    Cd = np.sqrt(E * (1 - nu) / (rho * (1 + nu) * (1 - 2 * nu)))
+    return Cd
+
+
 def alpha_s(C_f, C_s):
     return np.sqrt(1 - (C_f / C_s) ** 2)
 

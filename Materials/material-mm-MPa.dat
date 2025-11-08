@@ -21,7 +21,7 @@ model solid_mechanics_model_cohesive [
   material cohesive_linear [
     name = interface_mat
     beta = 0
-    G_c = 0.1
-    sigma_c = 30
+    G_c = 0.2
+    sigma_c = 50
   ]
 ]

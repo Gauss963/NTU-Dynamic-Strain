@@ -1,0 +1,6 @@
+material elastic [
+  name = Sample
+  rho = 1.19e-9
+  E = 3.2e3
+  nu = 0.35
+]

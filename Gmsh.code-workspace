@@ -73,7 +73,11 @@
 			"map": "cpp",
 			"queue": "cpp",
 			"regex": "cpp",
-			"stack": "cpp"
+			"stack": "cpp",
+			"cstdarg": "cpp",
+			"ctime": "cpp",
+			"optional": "cpp",
+			"typeindex": "cpp"
 		}
 	}
 }
