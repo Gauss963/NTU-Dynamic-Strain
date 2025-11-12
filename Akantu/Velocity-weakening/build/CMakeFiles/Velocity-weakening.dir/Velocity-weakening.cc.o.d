@@ -996,6 +996,11 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/material_cohesive_inline_impl.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/mesh.hh \
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/aka_common.hh \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi.h \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi_proto.h \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpio.h \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi.h \
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpicxx.h \
  /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/chrono \
  /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/chrono.h \
  /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/ratio \

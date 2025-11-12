@@ -4,7 +4,7 @@ import Functions
 def main():
 
     PMMA_THICKNESSES = [20]
-    mesh_size = 5
+    mesh_size = 1.0
 
     for PMMA_thickness in PMMA_THICKNESSES:
 

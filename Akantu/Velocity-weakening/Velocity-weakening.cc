@@ -2,56 +2,84 @@
 #include "mesh.hh"
 #include "aka_common.hh"
 #include <omp.h>
+#include <mpi.h>
 #include <iostream>
+#include <iomanip>
 #include <chrono>
 
-// using namespace akantu;
 
 int main(int argc, char *argv[])
 {
     omp_set_num_threads(12);
+    const auto &comm = akantu::Communicator::getStaticCommunicator();
+    int prank = comm.whoAmI();
+
     constexpr akantu::Int sd = 3;
-    const std::string mesh_file = "../../../Models/50mm-PMMA-CZM.msh";
+    const akantu::Real us = 1e-6;
+    const akantu::Real ms = 1e-3;
+    const std::string mesh_file = "../../../Models/100mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     akantu::initialize(mat_file, argc, argv);
-    std::cout << "Initialized" << std::endl;
+    if (prank == 0)
+    {
+        std::cout << "Load files successful." << std::endl;
+    }
+    // std::cout << "Initialized" << std::endl;
 
     akantu::Mesh mesh(sd);
-    mesh.read(mesh_file);
-    std::cout << "Load files successful." << std::endl;
+    // mesh.read(mesh_file);
 
-    std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
-    std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
-    std::cout << "Edges (1D): " << mesh.getNbElement(1) << std::endl;
+
+    
+    if (prank == 0)
+    {
+        mesh.read(mesh_file);
+        std::cout << "[Rank 0] mesh read complete\n";
+    }
+    mesh.distribute();
+    std::cout << "[Rank " << prank << "] has "
+              << mesh.getNbElement(sd) << " 3D elements and "
+              << mesh.getNbNodes() << " nodes\n";
+
+    
+    
+    // std::cout << "Load files successful." << std::endl;
+    // std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
+    // std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
+    // std::cout << "Edges (1D): " << mesh.getNbElement(1) << std::endl;
 
     akantu::SolidMechanicsModelCohesive model(mesh);
 
     akantu::MaterialCohesiveRules rules{
-        {{"friction_master", "friction_slave"}, "interface_mat"},
-        {{"friction_slave", "friction_slave"}, "interface_mat"},
-        {{"friction_master", "friction_master"}, "interface_mat"}};
+        {{"moving-block", "moving-block"}, "non_interface"},
+        {{"stationary-block", "stationary-block"}, "non_interface"},
+        {{"moving-block", "stationary-block"}, "interface"},
+        {{"stationary-block", "moving-block"}, "interface"}
+    };
     std::cout << "Got material" << std::endl;
 
     auto cohesive_selector = std::make_shared<akantu::MaterialCohesiveRulesSelector>(model, rules);
     auto bulk_selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", model);
     std::cout << "Got physical names" << std::endl;
 
-    cohesive_selector->setFallback(bulk_selector);
+    // cohesive_selector->setFallback(bulk_selector);
     bulk_selector->setFallback(model.getMaterialSelector());
     model.setMaterialSelector(cohesive_selector);
     std::cout << "Set material selector" << std::endl;
 
-    model.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass, akantu::_is_extrinsic = false);
+
+
+    model.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass, akantu::_is_extrinsic = true);
 
     std::cout << "After model initialization" << std::endl;
 
     akantu::Real dt = model.getStableTimeStep() * 0.5;
     model.setTimeStep(dt);
-    std::cout << "dt = " << dt << std::endl;
+    std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
 
+    model.setBaseName("50mm-PMMA-CZM-velocity-weakening");
     model.assembleMassLumped();
-    // model.setBaseName("czm_debug");
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("velocity");
     model.addDumpFieldVector("internal_force");
@@ -81,16 +109,17 @@ int main(int argc, char *argv[])
 
     std::cout << "set B.C. successful." << std::endl;
 
-    const akantu::Int SIMULATION_TIME = 10;             // total simulation time in ms
-    const akantu::Int max_steps = SIMULATION_TIME / dt; // total number of time steps
-    std::cout << "Starting time integration for " << SIMULATION_TIME
-              << " ms (" << max_steps << " steps)" << std::endl;
+    const akantu::Real SIMULATION_TIME = 20.0 * ms;           // 20 ms = 0.02 s
+    const akantu::Int max_steps = ceil(SIMULATION_TIME / dt); // total number of time steps
+    std::cout << "Starting time integration for " << (SIMULATION_TIME / ms) << " ms (" << max_steps << " steps)\n";
+    
     auto start_time = std::chrono::high_resolution_clock::now();
 
     for (akantu::Int s = 0; s < max_steps; ++s)
     {
+        model.checkCohesiveStress();
         model.solveStep();
-        if (s % 100 == 0) {
+        if (s % 5 == 0) {
             model.dump();
         }
         auto current_time = std::chrono::high_resolution_clock::now();
@@ -100,9 +129,10 @@ int main(int argc, char *argv[])
         double estimated_total = time_per_iter * max_steps;
         double remaining = estimated_total - elapsed.count();
 
-        std::cout << "Step " << s << "/" << max_steps
-                  << " | Elapsed: " << elapsed.count() << " s"
-                  << " | ETA: " << remaining << " s" << std::endl;
+        std::cout << "Step " << std::setw(8) << s << "/" << max_steps
+                  << " | Elapsed: " << std::fixed << std::setprecision(1) << std::setw(8) << elapsed.count() << " s"
+                  << " | ETA: " << std::fixed << std::setprecision(1) << std::setw(8) << remaining << " s\r";
+        std::cout.flush();
     }
     auto end_time = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> total_elapsed = end_time - start_time;

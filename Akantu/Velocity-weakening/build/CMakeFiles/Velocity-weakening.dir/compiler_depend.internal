@@ -758,6 +758,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable_inline_impl.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable_interface.hh
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/visitor.hh
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi.h
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi_proto.h
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpicxx.h
+ /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpio.h
  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/omp.h
  /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/atomic_word.h
  /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/basic_file.h

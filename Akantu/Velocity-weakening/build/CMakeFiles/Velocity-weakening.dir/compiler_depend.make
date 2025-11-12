@@ -757,6 +757,10 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable_inline_impl.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/variable_interface.hh \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper/visitor.hh \
+  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi.h \
+  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi_proto.h \
+  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpicxx.h \
+  /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpio.h \
   /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/omp.h \
   /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/atomic_word.h \
   /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/basic_file.h \
@@ -1249,7 +1253,11 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception_defines.h:
 
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception.h:
+
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/erase_if.h:
+
+/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/enable_special_members.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/concept_check.h:
 
@@ -1300,6 +1308,14 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/boost/preprocessor/list/adt.hpp:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/omp.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/malloc/_malloc_type.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpio.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi_proto.h:
+
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpi.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/_types/_u_int8_t.h:
 
@@ -2189,6 +2205,8 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
 
+/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/mpicxx.h:
+
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_iohelper.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/Geometry:
@@ -2489,8 +2507,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/basic_ios.tcc:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/malloc/_malloc_type.h:
-
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/dumper_elemental_field.hh:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
@@ -2516,8 +2532,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/sys/cdefs.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/constitutive_law_non_local_interface_tmpl.hh:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/exception.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/aarch64-apple-darwin24/bits/c++config.h:
 
@@ -2762,8 +2776,6 @@ CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o: /Users/b09501028/Docu
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include/math.h:
 
 /opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu/solver_callback.hh:
-
-/opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/enable_special_members.h:
 
 /opt/homebrew/Cellar/gcc/15.2.0/include/c++/15/bits/memoryfwd.h:
 

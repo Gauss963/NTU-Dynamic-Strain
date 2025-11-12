@@ -1,27 +1,34 @@
 model solid_mechanics_model_cohesive [
 
   cohesive_inserter [
-     cohesive_zones = [friction_master, friction_slave]
-   ]
+    cohesive_zones = [friction_master, friction_slave, moving-block, stationary-block]
+  ]
 
   material elastic [
     name = moving-block
-    rho = 1.18e-6
-    E   = 3000
-    nu  = 0.35
+    rho  = 1.18e-6    # kg/mm^3
+    E    = 3000       # MPa
+    nu   = 0.35
   ]
 
   material elastic [
     name = stationary-block
-    rho = 1.18e-6
-    E   = 3000
-    nu  = 0.35
+    rho  = 1.18e-6
+    E    = 3000
+    nu   = 0.35
   ]
 
   material cohesive_linear [
-    name = interface_mat
-    beta = 0
-    G_c = 0.2
-    sigma_c = 50
+    name    = interface
+    beta    = 200
+    G_c     = 2e-5
+    sigma_c = 0.002
+  ]
+
+  material cohesive_linear [
+    name    = non_interface
+    beta    = 0.00
+    G_c     = 1e6
+    sigma_c = 1e4
   ]
 ]
