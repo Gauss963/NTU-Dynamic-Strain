@@ -1,8 +1,6 @@
 #include "solid_mechanics_model_cohesive.hh"
 #include "mesh.hh"
 #include "aka_common.hh"
-#include <omp.h>
-#include <mpi.h>
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -10,10 +8,6 @@
 
 int main(int argc, char *argv[])
 {
-    omp_set_num_threads(12);
-    const auto &comm = akantu::Communicator::getStaticCommunicator();
-    int prank = comm.whoAmI();
-
     constexpr akantu::Int sd = 3;
     const akantu::Real us = 1e-6;
     const akantu::Real ms = 1e-3;
@@ -21,33 +15,13 @@ int main(int argc, char *argv[])
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     akantu::initialize(mat_file, argc, argv);
-    if (prank == 0)
-    {
-        std::cout << "Load files successful." << std::endl;
-    }
-    // std::cout << "Initialized" << std::endl;
-
+    std::cout << "Initialized" << std::endl;
     akantu::Mesh mesh(sd);
-    // mesh.read(mesh_file);
-
-
-    
-    if (prank == 0)
-    {
-        mesh.read(mesh_file);
-        std::cout << "[Rank 0] mesh read complete\n";
-    }
-    mesh.distribute();
-    std::cout << "[Rank " << prank << "] has "
-              << mesh.getNbElement(sd) << " 3D elements and "
-              << mesh.getNbNodes() << " nodes\n";
-
-    
-    
-    // std::cout << "Load files successful." << std::endl;
-    // std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
-    // std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
-    // std::cout << "Edges (1D): " << mesh.getNbElement(1) << std::endl;
+    mesh.read(mesh_file);
+    std::cout << "Load files successful." << std::endl;
+    std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
+    std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
+    std::cout << "Edges (1D): " << mesh.getNbElement(1) << std::endl;
 
     akantu::SolidMechanicsModelCohesive model(mesh);
 
