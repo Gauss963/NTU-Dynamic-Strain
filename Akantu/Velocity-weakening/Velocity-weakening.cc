@@ -11,11 +11,18 @@ int main(int argc, char *argv[])
     constexpr akantu::Int sd = 3;
     const akantu::Real us = 1e-6;
     const akantu::Real ms = 1e-3;
-    const std::string mesh_file = "../../../Models/100mm-PMMA-CZM.msh";
+    const int PMMA_thickness = 50;
+    const akantu::Real time_factor = 0.5;
+    // const std::string mesh_file = "../../../Models/100mm-PMMA-CZM.msh";
+    const std::string mesh_file =  "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     akantu::initialize(mat_file, argc, argv);
     std::cout << "Initialized" << std::endl;
+
+    const auto &comm = akantu::Communicator::getStaticCommunicator();
+    akantu::Int prank = comm.whoAmI();
+
     akantu::Mesh mesh(sd);
     mesh.read(mesh_file);
     std::cout << "Load files successful." << std::endl;
@@ -48,11 +55,12 @@ int main(int argc, char *argv[])
 
     std::cout << "After model initialization" << std::endl;
 
-    akantu::Real dt = model.getStableTimeStep() * 0.5;
+    akantu::Real dt = model.getStableTimeStep() * time_factor;
     model.setTimeStep(dt);
     std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
 
-    model.setBaseName("50mm-PMMA-CZM-velocity-weakening");
+    // model.setBaseName("50mm-PMMA-CZM-velocity-weakening");
+    model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-CZM-velocity-weakening");
     model.assembleMassLumped();
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("velocity");
@@ -73,7 +81,7 @@ int main(int argc, char *argv[])
     std::cout << "After setting vel and disp" << std::endl;
 
     akantu::Vector<akantu::Real, 3> t_front{8.0, 0.0, 0.0}; // MPa traction (+X)
-    akantu::Vector<akantu::Real, 3> t_left{ 0.0, 6.0, 0.0}; // MPa traction (+Y)
+    akantu::Vector<akantu::Real, 3> t_left{ 0.0, 3.0, 0.0}; // MPa traction (+Y)
 
     model.applyBC(akantu::BC::Neumann::FromTraction(t_front), "moving-block-front");
     model.applyBC(akantu::BC::Neumann::FromTraction(t_left), "moving-block-left");
@@ -105,12 +113,13 @@ int main(int argc, char *argv[])
 
         std::cout << "Step " << std::setw(8) << s << "/" << max_steps
                   << " | Elapsed: " << std::fixed << std::setprecision(1) << std::setw(8) << elapsed.count() << " s"
-                  << " | ETA: " << std::fixed << std::setprecision(1) << std::setw(8) << remaining << " s\r";
+                  << " | ETA: " << std::fixed << std::setprecision(1) << std::setw(8) << remaining << " s = "
+                  << std::fixed << std::setprecision(1) << std::setw(5) << remaining / 3600 << " h\r";
         std::cout.flush();
     }
     auto end_time = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> total_elapsed = end_time - start_time;
-    std::cout << "Total elapsed time: " << total_elapsed.count() << " s" << std::endl;
+    std::cout << "Total elapsed time: " << total_elapsed.count() << " s = " << total_elapsed.count() / 3600 << " h" << std::endl;
 
     akantu::finalize();
     return 0;

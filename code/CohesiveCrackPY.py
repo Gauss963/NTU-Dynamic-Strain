@@ -93,3 +93,71 @@ def delta_sigma_xx(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E):
     delta_sigma = Sxx
     
     return delta_sigma
+
+
+def compute_Xc_modeII_SI(E, nu, sigma_c, Gc):
+    """
+    Compute Mode II cohesive zone size in meters (ALL INPUTS IN SI UNITS)
+
+    Parameters
+    ----------
+    E : float
+        Young's modulus in Pa
+    nu : float
+        Poisson's ratio
+    sigma_c : float
+        Cohesive shear strength in Pa
+    Gc : float
+        Fracture energy in J/m^2
+
+    Returns
+    -------
+    Xc : float
+        Cohesive zone size in meters
+    """
+
+    # Plane strain modulus
+    E_prime = E / (1 - nu**2)
+
+    # Mode II cohesive zone size formula:
+    # Xc = (9π/32) * (E' / tau_c^2) * Gc
+    coef = 9 * np.pi / 32
+    Xc = coef * (E_prime / sigma_c**2) * Gc
+
+    return Xc
+
+def compute_E_nu_from_VpVsRho(Vp, Vs, rho):
+    """
+    Compute Young's modulus (E) and Poisson's ratio (nu)
+    from P-wave velocity (Vp), S-wave velocity (Vs), and density rho.
+
+    Parameters
+    ----------
+    Vp : float
+        P-wave velocity (m/s)
+    Vs : float
+        S-wave velocity (m/s)
+    rho : float
+        Density (kg/m³)
+
+    Returns
+    -------
+    E : float
+        Young's modulus in Pa
+    nu : float
+        Poisson's ratio
+    """
+
+    # Shear modulus
+    G = rho * Vs**2
+
+    # Bulk modulus
+    K = rho * Vp**2 - (4.0/3.0) * G
+
+    # Young's modulus
+    E = 9 * K * G / (3 * K + G)
+
+    # Poisson's ratio
+    nu = (3 * K - 2 * G) / (2 * (3 * K + G))
+
+    return E, nu

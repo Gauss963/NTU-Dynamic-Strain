@@ -3,9 +3,9 @@ import sys
 
 def main():
 
-    PMMA_THICKNESSES = [50, 100]
-    mesh_size = 20
-    # mesh_size = 5
+    PMMA_THICKNESSES = [50, 100, 500]
+    # mesh_size = 20
+    mesh_size = 5
     # mesh_size = 1
 
     for PMMA_thickness in PMMA_THICKNESSES:
@@ -184,7 +184,7 @@ def main():
         print(f"成功生成 {PMMA_thickness}mm-PMMA-CZM.msh")
         print("CZM 介面 (Slave/Master) 已在共形網格上創建。")
         
-        # gmsh.fltk.run()
+        gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":

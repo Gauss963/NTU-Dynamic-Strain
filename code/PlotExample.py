@@ -8,29 +8,39 @@ import CohesiveCrackPY
 def main():
 
     materials = FolderActions.read_materials("../Materials/material-mm-MPa.dat")
-    Gamma = materials["interface_mat"]["parameters"]["G_c"]  * 1e3  # MPa·mm → J/m² (SI)
-    E = materials["moving-block"]["parameters"]["E"] * 1e6          # MPa → Pa
-    nu = materials["moving-block"]["parameters"]["nu"]              # Poisson's ratio
-    rho = materials["moving-block"]["parameters"]["rho"] * 1e9      # g/mm³ → kg/m³
+    Gamma = materials["interface"]["parameters"]["G_c"]  * 1e3         # MPa·mm → J/m² (SI)
+    E = materials["moving-block"]["parameters"]["E"] * 1e6             # MPa → Pa
+    nu = materials["moving-block"]["parameters"]["nu"]                 # Poisson's ratio
+    rho = materials["moving-block"]["parameters"]["rho"] * 1e12        # tonne/mm³ → kg/m³
+    sigma_c = materials["interface"]["parameters"]["sigma_c"] * 1e6    # MPa → Pa
+    C_s = CohesiveCrackPY.get_Cs(E, nu, rho)                           # Shear wave speed (m/s)
+    C_d = CohesiveCrackPY.get_Cd(E, nu, rho)                           # Longitudinal wave speed (m/s)
+    X_c = CohesiveCrackPY.compute_Xc_modeII_SI(E, nu, sigma_c, Gamma)  # Cohesive zone size (m)
 
-    C_s = CohesiveCrackPY.get_Cs(E, nu, rho)            # Shear wave speed (m/s)
-    C_d = CohesiveCrackPY.get_Cd(E, nu, rho)            # Longitudinal wave speed (m/s
-    C_f = 0.9 * C_s                                     # Rupture speed (m/s)
+    C_f = 0.9 * C_s                                                    # Rupture speed (m/s)       [To be fit with experiment data]
+
     print(f"Fracture energy (Gamma): {Gamma} J/m^2")
-    print(f"Young's modulus (E): {E} Pa")
+    print(f"Young's modulus (E): {E/1e9} GPa")
     print(f"Poisson's ratio (nu): {nu}")
     print(f"Density (rho): {rho} kg/m³")
     print(f"Rupture speed (C_f): {C_f:.1f} m/s")
     print(f"Shear wave speed (C_s): {C_s:.1f} m/s")
     print(f"Longitudinal wave speed (C_d): {C_d:.1f} m/s")
-
-
+    print(f"Cohesive zone size (X_c): {X_c*1e3:.3f} mm")
+    
+    
+    
     X_c = 13.8e-3 # Cohesive zone size (m)
+    print(f"Cohesive zone size (X_c): {X_c*1e3:.3f} mm")
+
+
+
+
     y_values = [1e-8, 0.1e-3, 0.5e-3, 1.0e-3, 2.0e-3, 5e-3, 10e-3, 15e-3]
 
     x = np.linspace(-50e-3, 50e-3, 8192)
 
-    shift_scale = 5  # To convert Pa to MPa
+    shift_scale = 0.1
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True, sharey=True)
 

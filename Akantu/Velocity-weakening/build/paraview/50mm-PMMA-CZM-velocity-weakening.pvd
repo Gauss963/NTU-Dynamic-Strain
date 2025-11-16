@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-  <Collection>
-    <DataSet timestep="0" group="" part="0" file="50mm-PMMA-CZM-velocity-weakening_0000.pvtu"/>
-    <DataSet timestep="2.35394e-05" group="" part="0" file="50mm-PMMA-CZM-velocity-weakening_0001.pvtu"/>
-    <DataSet timestep="4.70787e-05" group="" part="0" file="50mm-PMMA-CZM-velocity-weakening_0002.pvtu"/>
-    <DataSet timestep="7.06181e-05" group="" part="0" file="50mm-PMMA-CZM-velocity-weakening_0003.pvtu"/>
-  </Collection>
-</VTKFile>
