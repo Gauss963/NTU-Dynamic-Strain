@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import CohesiveCrackPY
+import CohesiveModel
 import FolderActions
 
 def stf_herzian_mclaskey2009(t, rho, R, v, E1, nu1, E2, nu2):
@@ -41,8 +41,8 @@ E_pmma   = materials["moving-block"]["parameters"]["E"]   * 1e6      # MPa → P
 nu_pmma  = materials["moving-block"]["parameters"]["nu"]             # Poisson's ratio
 
 # 可選：計算剪力波速度（僅用於確認材料性質）
-C_s = CohesiveCrackPY.get_Cs(E_pmma, nu_pmma, rho_pmma)
-C_d = CohesiveCrackPY.get_Cd(E_pmma, nu_pmma, rho_pmma)
+C_s = CohesiveModel.get_Cs(E_pmma, nu_pmma, rho_pmma)
+C_d = CohesiveModel.get_Cd(E_pmma, nu_pmma, rho_pmma)
 
 # ========================================
 # 4. 鋼球參數（McLaskey 用的鋼球）

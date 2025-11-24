@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.signal
 
-import CohesiveCrack
+import CohesiveModel
 
 def voltage_to_strain(raw_voltage: float|np.ndarray[float]) -> float|np.ndarray[float]:
     '''
@@ -93,7 +93,7 @@ def fitting_function(X_c: float, C_f: float, Gamma: float, x: float|np.ndarray, 
     C_s = 2760    # Shear wave speed (m/s)
     C_d = 4790    # Longitudinal wave speed (m/s)
     
-    return CohesiveCrack.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
+    return CohesiveModel.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
 
 def chi_square(X_c: float, Gamma: float, C_f: float, X: np.ndarray, Y: np.ndarray):
     '''

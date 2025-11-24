@@ -13,25 +13,31 @@ int main(int argc, char *argv[])
     const akantu::Real ms = 1e-3;
     const int PMMA_thickness = 50;
     const akantu::Real time_factor = 0.5;
-    // const std::string mesh_file = "../../../Models/100mm-PMMA-CZM.msh";
     const std::string mesh_file =  "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     akantu::initialize(mat_file, argc, argv);
     std::cout << "Initialized" << std::endl;
-
-    const auto &comm = akantu::Communicator::getStaticCommunicator();
-    akantu::Int prank = comm.whoAmI();
-
     akantu::Mesh mesh(sd);
+
+    // const auto &comm = akantu::Communicator::getStaticCommunicator();
+    // akantu::Int prank = comm.whoAmI();
+    // if (prank == 0) {
+    //     mesh.read(mesh_file);
+    // }
+    // mesh.distribute();
+
+    
     mesh.read(mesh_file);
+    
+
+
     std::cout << "Load files successful." << std::endl;
     std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
     std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << std::endl;
     std::cout << "Edges (1D): " << mesh.getNbElement(1) << std::endl;
 
     akantu::SolidMechanicsModelCohesive model(mesh);
-
     akantu::MaterialCohesiveRules rules{
         {{"moving-block", "moving-block"}, "non_interface"},
         {{"stationary-block", "stationary-block"}, "non_interface"},
@@ -50,7 +56,6 @@ int main(int argc, char *argv[])
     std::cout << "Set material selector" << std::endl;
 
 
-
     model.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass, akantu::_is_extrinsic = true);
 
     std::cout << "After model initialization" << std::endl;
@@ -59,7 +64,6 @@ int main(int argc, char *argv[])
     model.setTimeStep(dt);
     std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
 
-    // model.setBaseName("50mm-PMMA-CZM-velocity-weakening");
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-CZM-velocity-weakening");
     model.assembleMassLumped();
     model.addDumpFieldVector("displacement");
@@ -91,27 +95,29 @@ int main(int argc, char *argv[])
 
     std::cout << "set B.C. successful." << std::endl;
 
-    const akantu::Real SIMULATION_TIME = 20.0 * ms;           // 20 ms = 0.02 s
-    const akantu::Int max_steps = ceil(SIMULATION_TIME / dt); // total number of time steps
-    std::cout << "Starting time integration for " << (SIMULATION_TIME / ms) << " ms (" << max_steps << " steps)\n";
-    
+    const akantu::Real SIMULATION_TIME = 20.0 * ms;
+    const akantu::Int MAX_STEPS = ceil(SIMULATION_TIME / dt);
+    const akantu::Int TOTAL_FRAMES = 840;
+    const akantu::Int DUMP_INTERVAL = MAX_STEPS / TOTAL_FRAMES;
+
+    std::cout << "Starting time integration for " << (SIMULATION_TIME / ms) << " ms (" << MAX_STEPS << " steps)\n";
+    std::cout << "Dumping every " << DUMP_INTERVAL << " steps (" << TOTAL_FRAMES << " frames)" << std::endl;
     auto start_time = std::chrono::high_resolution_clock::now();
 
-    for (akantu::Int s = 0; s < max_steps; ++s)
-    {
+    for (akantu::Int s = 0; s < MAX_STEPS; ++s) {
         model.checkCohesiveStress();
         model.solveStep();
-        if (s % 5 == 0) {
+        if (s % DUMP_INTERVAL == 0) {
             model.dump();
         }
         auto current_time = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = current_time - start_time;
 
         double time_per_iter = elapsed.count() / s;
-        double estimated_total = time_per_iter * max_steps;
+        double estimated_total = time_per_iter * MAX_STEPS;
         double remaining = estimated_total - elapsed.count();
 
-        std::cout << "Step " << std::setw(8) << s << "/" << max_steps
+        std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
                   << " | Elapsed: " << std::fixed << std::setprecision(1) << std::setw(8) << elapsed.count() << " s"
                   << " | ETA: " << std::fixed << std::setprecision(1) << std::setw(8) << remaining << " s = "
                   << std::fixed << std::setprecision(1) << std::setw(5) << remaining / 3600 << " h\r";

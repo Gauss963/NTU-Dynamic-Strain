@@ -2,13 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import FolderActions
-import CohesiveCrack  # pybind11 模組
-import CohesiveCrackPY
+import CohesiveModel
 
 def main():
     # === 包裝 C++ 函數為 NumPy vectorized ===
-    cpp_delta_sigma_xx = np.vectorize(CohesiveCrack.delta_sigma_xx)
-    cpp_delta_sigma_xy = np.vectorize(CohesiveCrack.delta_sigma_xy)
+    cpp_delta_sigma_xx = np.vectorize(CohesiveModel.delta_sigma_xx)
+    cpp_delta_sigma_xy = np.vectorize(CohesiveModel.delta_sigma_xy)
 
     # === 參數設定 ===
     Gamma = 0.21
@@ -25,7 +24,7 @@ def main():
 
     # ======== 第一列：Python 版 ========
     for i, y in enumerate(y_values):
-        delta_sigma_xx_py = CohesiveCrackPY.delta_sigma_xx(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
+        delta_sigma_xx_py = CohesiveModel.delta_sigma_xx(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
         axes[0][0].plot(x * 1000, delta_sigma_xx_py / 1e5 + i * 5, '--', label=f'y = {y * 1e3:.1f} mm')
 
     axes[0][0].set_title('Python: $\\Delta \\sigma_{xx}$')
@@ -35,7 +34,7 @@ def main():
     axes[0][0].legend(loc='lower right')
 
     for i, y in enumerate(y_values):
-        delta_sigma_xy_py = CohesiveCrackPY.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
+        delta_sigma_xy_py = CohesiveModel.delta_sigma_xy(x, y, X_c, C_f, C_s, C_d, nu, Gamma, E)
         axes[0][1].plot(x * 1000, delta_sigma_xy_py / 1e5 + i * 5, '--', label=f'y = {y * 1e3:.1f} mm')
 
     axes[0][1].set_title('Python: $\\Delta \\sigma_{xy}$')

@@ -1,5 +1,4 @@
 import gmsh
-import sys
 
 def main():
 
@@ -123,8 +122,8 @@ def main():
             gmsh.model.addPhysicalGroup(2, [czm_face_tag], slave_tag)
             gmsh.model.setPhysicalName(2, slave_tag, "friction_slave")
             
-            gmsh.model.addPhysicalGroup(2, [czm_face_tag], master_tag)
-            gmsh.model.setPhysicalName(2, master_tag, "friction_master")
+            # gmsh.model.addPhysicalGroup(2, [czm_face_tag], master_tag)
+            # gmsh.model.setPhysicalName(2, master_tag, "friction_master")
 
         # 6c. (可選) 其他外部邊界
         # 為了簡潔起見，我只添加了 CZM 面。
@@ -178,13 +177,15 @@ def main():
     
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
+        gmsh.model.mesh.removeDuplicateNodes()
+        gmsh.model.mesh.removeDuplicateElements()
         
         gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA-CZM.msh")
         gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.brep")
         print(f"成功生成 {PMMA_thickness}mm-PMMA-CZM.msh")
         print("CZM 介面 (Slave/Master) 已在共形網格上創建。")
         
-        gmsh.fltk.run()
+        # gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":
