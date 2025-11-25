@@ -1,0 +1,51 @@
+model solid_mechanics_model_cohesive [
+
+  cohesive_inserter [
+    cohesive_zones = [moving-block, stationary-block]
+  ]
+
+  material elastic [
+    name = moving-block
+    rho  = 1.148e-9    # tonne/mm^3
+    E    = 7662        # MPa
+    nu   = 0.20
+  ]
+
+  material elastic [
+    name = stationary-block
+    rho  = 1.148e-9    # tonne/mm^3
+    E    = 7662        # MPa
+    nu   = 0.20
+  ]
+
+  material cohesive_linear [
+    name    = interface
+    beta    = 0.0001
+    G_c     = 0.2
+    sigma_c = 20000
+  ]
+
+  material cohesive_linear [
+    name    = non_interface
+    beta    = 1.000     # Just make it hard to break
+    G_c     = 1e10      # Just make it hard to break
+    sigma_c = 1e10      # Just make it hard to break
+  ]
+
+  contact_detector [
+    type = explicit
+    master = friction_master
+    slave  = friction_slave
+    projection_tolerance = 1e-10
+    max_iterations       = 100
+    extension_tolerance  = 1e-5
+  ]
+
+  contact_resolution penalty_linear [
+    name = friction_slave
+    mu = 0.10                    # 庫倫摩擦係數（失效後的殘餘摩擦）
+    epsilon_n = 2.0e4            # 法向懲罰（MPa/mm），大→抗穿透
+    epsilon_t = 1.0e4            # 切向懲罰（MPa/mm），影響黏滑轉換
+    is_master_deformable = true  # 兩側皆可變形
+  ]
+]

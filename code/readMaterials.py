@@ -15,7 +15,7 @@ rho = materials["moving-block"]["parameters"]["rho"]     # Density (tonne/mm^3)
 Vp = 2727
 Vs = 1666
 
-E, nu = CohesiveCrack.compute_E_nu_from_VpVsRho(Vp, Vs, rho * 1e12)  # Convert density to kg/m^3
+E, nu = CohesiveModel.compute_E_nu_from_VpVsRho(Vp, Vs, rho * 1e12)  # Convert density to kg/m^3
 
 print(f"Fracture energy (Gamma): {Gamma} J/m²")
 print(f"Young's modulus (E): {E/1e9:.3f} GPa")

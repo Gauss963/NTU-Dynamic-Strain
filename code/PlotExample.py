@@ -12,9 +12,13 @@ def main():
     nu = materials["moving-block"]["parameters"]["nu"]                 # Poisson's ratio
     rho = materials["moving-block"]["parameters"]["rho"] * 1e12        # tonne/mm³ → kg/m³
     sigma_c = materials["interface"]["parameters"]["sigma_c"] * 1e6    # MPa → Pa
+    beta = materials["interface"]["parameters"]["beta"]                # dimensionless
+    tau_c = sigma_c * beta
+
+
     C_s = CohesiveModel.get_Cs(E, nu, rho)                             # Shear wave speed (m/s)
     C_d = CohesiveModel.get_Cd(E, nu, rho)                             # Longitudinal wave speed (m/s)
-    X_c = CohesiveModel.compute_Xc_modeII_SI(E, nu, sigma_c, Gamma)    # Cohesive zone size (m)
+    X_c = CohesiveModel.compute_Xc_modeII_SI(E, nu, tau_c, Gamma)      # Cohesive zone size (m)
 
     C_f = 0.9 * C_s                                                    # Rupture speed (m/s)       [To be fit with experiment data]
 
@@ -25,16 +29,17 @@ def main():
     print(f"Rupture speed (C_f): {C_f:.1f} m/s")
     print(f"Shear wave speed (C_s): {C_s:.1f} m/s")
     print(f"Longitudinal wave speed (C_d): {C_d:.1f} m/s")
-    print(f"Cohesive zone size (X_c): {X_c*1e3:.3f} mm")
+    print(f"Cohesive zone size (X_c): {X_c*1e3:.3g} mm")
 
 
 
 
     y_values = [1e-8, 0.1e-3, 0.5e-3, 1.0e-3, 2.0e-3, 5e-3, 10e-3, 15e-3]
+    
+    range = 300 # mm
+    x = np.linspace(-range * 1e-3, range * 1e-3, 8192)
 
-    x = np.linspace(-50e-3, 50e-3, 8192)
-
-    shift_scale = 0.1 # with sigma_c = 0.113
+    shift_scale = 1.0 # with sigma_c = 0.113
     # shift_scale = 0.8 # with sigma_c = 0.513
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True, sharey=True)

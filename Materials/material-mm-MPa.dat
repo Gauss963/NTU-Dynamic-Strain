@@ -20,15 +20,15 @@ model solid_mechanics_model_cohesive [
 
   material cohesive_linear [
     name    = interface
-    beta    = 200      # TBC (Not yet real value)
-    G_c     = 2e-5     # TBC (Not yet real value)
-    sigma_c = 0.113    # TBC (Not yet real value)
+    beta    = 0.0001
+    G_c     = 0.2
+    sigma_c = 20000
   ]
 
   material cohesive_linear [
     name    = non_interface
-    beta    = 0.00     # Just make it hard to break
-    G_c     = 1e6      # Just make it hard to break
-    sigma_c = 1e4      # Just make it hard to break
+    beta    = 1.000     # Just make it hard to break
+    G_c     = 1e10      # Just make it hard to break
+    sigma_c = 1e10      # Just make it hard to break
   ]
 ]
