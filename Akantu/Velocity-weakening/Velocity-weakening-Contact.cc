@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr akantu::Int PMMA_thickness = 500;
+    constexpr akantu::Int PMMA_thickness = 50;
     constexpr akantu::Real time_factor = 0.5;
 
-    const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
-    const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
+    const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM-Contact.msh";
+    const std::string mat_file = "../../../Materials/material-Contact.dat";
     const std::string SYS_PATH = "../../../../../../../../../../";
     const std::string DUMP_PATH = "Volumes/Gauss-T7/Dump_5mm/";
 
@@ -33,12 +33,14 @@ int main(int argc, char *argv[])
     std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << "\n";
     std::cout << "Edges (1D): " << mesh.getNbElement(1) << "\n";
 
-    // 以「CZM×接觸」耦合器建立兩個 model：SolidMechanicsModelCohesive 與 ContactMechanicsModel
+
+
+    // 以「CZM + 接觸」耦合器建立兩個 model：SolidMechanicsModelCohesive 與 ContactMechanicsModel
     akantu::CouplerSolidCohesiveContact coupler(mesh);
+    std::cout << "Coupler initialized\n";
     auto &solid = coupler.getSolidMechanicsModelCohesive();
     auto &contact = coupler.getContactMechanicsModel();
 
-    // 材料選擇（bulk 與 cohesive 規則仍讀自 material.dat）
     auto bulk_selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", solid);
     solid.setMaterialSelector(bulk_selector);
 
@@ -75,10 +77,9 @@ int main(int argc, char *argv[])
     disp.set(0.0);
 
     
-    const akantu::Real normalStress = 8.0; // MPa
-    const akantu::Real targetDisp = 3.0;   // mm 在 y 方向
-    const akantu::Real riseEnd = 0.70;     // 步入式位移比
-
+    constexpr akantu::Real normalStress = 8.0;
+    constexpr akantu::Real targetDisp = 3.0;
+    constexpr akantu::Real riseEnd = 0.70;
 
     akantu::Vector<akantu::Real, 3> t_front{normalStress, 0.0, 0.0}; // (+X) traction
     solid.applyBC(akantu::BC::Neumann::FromTraction(t_front), "moving-block-front");
@@ -98,19 +99,18 @@ int main(int argc, char *argv[])
 
     for (akantu::Int s = 0; s < MAX_STEPS; ++s)
     {
-        const akantu::Real progress = static_cast<akantu::Real>(s) / MAX_STEPS;
-        const akantu::Real alpha = (progress < riseEnd) ? (progress / riseEnd) : 1.0;
-        const akantu::Real pushY = alpha * targetDisp;
+        akantu::Real progress = static_cast<akantu::Real>(s) / MAX_STEPS;
+        akantu::Real alpha = (progress < riseEnd) ? (progress / riseEnd) : 1.0;
+        akantu::Real pushY = alpha * targetDisp;
 
         solid.applyBC(akantu::BC::Dirichlet::FixedValue(pushY, akantu::_y), "moving-block-left");
         coupler.solveStep();
 
         solid.checkCohesiveStress();
 
-        if (s % DUMP_INTERVAL == 0)
+        if (s % DUMP_INTERVAL == 0) {
             coupler.dump();
-
-
+        }
 
         auto t1 = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> el = t1 - t0;

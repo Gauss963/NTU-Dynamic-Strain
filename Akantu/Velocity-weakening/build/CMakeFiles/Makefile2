@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Velocity-weakening.dir/all
+all: CMakeFiles/Velocity-weakening-Contact.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Velocity-weakening.dir/codegen
+codegen: CMakeFiles/Velocity-weakening-Contact.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Velocity-weakening.dir/clean
+clean: CMakeFiles/Velocity-weakening-Contact.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Velocity-weakening.dir
+# Target rules for target CMakeFiles/Velocity-weakening-Contact.dir
 
 # All Build rule for target.
-CMakeFiles/Velocity-weakening.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles --progress-num=1,2 "Built target Velocity-weakening"
-.PHONY : CMakeFiles/Velocity-weakening.dir/all
+CMakeFiles/Velocity-weakening-Contact.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles --progress-num=1,2 "Built target Velocity-weakening-Contact"
+.PHONY : CMakeFiles/Velocity-weakening-Contact.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Velocity-weakening.dir/rule: cmake_check_build_system
+CMakeFiles/Velocity-weakening-Contact.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Velocity-weakening.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Velocity-weakening-Contact.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles 0
-.PHONY : CMakeFiles/Velocity-weakening.dir/rule
+.PHONY : CMakeFiles/Velocity-weakening-Contact.dir/rule
 
 # Convenience name for target.
-Velocity-weakening: CMakeFiles/Velocity-weakening.dir/rule
-.PHONY : Velocity-weakening
+Velocity-weakening-Contact: CMakeFiles/Velocity-weakening-Contact.dir/rule
+.PHONY : Velocity-weakening-Contact
 
 # codegen rule for target.
-CMakeFiles/Velocity-weakening.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles --progress-num=1,2 "Finished codegen for target Velocity-weakening"
-.PHONY : CMakeFiles/Velocity-weakening.dir/codegen
+CMakeFiles/Velocity-weakening-Contact.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles --progress-num=1,2 "Finished codegen for target Velocity-weakening-Contact"
+.PHONY : CMakeFiles/Velocity-weakening-Contact.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Velocity-weakening.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/clean
-.PHONY : CMakeFiles/Velocity-weakening.dir/clean
+CMakeFiles/Velocity-weakening-Contact.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/clean
+.PHONY : CMakeFiles/Velocity-weakening-Contact.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

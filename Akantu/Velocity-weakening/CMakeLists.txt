@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(Velocity-weakening)
+# project(Velocity-weakening)
+project(Velocity-weakening-Contact)
 
 # Use C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -7,7 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Akantu path (your conda env)
 set(AKANTU_ROOT "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu")
-set(TARGET_NAME Velocity-weakening)
+# set(TARGET_NAME Velocity-weakening)
+set(TARGET_NAME Velocity-weakening-Contact)
 
 # ───── Include Akantu headers ─────
 include_directories(${AKANTU_ROOT}/include)

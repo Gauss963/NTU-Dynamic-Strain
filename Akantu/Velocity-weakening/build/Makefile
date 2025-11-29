@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Velocity-weakening
+# Target rules for targets named Velocity-weakening-Contact
 
 # Build rule for target.
-Velocity-weakening: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Velocity-weakening
-.PHONY : Velocity-weakening
+Velocity-weakening-Contact: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Velocity-weakening-Contact
+.PHONY : Velocity-weakening-Contact
 
 # fast build rule for target.
-Velocity-weakening/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/build
-.PHONY : Velocity-weakening/fast
+Velocity-weakening-Contact/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/build
+.PHONY : Velocity-weakening-Contact/fast
 
-Velocity-weakening.o: Velocity-weakening.cc.o
-.PHONY : Velocity-weakening.o
+Velocity-weakening-Contact.o: Velocity-weakening-Contact.cc.o
+.PHONY : Velocity-weakening-Contact.o
 
 # target to build an object file
-Velocity-weakening.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
-.PHONY : Velocity-weakening.cc.o
+Velocity-weakening-Contact.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/Velocity-weakening-Contact.cc.o
+.PHONY : Velocity-weakening-Contact.cc.o
 
-Velocity-weakening.i: Velocity-weakening.cc.i
-.PHONY : Velocity-weakening.i
+Velocity-weakening-Contact.i: Velocity-weakening-Contact.cc.i
+.PHONY : Velocity-weakening-Contact.i
 
 # target to preprocess a source file
-Velocity-weakening.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.i
-.PHONY : Velocity-weakening.cc.i
+Velocity-weakening-Contact.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/Velocity-weakening-Contact.cc.i
+.PHONY : Velocity-weakening-Contact.cc.i
 
-Velocity-weakening.s: Velocity-weakening.cc.s
-.PHONY : Velocity-weakening.s
+Velocity-weakening-Contact.s: Velocity-weakening-Contact.cc.s
+.PHONY : Velocity-weakening-Contact.s
 
 # target to generate assembly for a file
-Velocity-weakening.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.s
-.PHONY : Velocity-weakening.cc.s
+Velocity-weakening-Contact.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-Contact.dir/build.make CMakeFiles/Velocity-weakening-Contact.dir/Velocity-weakening-Contact.cc.s
+.PHONY : Velocity-weakening-Contact.cc.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Velocity-weakening"
-	@echo "... Velocity-weakening.o"
-	@echo "... Velocity-weakening.i"
-	@echo "... Velocity-weakening.s"
+	@echo "... Velocity-weakening-Contact"
+	@echo "... Velocity-weakening-Contact.o"
+	@echo "... Velocity-weakening-Contact.i"
+	@echo "... Velocity-weakening-Contact.s"
 .PHONY : help
 
 

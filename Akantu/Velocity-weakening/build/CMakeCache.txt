@@ -165,7 +165,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Velocity-weakening
+CMAKE_PROJECT_NAME:STATIC=Velocity-weakening-Contact
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -311,6 +311,15 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
+
+//Value Computed by CMake
+Velocity-weakening-Contact_BINARY_DIR:STATIC=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build
+
+//Value Computed by CMake
+Velocity-weakening-Contact_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Velocity-weakening-Contact_SOURCE_DIR:STATIC=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening
 
 //Value Computed by CMake
 Velocity-weakening_BINARY_DIR:STATIC=/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build

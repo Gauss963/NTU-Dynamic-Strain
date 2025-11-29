@@ -1,0 +1,58 @@
+model solid_mechanics_model_cohesive [
+
+  cohesive_inserter [
+    cohesive_zones = [moving-block, stationary-block]
+  ]
+
+  material elastic [
+    name = moving-block
+    rho  = 1.148e-9    # tonne/mm^3
+    E    = 7662        # MPa
+    nu   = 0.20
+  ]
+
+  material elastic [
+    name = stationary-block
+    rho  = 1.148e-9    # tonne/mm^3
+    E    = 7662        # MPa
+    nu   = 0.20
+  ]
+
+  material cohesive_linear [
+    name    = interface
+    beta    = 0.0001
+    G_c     = 0.2
+    sigma_c = 20000
+  ]
+
+  material cohesive_linear [
+    name    = non_interface
+    beta    = 1.000     # Just make it hard to break
+    G_c     = 1e10      # Just make it hard to break
+    sigma_c = 1e10      # Just make it hard to break
+  ]
+
+  contact_search [
+    detection_method = hash_grid
+    detection_radius = 1.0
+  ]
+]
+
+model contact_mechanics_model [
+  contact_detector [
+    type = explicit
+    master = friction_master          # 你的 Physical Surface 名稱（主面）
+    slave  = friction_slave           # 你的 Physical Surface 名稱（從面）
+    projection_tolerance = 1e-10
+    max_iterations       = 100
+    extension_tolerance  = 1e-6
+  ]
+
+  contact_resolution penalty_linear [
+    name = friction_slave             # 一般填從面名稱
+    mu = 0.50                         # PMMA–PMMA 起始值 0.4–0.6
+    epsilon_n = 1.2e3                 # MPa/mm（依 h 與 σ_max 調，見下）
+    epsilon_t = 6.0e2                 # MPa/mm（通常 0.3–1.0 * epsilon_n）
+    is_master_deformable = true
+  ]
+]

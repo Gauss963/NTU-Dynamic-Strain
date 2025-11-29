@@ -3643,3 +3643,75 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:26 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-dV8ZVa"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-dV8ZVa"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-dV8ZVa'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a1bd3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a1bd3.dir/build.make CMakeFiles/cmTC_a1bd3.dir/build
+        Building CXX object CMakeFiles/cmTC_a1bd3.dir/test_mpi.cpp.o
+        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_a1bd3.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-dV8ZVa/test_mpi.cpp
+        Linking CXX executable cmTC_a1bd3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1bd3.dir/link.txt --verbose=1
+        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a1bd3.dir/test_mpi.cpp.o -o cmTC_a1bd3
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:26 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-CvkasB"
+      binary: "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-CvkasB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-CvkasB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a8da1/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a8da1.dir/build.make CMakeFiles/cmTC_a8da1.dir/build
+        Building CXX object CMakeFiles/cmTC_a8da1.dir/test_mpi.cpp.o
+        /opt/homebrew/bin/mpicxx   -std=gnu++17 -arch arm64 -o CMakeFiles/cmTC_a8da1.dir/test_mpi.cpp.o -c /Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/CMakeScratch/TryCompile-CvkasB/test_mpi.cpp
+        Linking CXX executable cmTC_a8da1
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8da1.dir/link.txt --verbose=1
+        /opt/homebrew/bin/mpicxx  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a8da1.dir/test_mpi.cpp.o -o cmTC_a8da1
+        
+      exitCode: 0
+...

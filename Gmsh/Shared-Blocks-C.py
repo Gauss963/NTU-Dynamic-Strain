@@ -3,8 +3,8 @@ import gmsh
 def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
-    # mesh_size = 20
-    mesh_size = 5
+    mesh_size = 20
+    # mesh_size = 5
     # mesh_size = 1
 
     for PMMA_thickness in PMMA_THICKNESSES:
@@ -129,6 +129,28 @@ def main():
         # 為了簡潔起見，我只添加了 CZM 面。
         # 你可以使用類似的 getEntitiesInBoundingBox 邏輯來標記
         # 'top', 'bottom', 'left', 'right' 等。
+
+
+
+        # ==========================================
+        # 新增：自動將所有曲線加入物理群組以生成 1D Edges
+        # ==========================================
+        # 1. 獲取模型中所有的 1D 實體 (曲線)
+        all_curves = gmsh.model.getEntities(dim=1)
+        
+        # 2. 提取這些曲線的 tag
+        all_curve_tags = [tag for dim, tag in all_curves]
+        
+        # 3. 創建一個物理群組包含所有曲線
+        # 使用 -1 讓 gmsh 自動分配一個沒用過的 tag ID，或者你可以指定一個 (例如 99)
+        p_curves_group = gmsh.model.addPhysicalGroup(1, all_curve_tags)
+        
+        # 4. 給它一個名字 (這會顯示在 Akantu 或其他後處理軟體中)
+        gmsh.model.setPhysicalName(1, p_curves_group, "All_Edges")
+
+
+
+        
         
         # 例如: 'moving-block-front' (x=0)
         front_face = gmsh.model.getEntitiesInBoundingBox(

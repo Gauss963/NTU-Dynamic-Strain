@@ -50,7 +50,6 @@ int main(int argc, char *argv[])
     auto bulk_selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", model);
     std::cout << "Got physical names" << std::endl;
 
-    // cohesive_selector->setFallback(bulk_selector);
     bulk_selector->setFallback(model.getMaterialSelector());
     model.setMaterialSelector(cohesive_selector);
     std::cout << "Set material selector" << std::endl;
