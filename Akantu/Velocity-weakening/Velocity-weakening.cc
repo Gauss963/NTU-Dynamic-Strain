@@ -9,10 +9,10 @@
 int main(int argc, char *argv[])
 {
     constexpr akantu::Int sd = 3;
-    const akantu::Real us = 1e-6;
-    const akantu::Real ms = 1e-3;
-    const int PMMA_thickness = 500;
-    const akantu::Real time_factor = 0.5;
+    constexpr akantu::Real us = 1e-6;
+    constexpr akantu::Real ms = 1e-3;
+    constexpr int PMMA_thickness = 500;
+    constexpr akantu::Real time_factor = 0.5;
     const std::string mesh_file =  "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
