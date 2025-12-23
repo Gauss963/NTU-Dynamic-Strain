@@ -8,15 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/Velocity-weakening/Velocity-weakening.cc" "CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o" "gcc" "CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o.d"
+  "/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/Velocity-weakening.cc" "CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o" "gcc" "CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,43 +1,18 @@
 cmake_minimum_required(VERSION 3.10)
-# project(Velocity-weakening)
-project(Velocity-weakening)
+project(Velocity-weakening LANGUAGES CXX)
 
-# Use C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Akantu path (your conda env)
-set(AKANTU_ROOT "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu")
-# set(TARGET_NAME Velocity-weakening)
 set(TARGET_NAME Velocity-weakening)
 
-# ───── Include Akantu headers ─────
-include_directories(${AKANTU_ROOT}/include)
-include_directories(${AKANTU_ROOT}/include/akantu)
-include_directories(${AKANTU_ROOT}/include/akantu/materials)
-include_directories(${AKANTU_ROOT}/include/akantu_iterators)
-include_directories(${AKANTU_ROOT}/include/eigen3)
-include_directories(${AKANTU_ROOT}/include/iohelper)
-
-# ───── Link Akantu libraries ─────
-link_directories(${AKANTU_ROOT}/lib)
-
-# ───── Find OpenMP ─────
+find_package(Boost REQUIRED)
+find_package(Akantu REQUIRED CONFIG)
 find_package(MPI REQUIRED)
 find_package(OpenMP REQUIRED COMPONENTS CXX)
 
-# ───── Build target ─────
-add_executable(${TARGET_NAME} ${TARGET_NAME}.cc)
+# Akantu helper (adds proper include dirs/links for Akantu)
+add_akantu_simulation(${TARGET_NAME} ${TARGET_NAME}.cc)
 
-# ───── Link libraries ─────
-target_link_libraries(${TARGET_NAME}
-    ${MPI_CXX_LIBRARIES}
-    akantu
-    iohelper
-    OpenMP::OpenMP_CXX
-)
-
-target_compile_options(${TARGET_NAME} PRIVATE ${MPI_CXX_COMPILE_FLAGS})
-
-# ───── Compile features ─────
-target_compile_features(${TARGET_NAME} PRIVATE cxx_std_17)
+# Your extra deps
+target_link_libraries(${TARGET_NAME} PRIVATE MPI::MPI_CXX OpenMP::OpenMP_CXX)

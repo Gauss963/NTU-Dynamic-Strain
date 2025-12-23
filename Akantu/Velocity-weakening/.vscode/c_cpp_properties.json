@@ -1,24 +1,22 @@
 {
-    "configurations": [
-        {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include",
-                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu",
-                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/akantu_iterators",
-                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/eigen3",
-                "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/iohelper"
-            ],
-            "defines": [],
-            "macFrameworkPath": [
-                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-            ],
-            "compilerPath": "/usr/bin/clang++",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "macos-clang-arm64"
-        }
-    ],
-    "version": 4
+  "version": 4,
+  "configurations": [
+    {
+      "name": "HPC-Linux",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/home/gauss112/softwares/akantu-build/include",
+        "/home/gauss112/softwares/akantu-build/include/akantu",
+        "/home/gauss112/softwares/akantu-build/include/akantu_iterators",
+        "/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/",
+        "/home/gauss112/softwares/akantu-build/include/iohelper/",
+        "/home/gauss112/softwares/eigen3/include/eigen3"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ]
 }

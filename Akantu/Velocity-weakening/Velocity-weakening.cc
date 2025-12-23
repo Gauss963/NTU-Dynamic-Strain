@@ -1,4 +1,5 @@
 #include "solid_mechanics_model_cohesive.hh"
+#include "ntn_friclaw_linear_slip_weakening.hh"
 #include "mesh.hh"
 #include "aka_common.hh"
 #include <iostream>
@@ -11,7 +12,7 @@ int main(int argc, char *argv[])
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr int PMMA_thickness = 500;
+    constexpr int PMMA_thickness = 50;
     constexpr akantu::Real time_factor = 0.5;
     const std::string mesh_file =  "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
 
 
     mesh.read(mesh_file);
+    std::cout << "Now on NCHC" << std::endl;
 
 
 
