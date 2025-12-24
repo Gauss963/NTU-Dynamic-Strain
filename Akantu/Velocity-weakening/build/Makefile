@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Velocity-weakening
+# Target rules for targets named Velocity-weakening-LSW
 
 # Build rule for target.
-Velocity-weakening: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Velocity-weakening
-.PHONY : Velocity-weakening
+Velocity-weakening-LSW: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Velocity-weakening-LSW
+.PHONY : Velocity-weakening-LSW
 
 # fast build rule for target.
-Velocity-weakening/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/build
-.PHONY : Velocity-weakening/fast
+Velocity-weakening-LSW/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-LSW.dir/build.make CMakeFiles/Velocity-weakening-LSW.dir/build
+.PHONY : Velocity-weakening-LSW/fast
 
-Velocity-weakening.o: Velocity-weakening.cc.o
-.PHONY : Velocity-weakening.o
+Velocity-weakening-LSW.o: Velocity-weakening-LSW.cc.o
+.PHONY : Velocity-weakening-LSW.o
 
 # target to build an object file
-Velocity-weakening.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.o
-.PHONY : Velocity-weakening.cc.o
+Velocity-weakening-LSW.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-LSW.dir/build.make CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
+.PHONY : Velocity-weakening-LSW.cc.o
 
-Velocity-weakening.i: Velocity-weakening.cc.i
-.PHONY : Velocity-weakening.i
+Velocity-weakening-LSW.i: Velocity-weakening-LSW.cc.i
+.PHONY : Velocity-weakening-LSW.i
 
 # target to preprocess a source file
-Velocity-weakening.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.i
-.PHONY : Velocity-weakening.cc.i
+Velocity-weakening-LSW.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-LSW.dir/build.make CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.i
+.PHONY : Velocity-weakening-LSW.cc.i
 
-Velocity-weakening.s: Velocity-weakening.cc.s
-.PHONY : Velocity-weakening.s
+Velocity-weakening-LSW.s: Velocity-weakening-LSW.cc.s
+.PHONY : Velocity-weakening-LSW.s
 
 # target to generate assembly for a file
-Velocity-weakening.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening.dir/build.make CMakeFiles/Velocity-weakening.dir/Velocity-weakening.cc.s
-.PHONY : Velocity-weakening.cc.s
+Velocity-weakening-LSW.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Velocity-weakening-LSW.dir/build.make CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.s
+.PHONY : Velocity-weakening-LSW.cc.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Velocity-weakening"
-	@echo "... Velocity-weakening.o"
-	@echo "... Velocity-weakening.i"
-	@echo "... Velocity-weakening.s"
+	@echo "... Velocity-weakening-LSW"
+	@echo "... Velocity-weakening-LSW.o"
+	@echo "... Velocity-weakening-LSW.i"
+	@echo "... Velocity-weakening-LSW.s"
 .PHONY : help
 
 

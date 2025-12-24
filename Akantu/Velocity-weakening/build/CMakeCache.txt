@@ -131,7 +131,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Velocity-weakening
+CMAKE_PROJECT_NAME:STATIC=Velocity-weakening-LSW
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/bin/ranlib
@@ -258,6 +258,12 @@ OpenMP_gomp_LIBRARY:FILEPATH=/pkg/compiler/gcc/11.2.0/lib64/libgomp.so
 OpenMP_pthread_LIBRARY:FILEPATH=/lib64/libpthread.so
 
 //Value Computed by CMake
+Velocity-weakening-LSW_BINARY_DIR:STATIC=/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build
+
+//Value Computed by CMake
+Velocity-weakening-LSW_SOURCE_DIR:STATIC=/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening
+
+//Value Computed by CMake
 Velocity-weakening_BINARY_DIR:STATIC=/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build
 
 //Value Computed by CMake
@@ -272,7 +278,7 @@ boost_headers_DIR:PATH=/home/gauss112/softwares/boost-1.82.0/lib/cmake/boost_hea
 ########################
 
 //List of akantu necessary libraries
-AKANTU_LIBRARIES:INTERNAL=akantu
+AKANTU_LIBRARIES:INTERNAL=akantu;akantu
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE

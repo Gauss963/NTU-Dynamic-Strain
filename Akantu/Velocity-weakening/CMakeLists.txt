@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
-project(Velocity-weakening LANGUAGES CXX)
+project(Velocity-weakening-LSW LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(TARGET_NAME Velocity-weakening)
+set(TARGET_NAME Velocity-weakening-LSW)
 
 find_package(Boost REQUIRED)
 find_package(Akantu REQUIRED CONFIG)
