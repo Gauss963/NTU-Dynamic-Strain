@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "code",
+			"path": "code"
+		},
+		{
 			"name": "Gmsh",
 			"path": "Gmsh"
 		},
@@ -11,10 +15,6 @@
 		{
 			"name": "Materials",
 			"path": "Materials"
-		},
-		{
-			"name": "code",
-			"path": "code"
 		},
 		{
 			"name": "Models",

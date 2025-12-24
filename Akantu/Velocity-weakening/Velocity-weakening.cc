@@ -1,7 +1,7 @@
-#include "solid_mechanics_model_cohesive.hh"
 #include "ntn_friclaw_linear_slip_weakening.hh"
-#include "mesh.hh"
+#include "solid_mechanics_model_cohesive.hh"
 #include "aka_common.hh"
+#include "mesh.hh"
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 
     mesh.read(mesh_file);
     std::cout << "Now on NCHC" << std::endl;
+    std::cout << "TT" << std::endl;
 
 
 

@@ -2,5 +2,5 @@
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
-    "cmake.sourceDirectory": "/Users/b09501028/Documents/University/LEFM/NTU-Dynamic-Strain/Akantu/cohesive_extrinsic_ig_tg"
+    "cmake.sourceDirectory": "/home/gauss112/NTU-Dynamic-Strain/Akantu"
 }
