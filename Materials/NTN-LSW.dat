@@ -1,26 +1,26 @@
 material elastic [
   name = moving-block
-  rho = ...
-  E   = ...
-  nu  = ...
+  rho = 1.148e-9    # tonne/mm^3
+  E   = 7662        # MPa
+  nu  = 0.20
 ]
 
 material elastic [
   name = stationary-block
-  rho = ...
-  E   = ...
-  nu  = ...
+  rho = 1.148e-9    # tonne/mm^3
+  E   = 7662        # MPa
+  nu  = 0.20
 ]
 
 contact [
   name   = contact
-  master = stationary-block-front
-  slave  = moving-block-back
+  master = stationary-block-back
+  slave  = moving-block-front
 ]
 
 friction linear_slip_weakening [
   mu_s = 0.60
   mu_k = 0.30
-  dc   = 0.20   # mm（與你的位移單位一致）
+  dc   = 0.20
   # (optional) t_star = ...
 ]
