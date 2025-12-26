@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
 
-    const akantu::Real SIMULATION_TIME = 0.4 * ms;
+    const akantu::Real SIMULATION_TIME = 20 * ms;
     const akantu::Int MAX_STEPS = static_cast<akantu::Int>(std::ceil(SIMULATION_TIME / dt));
     const akantu::Int DUMP_INTERVAL = 3;
 
@@ -135,7 +135,7 @@ int main(int argc, char *argv[])
             std::cout.flush();
         }
     }
-    
+
     if (prank == 0)
     {
         std::cout << "\n";

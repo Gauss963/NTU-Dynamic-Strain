@@ -2,8 +2,8 @@
 #SBATCH --account=MST113389
 #SBATCH --partition=hm122
 #SBATCH --job-name=Akantu-LSW-50mm
-#SBATCH --output=/home/gauss112/outs/Abaqus-%j.out
-#SBATCH --error=/home/gauss112/outs/Abaqus-%j.err
+#SBATCH --output=/home/gauss112/outs/Akantu-%j.out
+#SBATCH --error=/home/gauss112/outs/Akantu-%j.err
 #SBATCH --ntasks=100
 #SBATCH --cpus-per-task=1
 #SBATCH --nodes=1
@@ -15,5 +15,3 @@
 echo "Job started at $(date) on $(hostname)"
 source /etc/profile.d/modules.sh
 
-# === Unset SLURM_GTIDS for Abaqus MPI compatibility ===
-unset SLURM_GTIDS
