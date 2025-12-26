@@ -19,6 +19,9 @@
 		{
 			"name": "Models",
 			"path": "Models"
+		},
+		{
+			"path": "slurm"
 		}
 	],
 	"settings": {

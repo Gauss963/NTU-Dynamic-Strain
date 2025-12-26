@@ -4,10 +4,6 @@
 CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/Velocity-weakening-LSW.cc
  /usr/include/stdc-predef.h
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_friction.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh
  /home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_compatibilty_with_cpp_standard.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iterator
@@ -509,6 +505,7 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iostream
  /home/gauss112/softwares/akantu-build/include/akantu/aka_constexpr_map.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_common_inline_impl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cmath
  /usr/include/math.h
  /usr/include/bits/math-vector.h
@@ -545,20 +542,7 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_conv.h
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/quoted_string.h
  /home/gauss112/softwares/akantu-build/include/akantu/aka_fwd.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_iterators.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_arange_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_concatenate_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_enumerate_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_zip_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_filter_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_repeat_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_transform_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_zip_iterator.hh
- /home/gauss112/softwares/akantu-build/include/akantu/dumpable.hh
- /home/gauss112/softwares/akantu-build/include/akantu/dumpable_iohelper.hh
- /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_array.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_types.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/numeric
@@ -776,12 +760,36 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/aka_array_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_array_filter.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_array_view.hh
- /home/gauss112/softwares/akantu-build/include/akantu/element_type_map.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_named_argument.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_bbox.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_iterators.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_arange_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_concatenate_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_enumerate_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_zip_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_filter_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_repeat_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_transform_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_zip_iterator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_math.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_math_tmpl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communicator.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_event_handler_manager.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communication_buffer.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communication_buffer_inline_impl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communication_request.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communicator_event_handler.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/communicator_inline_impl.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/map
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_map.h
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_multimap.h
+ /home/gauss112/softwares/akantu-build/include/akantu/dumpable.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/dumpable_iohelper.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/element_type_map.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_named_argument.hh
  /home/gauss112/softwares/akantu-build/include/iohelper/io_helper.hh
  /home/gauss112/softwares/akantu-build/include/iohelper/dumper.hh
  /home/gauss112/softwares/akantu-build/include/iohelper/container_array.hh
@@ -806,13 +814,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/iohelper/variable_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumpable_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_elemental_field.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communicator.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_event_handler_manager.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communication_buffer.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communication_buffer_inline_impl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communication_request.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communicator_event_handler.hh
- /home/gauss112/softwares/akantu-build/include/akantu/communicator_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_field.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_generic_elemental_field.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_element_iterator.hh
@@ -822,50 +823,11 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/element_type_map_filter.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_generic_elemental_field_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_nodal_field.hh
- /home/gauss112/softwares/akantu-build/include/akantu/parsable.hh
- /home/gauss112/softwares/akantu-build/include/akantu/parameter_registry.hh
- /home/gauss112/softwares/akantu-build/include/akantu/parser.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_random_generator.hh
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/random
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/random.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/opt_random.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/random.tcc
- /home/gauss112/softwares/akantu-build/include/akantu/parser_tmpl.hh
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/regex
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bitset
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/stack
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/deque
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_deque.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/deque.tcc
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_stack.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_constants.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_error.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_automaton.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_automaton.tcc
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_scanner.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_scanner.tcc
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_compiler.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_compiler.tcc
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex.tcc
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_executor.h
- /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_executor.tcc
- /home/gauss112/softwares/akantu-build/include/akantu/parameter_registry_tmpl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_csr.hh
- /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh
- /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh
- /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition_functor.hh
- /home/gauss112/softwares/akantu-build/include/akantu/fe_engine.hh
- /home/gauss112/softwares/akantu-build/include/akantu/mesh_events.hh
- /home/gauss112/softwares/akantu-build/include/akantu/fe_engine_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class.hh
  /home/gauss112/softwares/akantu-build/include/akantu/interpolation_element_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/geometrical_element_property.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/gauss_integration_tmpl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_math.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_math_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_hexahedron_8_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_pentahedron_6_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_hexahedron_20_inline_impl.hh
@@ -884,13 +846,13 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_bernoulli_beam_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_class_kirchhoff_shell_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/cohesive_element.hh
- /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_bbox.hh
  /home/gauss112/softwares/akantu-build/include/akantu/group_manager.hh
  /home/gauss112/softwares/akantu-build/include/akantu/mesh_data.hh
  /home/gauss112/softwares/akantu-build/include/akantu/mesh_data_tmpl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/mesh_events.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_type_map_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/integration_point.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_type_conversion.hh
  /home/gauss112/softwares/akantu-build/include/akantu/mesh_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_group.hh
@@ -898,6 +860,11 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/mesh_filter.hh
  /home/gauss112/softwares/akantu-build/include/akantu/node_group_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_group_inline_impl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition_functor.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/fe_engine.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/fe_engine_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/fe_engine_template.hh
  /home/gauss112/softwares/akantu-build/include/akantu/fe_engine_template_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dof_manager.hh
@@ -933,6 +900,35 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/constitutive_laws_handler.hh
  /home/gauss112/softwares/akantu-build/include/akantu/constitutive_law.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/parsable.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/parameter_registry.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/parser.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_random_generator.hh
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/random
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/random.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/opt_random.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/random.tcc
+ /home/gauss112/softwares/akantu-build/include/akantu/parser_tmpl.hh
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/regex
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bitset
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/stack
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/deque
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_deque.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/deque.tcc
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_stack.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_constants.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_error.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_automaton.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_automaton.tcc
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_scanner.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_scanner.tcc
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_compiler.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_compiler.tcc
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex.tcc
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_executor.h
+ /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_executor.tcc
+ /home/gauss112/softwares/akantu-build/include/akantu/parameter_registry_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/internal_field.hh
  /home/gauss112/softwares/akantu-build/include/akantu/random_internal_field.hh
  /home/gauss112/softwares/akantu-build/include/akantu/constitutive_law_tmpl.hh
@@ -948,6 +944,7 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/grid_synchronizer.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_synchronizer.hh
  /home/gauss112/softwares/akantu-build/include/akantu/mesh_partition.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/aka_csr.hh
  /home/gauss112/softwares/akantu-build/include/akantu/synchronizer_registry.hh
  /home/gauss112/softwares/akantu-build/include/akantu/grid_synchronizer_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/neighborhood_base_inline_impl.hh
@@ -971,18 +968,25 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/aka_voigthelper_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model_event_handler.hh
  /home/gauss112/softwares/akantu-build/include/akantu/material_inline_impl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh
  /home/gauss112/softwares/akantu-build/include/akantu/material_selector_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/material_selector.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact.hh
  /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array.hh
  /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array_inline_impl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact_inline_impl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_friction.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh
  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb_tmpl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction_tmpl.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening.hh
  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening_tmpl.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_text.hh
- /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh
- /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/parse_numbers.h
