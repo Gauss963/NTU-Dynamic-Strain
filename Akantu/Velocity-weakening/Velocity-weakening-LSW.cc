@@ -35,8 +35,6 @@ int main(int argc, char *argv[])
     }
 
     mesh.distribute();
-    // std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << "\n";
-    // std::cout << "Faces (2D): " << mesh.getNbElement(mesh.getSpatialDimension() - 1) << "\n";
 
     auto dim = mesh.getSpatialDimension();
 
@@ -55,8 +53,10 @@ int main(int argc, char *argv[])
     model.assembleMassLumped();
 
     akantu::Real dt = model.getStableTimeStep() * time_factor;
-    std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
-
+    if (prank == 0)
+    {
+        std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
+    }
     model.setTimeStep(dt);
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
     model.addDumpFieldVector("displacement");
@@ -92,8 +92,11 @@ int main(int argc, char *argv[])
     const akantu::Int MAX_STEPS = static_cast<akantu::Int>(std::ceil(SIMULATION_TIME / dt));
     const akantu::Int DUMP_INTERVAL = 3;
 
-    std::cout << "Starting time integration for " << (SIMULATION_TIME / ms)
-              << " ms (" << MAX_STEPS << " steps)\n";
+    if (prank == 0)
+    {
+        std::cout << "Starting time integration for " << (SIMULATION_TIME / ms)
+                  << " ms (" << MAX_STEPS << " steps)\n";
+    }
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -112,7 +115,7 @@ int main(int argc, char *argv[])
 
         model.solveStep();
 
-        if (s % DUMP_INTERVAL == 0)
+        if (s % DUMP_INTERVAL == 0 && prank == 0)
         {
             model.dump();
         }
@@ -122,16 +125,21 @@ int main(int argc, char *argv[])
         const double denom = (s > 0) ? static_cast<double>(s) : 1.0;
         const double time_per_iter = elapsed.count() / denom;
         const double remaining = time_per_iter * MAX_STEPS - elapsed.count();
-
-        std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
-                  << " | Elapsed: " << std::fixed << std::setprecision(1)
-                  << std::setw(8) << elapsed.count() << " s"
-                  << " | ETA: " << std::fixed << std::setprecision(1)
-                  << std::setw(8) << std::max(0.0, remaining) << " s\r";
-        std::cout.flush();
+        if (prank == 0)
+        {
+            std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
+                      << " | Elapsed: " << std::fixed << std::setprecision(1)
+                      << std::setw(8) << elapsed.count() << " s"
+                      << " | ETA: " << std::fixed << std::setprecision(1)
+                      << std::setw(8) << std::max(0.0, remaining) << " s\r";
+            std::cout.flush();
+        }
     }
-
-    std::cout << "\n";
+    
+    if (prank == 0)
+    {
+        std::cout << "\n";
+    }
     akantu::finalize();
     return 0;
 }

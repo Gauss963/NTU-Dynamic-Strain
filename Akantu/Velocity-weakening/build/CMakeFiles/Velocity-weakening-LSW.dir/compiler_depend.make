@@ -559,7 +559,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/stdlib.h \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/complex \
   /home/gauss112/.local/include/eigen3/Eigen/src/Core/util/MKL_support.h \
-  /pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/omp.h \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cassert \
   /usr/include/assert.h \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cstring \
@@ -944,6 +943,7 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /home/gauss112/softwares/akantu-build/include/akantu/element_synchronizer.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/mesh_partition.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/aka_csr.hh \
+  /home/gauss112/softwares/akantu-build/include/akantu/mesh_partition_scotch.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/synchronizer_registry.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/grid_synchronizer_tmpl.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/neighborhood_base_inline_impl.hh \
@@ -1011,8 +1011,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/akantu-build/include/akantu/material_selector.hh:
 
-/home/gauss112/softwares/akantu-build/include/akantu/material_inline_impl.hh:
-
 /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model_event_handler.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/aka_voigthelper_tmpl.hh:
@@ -1030,6 +1028,10 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/akantu-build/include/akantu/mesh_accessor.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/synchronizer_registry.hh:
+
+/home/gauss112/softwares/akantu-build/include/akantu/material_inline_impl.hh:
+
+/home/gauss112/softwares/akantu-build/include/akantu/mesh_partition_scotch.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/element_synchronizer.hh:
 
@@ -1443,6 +1445,8 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h:
 
+/home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
+
 /home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
 
 /home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h:
@@ -1482,10 +1486,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /usr/include/assert.h:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cassert:
-
-/home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
-
-/pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/omp.h:
 
 /home/gauss112/.local/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h:
 

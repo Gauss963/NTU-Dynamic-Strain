@@ -4,7 +4,7 @@
 # compile CXX with /pkg/compiler/gcc/11.2.0/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/gauss112/softwares/akantu-build/include/akantu -isystem /home/gauss112/softwares/akantu-build/include/akantu_iterators -isystem /home/gauss112/softwares/boost-1.82.0/include -isystem /home/gauss112/.local/include/eigen3 -isystem /home/gauss112/softwares/akantu-build/include/iohelper -isystem /pkg/mpi/gcc-11.2.0/openmpi/5.0.2/include
+CXX_INCLUDES = -isystem /home/gauss112/softwares/akantu-build/include/akantu -isystem /pkg/mpi/gcc-11.2.0/openmpi/5.0.2/include -isystem /home/gauss112/softwares/scotch-v7.0.4/include -isystem /home/gauss112/softwares/akantu-build/include/akantu_iterators -isystem /home/gauss112/softwares/boost-1.82.0/include -isystem /home/gauss112/.local/include/eigen3 -isystem /home/gauss112/softwares/akantu-build/include/iohelper
 
-CXX_FLAGS = -Wall -Wextra -pedantic -pthread -fopenmp -std=gnu++2a
+CXX_FLAGS = -Wall -Wextra -pedantic -DOMPI_SKIP_MPICXX -Wno-literal-suffix -std=gnu++2a
 

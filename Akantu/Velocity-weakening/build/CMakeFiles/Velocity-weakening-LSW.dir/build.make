@@ -93,10 +93,13 @@ Velocity__weakening__LSW_EXTERNAL_OBJECTS =
 Velocity-weakening-LSW: CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
 Velocity-weakening-LSW: CMakeFiles/Velocity-weakening-LSW.dir/build.make
 Velocity-weakening-LSW: /home/gauss112/softwares/akantu-build/lib64/libakantu.so.5.0.7
+Velocity-weakening-LSW: /home/gauss112/softwares/scotch-v7.0.4/lib/libscotch.a
+Velocity-weakening-LSW: /home/gauss112/softwares/scotch-v7.0.4/lib/libscotcherr.a
+Velocity-weakening-LSW: /home/gauss112/softwares/scotch-v7.0.4/lib/libptscotch.a
+Velocity-weakening-LSW: /home/gauss112/softwares/scotch-v7.0.4/lib/libptscotcherr.a
 Velocity-weakening-LSW: /home/gauss112/softwares/akantu-build/lib64/libiohelper.so
 Velocity-weakening-LSW: /pkg/mpi/gcc-11.2.0/openmpi/5.0.2/lib64/libmpi.so
-Velocity-weakening-LSW: /pkg/compiler/gcc/11.2.0/lib64/libgomp.so
-Velocity-weakening-LSW: /lib64/libpthread.so
+Velocity-weakening-LSW: /pkg/mpi/gcc-11.2.0/openmpi/5.0.2/lib64/libmpi.so
 Velocity-weakening-LSW: CMakeFiles/Velocity-weakening-LSW.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Velocity-weakening-LSW"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Velocity-weakening-LSW.dir/link.txt --verbose=$(VERBOSE)
