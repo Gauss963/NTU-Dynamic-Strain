@@ -6,7 +6,6 @@ def main():
     PMMA_THICKNESSES = [50, 100, 500]
     # mesh_size = 5
     mesh_size = 1
-    # mesh_size = 20
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -40,7 +39,7 @@ def main():
         gmsh.model.mesh.generate(3)
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.msh")
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.brep")
-        gmsh.fltk.run()
+        # gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":

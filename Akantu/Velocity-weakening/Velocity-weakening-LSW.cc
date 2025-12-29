@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
 
         model.solveStep();
 
-        if (s % DUMP_INTERVAL == 0 && prank == 0)
+        if (s % DUMP_INTERVAL == 0)
         {
             model.dump();
         }
@@ -125,14 +125,14 @@ int main(int argc, char *argv[])
         const double denom = (s > 0) ? static_cast<double>(s) : 1.0;
         const double time_per_iter = elapsed.count() / denom;
         const double remaining = time_per_iter * MAX_STEPS - elapsed.count();
-        if (prank == 0)
+        if (prank == 0 || true)
         {
             std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
                       << " | Elapsed: " << std::fixed << std::setprecision(1)
                       << std::setw(8) << elapsed.count() << " s"
                       << " | ETA: " << std::fixed << std::setprecision(1)
-                      << std::setw(8) << std::max(0.0, remaining) << " s\r";
-            std::cout.flush();
+                      << std::setw(8) << std::max(0.0, remaining) << " s\n";
+            // std::cout.flush();
         }
     }
 

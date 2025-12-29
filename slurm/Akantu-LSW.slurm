@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=MST113389
-#SBATCH --partition=hm122
+#SBATCH --partition=hm112
 #SBATCH --job-name=Akantu-LSW-50mm
 #SBATCH --output=/home/gauss112/outs/Akantu-%j.out
 #SBATCH --error=/home/gauss112/outs/Akantu-%j.err
@@ -15,3 +15,14 @@
 echo "Job started at $(date) on $(hostname)"
 source /etc/profile.d/modules.sh
 
+module load gcc/11.2.0
+module load openmpi/5.0.2
+
+DATE_STR=$(date +"%Y-%m-%d-%H-%M-%S")
+DEST_DIR="/work1/gauss112/Akantu-Run/$DATE_STR"
+
+mkdir -p "$DEST_DIR"
+cp -r /home/gauss112/NTU-Dynamic-Strain/ "$DEST_DIR/"
+echo $DEST_DIR
+cd "$DEST_DIR/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/"
+mpirun -np 100 ./Velocity-weakening-LSW
