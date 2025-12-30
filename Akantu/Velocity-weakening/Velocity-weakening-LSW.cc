@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr int PMMA_thickness = 50;
     constexpr akantu::Real time_factor = 0.5;
+    constexpr int PMMA_thickness = 50;
 
     const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-BS-PMMA.msh";
     const std::string mat_file = "../../../Materials/NTN-LSW.dat";
@@ -35,15 +35,6 @@ int main(int argc, char *argv[])
     }
 
     mesh.distribute();
-
-    auto dim = mesh.getSpatialDimension();
-
-    std::cout << "[Rank " << prank << "] "
-              << "Local cells = "
-              << mesh.getNbElement(dim, akantu::_not_ghost)
-              << ", Ghost cells = "
-              << mesh.getNbElement(dim, akantu::_ghost)
-              << std::endl;
 
     akantu::SolidMechanicsModel model(mesh);
 
@@ -70,7 +61,7 @@ int main(int argc, char *argv[])
     model.getDisplacement().set(0.);
 
     akantu::NTNContact ntn_contact(model, "contact");
-    ntn_contact.addSurfacePair("moving-block-front", "stationary-block-back", akantu::_x);
+    ntn_contact.addSurfacePair("stationary-block-back", "moving-block-front", akantu::_x);
     ntn_contact.initParallel();
     ntn_contact.updateInternalData();
 
@@ -79,8 +70,8 @@ int main(int argc, char *argv[])
     Fric ntn_friction(ntn_contact, "friction");
 
     const akantu::Real normalStress = 8.0; // MPa
-    const akantu::Real shearDisp = 3.0;    // mm
-    const akantu::Real riseEnd = 0.70;
+    const akantu::Real shearDisp = 8.0;    // mm
+    const akantu::Real riseEnd = 0.30;
     akantu::Real pushValue = 0.0;
 
     akantu::Vector<akantu::Real, 3> t_normal{normalStress, 0.0, 0.0};
@@ -88,9 +79,11 @@ int main(int argc, char *argv[])
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
 
-    const akantu::Real SIMULATION_TIME = 20 * ms;
+    const akantu::Real SIMULATION_TIME = 200 * ms;
+    const akantu::Int TOTAL_FRAMES = 2400;
     const akantu::Int MAX_STEPS = static_cast<akantu::Int>(std::ceil(SIMULATION_TIME / dt));
-    const akantu::Int DUMP_INTERVAL = 3;
+    const akantu::Int DUMP_INTERVAL = MAX_STEPS / TOTAL_FRAMES;
+    // const akantu::Int DUMP_INTERVAL = 3;
 
     if (prank == 0)
     {
@@ -104,7 +97,7 @@ int main(int argc, char *argv[])
     {
         const akantu::Real progress = static_cast<akantu::Real>(s) / MAX_STEPS;
         pushValue = (progress < riseEnd) ? (progress / riseEnd) * shearDisp : shearDisp;
-
+ 
         model.applyBC(akantu::BC::Dirichlet::FixedValue(pushValue, akantu::_y), "moving-block-right");
 
         ntn_contact.updateInternalData();
@@ -125,14 +118,13 @@ int main(int argc, char *argv[])
         const double denom = (s > 0) ? static_cast<double>(s) : 1.0;
         const double time_per_iter = elapsed.count() / denom;
         const double remaining = time_per_iter * MAX_STEPS - elapsed.count();
-        if (prank == 0 || true)
+        if (prank == 0 && s % 200 == 0)
         {
             std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
                       << " | Elapsed: " << std::fixed << std::setprecision(1)
                       << std::setw(8) << elapsed.count() << " s"
                       << " | ETA: " << std::fixed << std::setprecision(1)
                       << std::setw(8) << std::max(0.0, remaining) << " s\n";
-            // std::cout.flush();
         }
     }
 
