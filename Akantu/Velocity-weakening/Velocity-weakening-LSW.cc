@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr akantu::Real time_factor = 0.05;
+    constexpr akantu::Real time_factor = 0.5;
     constexpr akantu::Real SIMULATION_TIME = 20 * ms;
     constexpr int PMMA_thickness = 50;
 
@@ -65,17 +65,11 @@ int main(int argc, char *argv[])
     // ntn_contact.addSurfacePair("stationary-block-back", "moving-block-front", akantu::_x);
     ntn_contact.addSurfacePair("moving-block-front", "stationary-block-back", akantu::_x);
 
-
-    
-
     int local_pairs = static_cast<int>(ntn_contact.getNbContactNodes());
     if (prank == 0)
     {
-        std::cout << "[CHK] local_pairs(rank0)=" << local_pairs  << "\n";
+        std::cout << "[CHK] local_pairs(rank0)=" << local_pairs << "\n";
     }
-
-
-
 
     ntn_contact.initParallel();
     ntn_contact.updateInternalData();
@@ -97,7 +91,6 @@ int main(int argc, char *argv[])
     const akantu::Int TOTAL_FRAMES = 2400;
     const akantu::Int MAX_STEPS = static_cast<akantu::Int>(std::ceil(SIMULATION_TIME / dt));
     const akantu::Int DUMP_INTERVAL = MAX_STEPS / TOTAL_FRAMES;
-
     const akantu::Int rise_steps = static_cast<akantu::Int>(std::ceil(riseEnd * MAX_STEPS));
     const akantu::Real dy = shearDisp / rise_steps;
 
@@ -158,11 +151,11 @@ int main(int argc, char *argv[])
         const double remaining = time_per_iter * MAX_STEPS - elapsed.count();
         if (prank == 0 && s % 200 == 0)
         {
-            std::cout << "Step " << std::setw(8) << s << "/" << MAX_STEPS
+            std::cout << "[SIM] Step " << std::setw(8) << s << "/" << MAX_STEPS
                       << " | Elapsed: " << std::fixed << std::setprecision(1)
                       << std::setw(8) << elapsed.count() << " s"
                       << " | ETA: " << std::fixed << std::setprecision(1)
-                      << std::setw(8) << std::max(0.0, remaining) << " s\n";
+                      << std::setw(8) << std::max(0.0, remaining) << " s, ";
         }
 
         if (prank == 0 && s % 200 == 0)
@@ -184,7 +177,10 @@ int main(int argc, char *argv[])
                 nx_min = std::min(nx_min, nx);
                 nx_max = std::max(nx_max, nx);
             }
-            std::cout << "[DBG] nx[min,max]=[" << nx_min << "," << nx_max << "]\n";
+            std::cout << "[DBG] nx[min,max]=["
+                      << std::scientific << std::setprecision(1) << std::setw(12) << nx_min << ","
+                      << std::scientific << std::setprecision(1) << std::setw(12) << nx_max
+                      << "]\n";
         }
     }
 

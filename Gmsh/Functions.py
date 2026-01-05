@@ -17,7 +17,7 @@ def create_block(origin, dimensions, mesh_size, block_name, tag_prefix=1):
     for dim, tag in faces:
         pass
         # gmsh.model.mesh.setTransfiniteSurface(tag)
-        # gmsh.model.mesh.setRecombine(2, tag)
+        gmsh.model.mesh.setRecombine(2, tag)
 
     gmsh.model.addPhysicalGroup(3, [box], tag=tag_prefix * 10 + 1)
     gmsh.model.setPhysicalName(3, tag_prefix * 10 + 1, block_name)
