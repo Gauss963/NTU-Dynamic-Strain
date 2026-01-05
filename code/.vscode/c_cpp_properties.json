@@ -1,15 +1,15 @@
 {
     "configurations": [
         {
-            "name": "Mac",
+            "name": "NCHC-Linux",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang++",
+            "compilerPath": "/pkg/compiler/gcc/11.2.0/bin/g++",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "macos-clang-arm64"
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4

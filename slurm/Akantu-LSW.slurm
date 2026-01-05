@@ -11,7 +11,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=b09501028@ntu.edu.tw
 
-echo "Job started at $(date) on $(hostname)"
+echo "Job started at $(date) on $(hostname) with $SLURM_NTASKS cores."
 source /etc/profile.d/modules.sh
 
 module load gcc/11.2.0
@@ -24,4 +24,4 @@ mkdir -p "$DEST_DIR"
 cp -r /home/gauss112/NTU-Dynamic-Strain/ "$DEST_DIR/"
 echo $DEST_DIR
 cd "$DEST_DIR/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/"
-mpirun -np 100 ./Velocity-weakening-LSW
+mpirun -np $SLURM_NTASKS ./Velocity-weakening-LSW

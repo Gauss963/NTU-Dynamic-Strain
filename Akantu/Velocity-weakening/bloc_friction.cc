@@ -19,8 +19,7 @@ int main(int argc, char *argv[])
     // Initialize each model
     auto &solid = coupler.getSolidMechanicsModel();
     auto &contact = coupler.getContactMechanicsModel();
-    auto &&selector = std::make_shared<MeshDataMaterialSelector<std::string>>(
-        "physical_names", solid);
+    auto &&selector = std::make_shared<MeshDataMaterialSelector<std::string>>("physical_names", solid);
     solid.setMaterialSelector(selector);
 
     // Initialize the coupler
