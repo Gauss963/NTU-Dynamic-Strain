@@ -9,13 +9,15 @@ def main():
     for PMMA_thickness in PMMA_THICKNESSES:
 
         gmsh.initialize()
-        # gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
-        gmsh.option.setNumber("Mesh.MshFileVersion", 4.1)
+        gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
+        # gmsh.option.setNumber("Mesh.MshFileVersion", 4.1)
         gmsh.option.setNumber("Mesh.Algorithm3D", 1)
         # gmsh.option.setNumber("Mesh.RecombineAll", 1)
         gmsh.option.setNumber("Mesh.ElementOrder", 1)
         gmsh.option.setNumber("Mesh.SubdivisionAlgorithm", 1)
         gmsh.option.setNumber("Mesh.Binary", 0)
+        gmsh.option.setNumber("Mesh.RecombineAll", 0)
+        gmsh.option.setNumber("Mesh.Algorithm", 6)
 
         gmsh.model.add("ContactModel")
 
@@ -50,14 +52,11 @@ def main():
         gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
 
 
-
-
         gmsh.model.occ.synchronize()
-
         gmsh.model.mesh.generate(3)
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.msh")
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.brep")
-        # gmsh.fltk.run()
+        gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":
