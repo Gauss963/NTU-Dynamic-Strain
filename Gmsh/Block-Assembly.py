@@ -5,7 +5,6 @@ def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
     mesh_size = 5
-    mesh_size = 20
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -16,44 +15,49 @@ def main():
 
         # gmsh.option.setNumber("Mesh.RecombineAll", 1)
         gmsh.option.setNumber("Mesh.SubdivisionAlgorithm", 1)
+        gmsh.option.setNumber("Mesh.MeshSizeExtendFromBoundary", 0)
 
         gmsh.option.setNumber("Mesh.Binary", 0)
         gmsh.option.setNumber("Mesh.RecombineAll", 0)
         gmsh.model.add("ContactModel")
 
-        # blk1 = Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, block_name="moving-block", tag_prefix=1)
-        # blk2 = Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, block_name="stationary-block", tag_prefix=2)
+        blk1 = Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, block_name="moving-block", tag_prefix=1)
+        blk2 = Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, block_name="stationary-block", tag_prefix=2)
         
 
-        blk1 = Functions.create_block(
-            origin=(0, 0, 0),
-            dimensions=(200, 500, PMMA_thickness),
-            mesh_size=mesh_size,
-            block_name="moving-block",
-            tag_prefix=1
-        )
-        blk2a = Functions.create_block(
-            origin=(200, 0, 0),
-            dimensions=(145, 500, PMMA_thickness),
-            mesh_size=mesh_size,
-            block_name="stationary-block",
-            tag_prefix=2
-        )
-        blk2b = Functions.create_block(
-            origin=(200, 500, 0),
-            dimensions=(145, 50, PMMA_thickness),
-            mesh_size=mesh_size,
-            block_name="stationary-block-upper",
-            tag_prefix=3
-        )
+        # blk1 = Functions.create_block(
+        #     origin=(0, 0, 0),
+        #     dimensions=(200, 500, PMMA_thickness),
+        #     mesh_size=mesh_size,
+        #     block_name="moving-block",
+        #     tag_prefix=1
+        # )
+        # blk2a = Functions.create_block(
+        #     origin=(200, 0, 0),
+        #     dimensions=(145, 500, PMMA_thickness),
+        #     mesh_size=mesh_size,
+        #     block_name="stationary-block",
+        #     tag_prefix=2
+        # )
+        # blk2b = Functions.create_block(
+        #     origin=(200, 500, 0),
+        #     dimensions=(145, 50, PMMA_thickness),
+        #     mesh_size=mesh_size,
+        #     block_name="stationary-block-upper",
+        #     tag_prefix=3
+        # )
 
-        gmsh.model.occ.synchronize()
-        stationary_pg = gmsh.model.addPhysicalGroup(3, [blk2a["volume"], blk2b["volume"]], tag=221)
-        gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
+        # gmsh.model.occ.synchronize()
+        # stationary_pg = gmsh.model.addPhysicalGroup(3, [blk2a["volume"], blk2b["volume"]], tag=221)
+        # gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
 
-
+        # gmsh.model.occ.removeAllDuplicates()+
+        gmsh.option.setNumber("Mesh.Optimize", 1)
+        gmsh.option.setNumber("Mesh.OptimizeNetgen", 1)
+        gmsh.option.setNumber("Mesh.Smoothing", 120)
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
+        gmsh.model.mesh.optimize("Netgen")
 
         types3d, _, _ = gmsh.model.mesh.getElements(3)
         print("3D element types =", types3d)

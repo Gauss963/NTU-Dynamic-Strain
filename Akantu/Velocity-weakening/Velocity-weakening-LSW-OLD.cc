@@ -1,5 +1,4 @@
 #include "aka_common.hh"
-#include "coupler_solid_contact.hh"
 #include "mesh.hh"
 #include "solid_mechanics_model.hh"
 
@@ -7,8 +6,6 @@
 #include "ntn_friclaw_linear_slip_weakening.hh"
 #include "ntn_fricreg_no_regularisation.hh"
 #include "ntn_friction.hh"
-
-#include "non_linear_solver.hh"
 
 #include <chrono>
 #include <cmath>
@@ -19,7 +16,7 @@ int main(int argc, char *argv[]) {
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr akantu::Real time_factor = 0.05;
+    constexpr akantu::Real TIME_FACTOR = 0.5;
     constexpr akantu::Real SIMULATION_TIME = 20 * ms;
     constexpr int PMMA_thickness = 50;
 
@@ -38,41 +35,30 @@ int main(int argc, char *argv[]) {
 
     mesh.distribute();
 
-    akantu::CouplerSolidContact coupler(mesh);
+    akantu::SolidMechanicsModel model(mesh);
 
-    auto &solid = coupler.getSolidMechanicsModel();
-    auto &contact = coupler.getContactMechanicsModel();
-    auto &&selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", solid);
-    solid.setMaterialSelector(selector);
+    auto bulk_selector = std::make_shared<akantu::MeshDataMaterialSelector<std::string>>("physical_names", model);
+    model.setMaterialSelector(bulk_selector);
+    model.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass);
+    model.assembleMassLumped();
 
-    coupler.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass);
-
-    akantu::Real dt = solid.getStableTimeStep() * time_factor;
-    coupler.setTimeStep(dt);
+    akantu::Real dt = model.getStableTimeStep() * TIME_FACTOR;
     if (prank == 0) {
-        std::cout << "dt = " << dt << " s (" << dt / us << " us)\n";
+        std::cout << "[SIM] dt = " << dt << " s (" << dt / us << " us)\n";
     }
+    model.setTimeStep(dt);
+    model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
+    model.addDumpFieldVector("displacement");
+    model.addDumpFieldVector("velocity");
+    model.addDumpFieldVector("internal_force");
+    model.addDumpFieldVector("external_force");
+    model.addDumpField("stress");
+    model.addDumpField("grad_u");
 
-    auto &&surface_selector = std::make_shared<akantu::PhysicalSurfaceSelector>(mesh);
-    contact.getContactDetector().setSurfaceSelector(surface_selector);
+    model.getVelocity().set(0.);
+    model.getDisplacement().set(0.);
 
-    coupler.setTimeStep(dt);
-    coupler.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
-    coupler.addDumpFieldVector("displacement");
-    coupler.addDumpFieldVector("velocity");
-    coupler.addDumpFieldVector("normals");
-    coupler.addDumpFieldVector("tangents");
-    coupler.addDumpFieldVector("contact_force");
-    coupler.addDumpFieldVector("external_force");
-    coupler.addDumpFieldVector("internal_force");
-    coupler.addDumpField("areas");
-    coupler.addDumpField("stress");
-    coupler.addDumpField("blocked_dofs");
-
-    coupler.getVelocity().set(0.);
-    coupler.getDisplacement().set(0.);
-
-    akantu::NTNContact ntn_contact(solid, "contact");
+    akantu::NTNContact ntn_contact(model, "contact");
     // ntn_contact.addSurfacePair("stationary-block-back", "moving-block-front", akantu::_x);
     ntn_contact.addSurfacePair("moving-block-front", "stationary-block-back", akantu::_x);
 
@@ -92,14 +78,15 @@ int main(int argc, char *argv[]) {
     using Friction = akantu::NTNFriction<akantu::NTNFricLawLinearSlipWeakening, Regular>;
     Friction ntn_friction(ntn_contact, "friction");
 
+
     const akantu::Real normalStress = 8.0; // MPa
     const akantu::Real shearDisp = 3.0;    // mm
     const akantu::Real riseEnd = 0.30;
 
     akantu::Vector<akantu::Real, 3> t_normal{normalStress, 0.0, 0.0};
-    coupler.applyBC(akantu::BC::Neumann::FromTraction(t_normal), "moving-block-back");
-    coupler.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
-    coupler.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
+    model.applyBC(akantu::BC::Neumann::FromTraction(t_normal), "moving-block-back");
+    model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
+    model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
 
     // const akantu::Int TOTAL_FRAMES = 2400;
     // const std::int64_t MAX_STEPS =
@@ -132,7 +119,7 @@ int main(int argc, char *argv[]) {
 
     for (akantu::Int s = 0; s < MAX_STEPS; ++s) {
 
-        coupler.applyBC(akantu::BC::Dirichlet::IncrementValue(dy, akantu::_y), "moving-block-right");
+        model.applyBC(akantu::BC::Dirichlet::IncrementValue(dy, akantu::_y), "moving-block-right");
 
         ntn_contact.updateInternalData();
         ntn_contact.computeContactPressure();
@@ -141,15 +128,15 @@ int main(int argc, char *argv[]) {
         ntn_friction.assembleGlobalFrictionTraction();
 
         //
-        auto &f_ext = coupler.getExternalForce();
+        auto &f_ext = model.getExternalForce();
         auto &f_c = ntn_contact.getGlobalContactPressure();
-        const auto dim = coupler.getSpatialDimension();
+        const auto dim = model.getSpatialDimension();
         for (akantu::Idx n = 0; n < mesh.getNbNodes(); ++n) {
             for (akantu::Int d = 0; d < dim; ++d) {
                 f_ext(n, d) += static_cast<akantu::Real>(f_c(n, d));
             }
         }
-        coupler.solveStep();
+        model.solveStep();
         for (akantu::Idx n = 0; n < mesh.getNbNodes(); ++n) {
             for (akantu::Int d = 0; d < dim; ++d) {
                 f_ext(n, d) -= static_cast<akantu::Real>(f_c(n, d));
@@ -160,7 +147,7 @@ int main(int argc, char *argv[]) {
         // model.solveStep();
 
         if (s % DUMP_INTERVAL == 0) {
-            coupler.dump();
+            model.dump();
         }
         auto now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now - start_time;
@@ -208,6 +195,3 @@ int main(int argc, char *argv[]) {
     akantu::finalize();
     return 0;
 }
-
-// Velocity-weakening-LSW-OLD.cc
-// Linear-Slip-Weakening.cc
