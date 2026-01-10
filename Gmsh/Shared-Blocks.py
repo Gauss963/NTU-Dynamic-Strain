@@ -4,8 +4,6 @@ def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
     mesh_size = 5
-    # mesh_size = 20
-    # mesh_size = 100
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -65,7 +63,7 @@ def main():
             shear_tag = 55
             
             gmsh.model.addPhysicalGroup(2, [czm_face_tag], slave_tag)
-            gmsh.model.setPhysicalName(2, slave_tag, "friction_slave")
+            gmsh.model.setPhysicalName(2, slave_tag, "friction-surface")
             
         front_face = gmsh.model.getEntitiesInBoundingBox(
             0 - tol, 0 - tol, 0 - tol,
@@ -74,7 +72,7 @@ def main():
         )
         if front_face:
             gmsh.model.addPhysicalGroup(2, [front_face[0][1]], 14) # tag 14
-            gmsh.model.setPhysicalName(2, 14, "moving-block-front")
+            gmsh.model.setPhysicalName(2, 14, "moving-block-back")
 
         left_face = gmsh.model.getEntitiesInBoundingBox(
             0 - tol, 0 - tol, 0 - tol,
@@ -83,7 +81,7 @@ def main():
         )
         if left_face:
             gmsh.model.addPhysicalGroup(2, [left_face[0][1]], 13) # tag 13
-            gmsh.model.setPhysicalName(2, 13, "moving-block-left")
+            gmsh.model.setPhysicalName(2, 13, "moving-block-right")
             
         back_faces = gmsh.model.getEntitiesInBoundingBox(
             345 - tol, 0 - tol, 0 - tol,
@@ -93,9 +91,9 @@ def main():
         if back_faces:
             back_face_tags = [tag for dim, tag in back_faces]
             gmsh.model.addPhysicalGroup(2, back_face_tags, 25)  # tag 25
-            gmsh.model.setPhysicalName(2, 25, "stationary-block-back")
+            gmsh.model.setPhysicalName(2, 25, "stationary-block-front")
         else:
-            print("⚠️ cannot find stationary-block-back")
+            print("⚠️ cannot find stationary-block-front")
         
         right_faces = gmsh.model.getEntitiesInBoundingBox(
             200 - tol, 550 - tol, 0 - tol,
@@ -105,9 +103,9 @@ def main():
         if right_faces:
             right_face_tags = [tag for dim, tag in right_faces]
             gmsh.model.addPhysicalGroup(2, right_face_tags, 26)  # tag 26
-            gmsh.model.setPhysicalName(2, 26, "stationary-block-right")
+            gmsh.model.setPhysicalName(2, 26, "stationary-block-left")
         else:
-            print("⚠️ cannot find stationary-block-right")
+            print("⚠️ cannot find stationary-block-left")
 
         gmsh.model.occ.removeAllDuplicates()
         gmsh.model.occ.synchronize()

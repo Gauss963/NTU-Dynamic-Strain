@@ -4,7 +4,10 @@ import Functions
 def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
+    # PMMA_THICKNESSES = [50, 100]
     mesh_size = 5
+
+    initial_offdet = 1 # gap, in mm
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -22,7 +25,7 @@ def main():
         gmsh.model.add("ContactModel")
 
         blk1 = Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, block_name="moving-block", tag_prefix=1)
-        blk2 = Functions.create_block(origin=(200, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, block_name="stationary-block", tag_prefix=2)
+        blk2 = Functions.create_block(origin=(200 + initial_offdet, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, block_name="stationary-block", tag_prefix=2)
         
 
         # blk1 = Functions.create_block(
@@ -51,10 +54,10 @@ def main():
         # stationary_pg = gmsh.model.addPhysicalGroup(3, [blk2a["volume"], blk2b["volume"]], tag=221)
         # gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
 
-        # gmsh.model.occ.removeAllDuplicates()+
+
         gmsh.option.setNumber("Mesh.Optimize", 1)
         gmsh.option.setNumber("Mesh.OptimizeNetgen", 1)
-        gmsh.option.setNumber("Mesh.Smoothing", 120)
+        gmsh.option.setNumber("Mesh.Smoothing", 10)
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
         gmsh.model.mesh.optimize("Netgen")

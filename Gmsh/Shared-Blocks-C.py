@@ -3,174 +3,137 @@ import gmsh
 def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
-    mesh_size = 20
-    # mesh_size = 5
-    # mesh_size = 1
+    mesh_size = 5
+    mesh_size = 1
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
         gmsh.initialize()
         gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
         gmsh.option.setNumber("Mesh.Algorithm3D", 1)
-        # gmsh.option.setNumber("Mesh.RecombineAll", 1)
         gmsh.option.setNumber("Mesh.ElementOrder", 1)
-        # SubdivisionAlgorithm = 1 是 Transfinite 的必要條件
         gmsh.option.setNumber("Mesh.SubdivisionAlgorithm", 1) 
         gmsh.option.setNumber("Mesh.Binary", 0)
+        gmsh.option.setNumber("Mesh.MeshSizeMin", mesh_size)
+        gmsh.option.setNumber("Mesh.MeshSizeMax", mesh_size)
+        gmsh.option.setNumber("Mesh.Smoothing", 20)
 
         gmsh.model.add("ContactModel")
 
-        # 步驟 1：定義 3 個塊的幾何
-        # 塊 1: moving-block
         blk1_origin = (0, 0, 0)
         blk1_dims = (200, 500, PMMA_thickness)
-        
-        # 塊 2: stationary-block (底部, 匹配部分)
-        blk2_bottom_origin = (200, 0, 0)
-        blk2_bottom_dims = (145, 500, PMMA_thickness) # Y=500, 匹配 blk1
 
-        # 塊 3: stationary-block (頂部, 不匹配部分)
-        blk2_top_origin = (200, 500, 0) # Y 從 500 開始
-        blk2_top_dims = (145, 50, PMMA_thickness)  # Y=50 (550 - 500)
+        blk2_origin = (200, 0, 0)
+        blk2_dims   = (145, 550, PMMA_thickness)
 
-        # 步驟 2：僅創建幾何體
         blk1_tag = gmsh.model.occ.addBox(
             blk1_origin[0], blk1_origin[1], blk1_origin[2],
             blk1_dims[0], blk1_dims[1], blk1_dims[2]
         )
-        
-        blk2_bottom_tag = gmsh.model.occ.addBox(
-            blk2_bottom_origin[0], blk2_bottom_origin[1], blk2_bottom_origin[2],
-            blk2_bottom_dims[0], blk2_bottom_dims[1], blk2_bottom_dims[2]
+
+        blk2_tag = gmsh.model.occ.addBox(
+            blk2_origin[0], blk2_origin[1], blk2_origin[2],
+            blk2_dims[0], blk2_dims[1], blk2_dims[2]
         )
 
-        blk2_top_tag = gmsh.model.occ.addBox(
-            blk2_top_origin[0], blk2_top_origin[1], blk2_top_origin[2],
-            blk2_top_dims[0], blk2_top_dims[1], blk2_top_dims[2]
-        )
-
-        # 步驟 3：Fragment (縫合) 所有塊
-        # 這是實現共形網格的關鍵
-        all_vols = [(3, blk1_tag), (3, blk2_bottom_tag), (3, blk2_top_tag)]
-        # 將所有 3 個卷與彼此進行 fragment
+        all_vols = [(3, blk1_tag), (3, blk2_tag)]
         ov, ovm = gmsh.model.occ.fragment(all_vols, [])
         gmsh.model.occ.synchronize()
 
-        # 步驟 4：獲取 Fragment 之後的 *新* 體積標籤
-        # ovm[0] 是 blk1_tag 的映射 -> new_blk1_tag
-        # ovm[1] 是 blk2_bottom_tag 的映射 -> new_blk2_bottom_tag
-        # ovm[2] 是 blk2_top_tag 的映射 -> new_blk2_top_tag
-        
-        new_blk1_tag = ovm[0][0][1]
-        new_blk2_bottom_tag = ovm[1][0][1]
-        new_blk2_top_tag = ovm[2][0][1]
-        
-        new_vols = [new_blk1_tag, new_blk2_bottom_tag, new_blk2_top_tag]
+        new_blk1_tags = [entry[1] for entry in ovm[0]]
+        new_blk2_tags = [entry[1] for entry in ovm[1]]
 
-        # 步驟 5：在 *新* 體積上設置 Transfinite (Hex 網格)
-        all_faces_tags = set()
-        # for vol_tag in new_vols:
-            # 設置體積為 Transfinite
-            # gmsh.model.mesh.setTransfiniteVolume(vol_tag)
-            # gmsh.model.mesh.setRecombine(3, vol_tag)
-            
-            # 獲取此體積的所有面
-            # faces = gmsh.model.getBoundary([(3, vol_tag)], oriented=False)
-            # for dim, tag in faces:
-            #     all_faces_tags.add(tag)
-
-        # 設置所有面 (包括內部) 為 Transfinite
-        for tag in all_faces_tags:
-            gmsh.model.mesh.setTransfiniteSurface(tag)
-            gmsh.model.mesh.setRecombine(2, tag)
-
-        # 設置全局網格大小
         gmsh.model.mesh.setSize(gmsh.model.getEntities(0), mesh_size)
-        
         gmsh.model.occ.synchronize()
-
-        # 步驟 6：手動定義物理群組
-        # 這是最穩健的方法，使用 BoundingBox 來查找實體
-        
-        # 6a. 體積群組
-        gmsh.model.addPhysicalGroup(3, [new_blk1_tag], 11)
+        gmsh.model.addPhysicalGroup(3, new_blk1_tags, 11)
         gmsh.model.setPhysicalName(3, 11, "moving-block")
         
-        gmsh.model.addPhysicalGroup(3, [new_blk2_bottom_tag, new_blk2_top_tag], 21)
+        gmsh.model.addPhysicalGroup(3, new_blk2_tags, 21)
         gmsh.model.setPhysicalName(3, 21, "stationary-block")
 
-        # 6b. CZM 介面 (關鍵！)
-        # 這個面位於 x=200, y=[0, 500]
-        # 我們需要為 *同一個* 幾何面定義 *兩* 個物理群組
+        # ===== Contact Interface Handling =====
         tol = 1e-3
-        czm_face = gmsh.model.getEntitiesInBoundingBox(
-            200 - tol, 0 - tol, 0 - tol,
-            200 + tol, 500 + tol, PMMA_thickness + tol,
+        # search contact candidate surfaces near x=200 over full y-range of stationary block
+        y_min = 0.0 - tol
+        y_max = 550.0 + tol
+        contact_candidates = gmsh.model.getEntitiesInBoundingBox(
+            200.0 - tol, y_min, 0.0 - tol,
+            200.0 + tol, y_max, PMMA_thickness + tol,
             dim=2
         )
-        if not czm_face:
-            print("錯誤：未找到 CZM 介面")
+
+        if not contact_candidates:
+            print("Error, cannot find CZM interface face candidates!")
         else:
-            czm_face_tag = czm_face[0][1] # 獲取 (dim, tag) 中的 tag
-            
-            # 這是你的 CZM 介面
-            # 你的原始代碼使用 15 和 24
-            slave_tag = 15 # tag_prefix * 10 + 5 (moving-block-back)
-            master_tag = 24 # tag_prefix * 10 + 4 (stationary-block-front)
-            shear_tag = 55
-            
-            gmsh.model.addPhysicalGroup(2, [czm_face_tag], slave_tag)
-            gmsh.model.setPhysicalName(2, slave_tag, "friction_slave")
-            
-            gmsh.model.addPhysicalGroup(2, [czm_face_tag], master_tag)
-            gmsh.model.setPhysicalName(2, master_tag, "friction_master")
+            contact_tags = [tag for dim, tag in contact_candidates]
+            print(f"[DEBUG] Found {len(contact_tags)} contact candidate surfaces: {contact_tags}")
 
-        # 6c. (可選) 其他外部邊界
-        # 為了簡潔起見，我只添加了 CZM 面。
-        # 你可以使用類似的 getEntitiesInBoundingBox 邏輯來標記
-        # 'top', 'bottom', 'left', 'right' 等。
+            # collect boundary surfaces of each new volume (may be multiple after fragment)
+            blk1_bound = {t for (d, t) in gmsh.model.getBoundary([(3, tag) for tag in new_blk1_tags], oriented=False) if d == 2}
+            blk2_bound = {t for (d, t) in gmsh.model.getBoundary([(3, tag) for tag in new_blk2_tags], oriented=False) if d == 2}
 
+            print(f"[DEBUG] blk1_bound: {blk1_bound}")
+            print(f"[DEBUG] blk2_bound: {blk2_bound}")
 
+            moving_front = [t for t in contact_tags if t in blk1_bound]
+            stationary_back = [t for t in contact_tags if t in blk2_bound]
+            unassigned = [t for t in contact_tags if t not in moving_front and t not in stationary_back]
 
-        # ==========================================
-        # 新增：自動將所有曲線加入物理群組以生成 1D Edges
-        # ==========================================
-        # 1. 獲取模型中所有的 1D 實體 (曲線)
-        all_curves = gmsh.model.getEntities(dim=1)
-        
-        # 2. 提取這些曲線的 tag
-        all_curve_tags = [tag for dim, tag in all_curves]
-        
-        # 3. 創建一個物理群組包含所有曲線
-        # 使用 -1 讓 gmsh 自動分配一個沒用過的 tag ID，或者你可以指定一個 (例如 99)
-        p_curves_group = gmsh.model.addPhysicalGroup(1, all_curve_tags)
-        
-        # 4. 給它一個名字 (這會顯示在 Akantu 或其他後處理軟體中)
-        gmsh.model.setPhysicalName(1, p_curves_group, "All_Edges")
+            print(f"[DEBUG] moving_front tags: {moving_front}")
+            print(f"[DEBUG] stationary_back tags: {stationary_back}")
+            print(f"[DEBUG] unassigned tags: {unassigned}")
 
+            if moving_front:
+                gmsh.model.addPhysicalGroup(2, moving_front, 15)
+                gmsh.model.setPhysicalName(2, 15, "moving-block-front")
+                print(f"✓ Created moving-block-front with {len(moving_front)} surface(s)")
+            else:
+                print("⚠️ no moving-block-front surfaces found")
 
+            if stationary_back:
+                gmsh.model.addPhysicalGroup(2, stationary_back, 24)
+                gmsh.model.setPhysicalName(2, 24, "stationary-block-back")
+                print(f"✓ Created stationary-block-back with {len(stationary_back)} surface(s)")
+            else:
+                print("⚠️ no stationary-block-back surfaces found")
 
-        
-        
-        # 例如: 'moving-block-front' (x=0)
+            # in case some faces are neither (safety)
+            if unassigned:
+                gmsh.model.addPhysicalGroup(2, unassigned, 99)
+                gmsh.model.setPhysicalName(2, 99, "contact-interface-unassigned")
+                print(f"⚠️ {len(unassigned)} unassigned contact surface(s)")
+
+        # ===== Boundary Conditions =====
         front_face = gmsh.model.getEntitiesInBoundingBox(
             0 - tol, 0 - tol, 0 - tol,
             0 + tol, 500 + tol, PMMA_thickness + tol,
             dim=2
         )
         if front_face:
-            gmsh.model.addPhysicalGroup(2, [front_face[0][1]], 14) # tag 14
-            gmsh.model.setPhysicalName(2, 14, "moving-block-front")
-        left_face = gmsh.model.getEntitiesInBoundingBox(
+            gmsh.model.addPhysicalGroup(2, [front_face[0][1]], 14)
+            gmsh.model.setPhysicalName(2, 14, "moving-block-back")
+            print("✓ Created moving-block-back (x=0 face)")
+
+        right_face = gmsh.model.getEntitiesInBoundingBox(
             0 - tol, 0 - tol, 0 - tol,
             200 + tol, 0 + tol, PMMA_thickness + tol,
             dim=2
         )
+        if right_face:
+            gmsh.model.addPhysicalGroup(2, [right_face[0][1]], 13)
+            gmsh.model.setPhysicalName(2, 13, "moving-block-right")
+            print("✓ Created moving-block-right (y=0 face)")
+
+        left_face = gmsh.model.getEntitiesInBoundingBox(
+            0 - tol, 500 - tol, 0 - tol,
+            200 + tol, 500 + tol, PMMA_thickness + tol,
+            dim=2
+        )
         if left_face:
-            gmsh.model.addPhysicalGroup(2, [left_face[0][1]], 13) # tag 13
-            gmsh.model.setPhysicalName(2, 13, "moving-block-left")
-            
-            
+            gmsh.model.addPhysicalGroup(2, [left_face[0][1]], 16)
+            gmsh.model.setPhysicalName(2, 16, "moving-block-left")
+            print("✓ Created moving-block-left (y=500 face)")
+
         back_faces = gmsh.model.getEntitiesInBoundingBox(
             345 - tol, 0 - tol, 0 - tol,
             345 + tol, 550 + tol, PMMA_thickness + tol,
@@ -178,36 +141,50 @@ def main():
         )
         if back_faces:
             back_face_tags = [tag for dim, tag in back_faces]
-            gmsh.model.addPhysicalGroup(2, back_face_tags, 25)  # tag 25
-            gmsh.model.setPhysicalName(2, 25, "stationary-block-back")
+            gmsh.model.addPhysicalGroup(2, back_face_tags, 25)
+            gmsh.model.setPhysicalName(2, 25, "stationary-block-front")
+            print(f"✓ Created stationary-block-front (x=345 face) with {len(back_face_tags)} surface(s)")
         else:
-            print("⚠️ 無法找到 stationary-block-back")
+            print("⚠️ cannot find stationary-block-front")
         
         right_faces = gmsh.model.getEntitiesInBoundingBox(
-            200 - tol, 550 - tol, 0 - tol,
-            345 + tol, 550 + tol, PMMA_thickness + tol,
+            200 - tol, 0 - tol, 0 - tol,
+            345 + tol, 0 + tol, PMMA_thickness + tol,
             dim=2
         )
         if right_faces:
             right_face_tags = [tag for dim, tag in right_faces]
-            gmsh.model.addPhysicalGroup(2, right_face_tags, 26)  # tag 26
+            gmsh.model.addPhysicalGroup(2, right_face_tags, 26)
             gmsh.model.setPhysicalName(2, 26, "stationary-block-right")
+            print(f"✓ Created stationary-block-right (y=0 face) with {len(right_face_tags)} surface(s)")
         else:
-            print("⚠️ 無法找到 stationary-block-right")
-    
-        
-    
+            print("⚠️ cannot find stationary-block-right")
+
+        left_upper_faces = gmsh.model.getEntitiesInBoundingBox(
+            200 - tol, 550 - tol, 0 - tol,
+            345 + tol, 550 + tol, PMMA_thickness + tol,
+            dim=2
+        )
+        if left_upper_faces:
+            left_upper_face_tags = [tag for dim, tag in left_upper_faces]
+            gmsh.model.addPhysicalGroup(2, left_upper_face_tags, 27)
+            gmsh.model.setPhysicalName(2, 27, "stationary-block-left")
+            print(f"✓ Created stationary-block-left (y=550 face) with {len(left_upper_face_tags)} surface(s)")
+        else:
+            print("⚠️ cannot find stationary-block-left")
+
+        gmsh.model.occ.removeAllDuplicates()
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
         gmsh.model.mesh.removeDuplicateNodes()
         gmsh.model.mesh.removeDuplicateElements()
         
-        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA-CZM-Contact.msh")
-        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA-CZM-Contact.brep")
-        print(f"成功生成 {PMMA_thickness}mm-PMMA-CZM-Contact.msh")
-        print("CZM 介面 (Slave/Master) 已在共形網格上創建。")
+        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA-CZM.msh")
+        gmsh.write(f"../Models/{PMMA_thickness}mm-PMMA.brep")
+        print(f"\n✓ Generated {PMMA_thickness}mm-PMMA-CZM.msh")
+        print("✓ Contact interface (moving-block-front / stationary-block-back) has been created on conformal mesh.\n")
         
-        gmsh.fltk.run()
+        # gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":

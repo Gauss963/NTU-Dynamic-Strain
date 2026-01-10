@@ -30,10 +30,6 @@ int main(int argc, char *argv[])
 
 
     mesh.read(mesh_file);
-    std::cout << "Now on NCHC" << std::endl;
-    std::cout << "TT" << std::endl;
-
-
 
     std::cout << "Load files successful." << std::endl;
     std::cout << "Cells (3D): " << mesh.getNbElement(mesh.getSpatialDimension()) << std::endl;
