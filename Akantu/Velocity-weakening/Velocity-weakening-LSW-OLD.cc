@@ -16,11 +16,12 @@ int main(int argc, char *argv[]) {
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
-    constexpr akantu::Real TIME_FACTOR = 0.5;
-    constexpr akantu::Real SIMULATION_TIME = 20 * ms;
+    constexpr akantu::Real TIME_FACTOR = 0.05;
+    constexpr akantu::Real SIMULATION_TIME = 4 * ms;
     constexpr int PMMA_thickness = 50;
 
     const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-BS-PMMA.msh";
+    // const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/NTN-LSW.dat";
 
     akantu::initialize(mat_file, argc, argv);
@@ -59,16 +60,31 @@ int main(int argc, char *argv[]) {
     model.getDisplacement().set(0.);
 
     akantu::NTNContact ntn_contact(model, "contact");
-    // ntn_contact.addSurfacePair("stationary-block-back", "moving-block-front", akantu::_x);
+
+    if (prank == 0) {
+        const auto &slave_boundary = mesh.getElementGroup("moving-block-front");
+        const auto &master_boundary = mesh.getElementGroup("stationary-block-back");
+        const auto &coordinates = mesh.getNodes();
+        std::cout << "[DBG] Slave boundary nodes (first 5):\n";
+        for (int i = 0; i < std::min(5, (int)slave_boundary.getNbNodes()); ++i) {
+            auto node = slave_boundary.getNodeGroup().getNodes()[i];
+            std::cout << "      x=" << coordinates(node, 0)
+                      << " y=" << coordinates(node, 1) << "\n";
+        }
+        std::cout << "[DBG] Master boundary nodes (first 5):\n";
+        for (int i = 0; i < std::min(5, (int)master_boundary.getNbNodes()); ++i) {
+            auto node = master_boundary.getNodeGroup().getNodes()[i];
+            std::cout << "      x=" << coordinates(node, 0)
+                      << " y=" << coordinates(node, 1) << "\n";
+        }
+    }
+
     ntn_contact.addSurfacePair("moving-block-front", "stationary-block-back", akantu::_x);
 
     if (prank == 0) {
         std::cout << "[CHK] ntn_contact created and surface pair added.\n";
         const int LOCAL_PAIRS = static_cast<int>(ntn_contact.getNbContactNodes());
-        // const int ALL_PAIRS = static_cast<int>(ntn_contact.getNbNodesInContact());
-
         std::cout << "[DBG] local_pairs at rank " << prank << " is " << LOCAL_PAIRS << "\n";
-        // std::cout << "[DBG] all_pairs after gather is " << ALL_PAIRS << "\n";
     }
 
     ntn_contact.initParallel();
@@ -78,7 +94,6 @@ int main(int argc, char *argv[]) {
     using Friction = akantu::NTNFriction<akantu::NTNFricLawLinearSlipWeakening, Regular>;
     Friction ntn_friction(ntn_contact, "friction");
 
-
     const akantu::Real normalStress = 8.0; // MPa
     const akantu::Real shearDisp = 3.0;    // mm
     const akantu::Real riseEnd = 0.30;
@@ -87,13 +102,6 @@ int main(int argc, char *argv[]) {
     model.applyBC(akantu::BC::Neumann::FromTraction(t_normal), "moving-block-back");
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
-
-    // const akantu::Int TOTAL_FRAMES = 2400;
-    // const std::int64_t MAX_STEPS =
-    // static_cast<std::int64_t>(std::ceil(SIMULATION_TIME / dt)); const
-    // akantu::Int DUMP_INTERVAL = MAX_STEPS / TOTAL_FRAMES; const akantu::Int
-    // rise_steps = static_cast<akantu::Int>(std::ceil(riseEnd * MAX_STEPS));
-    // const akantu::Real dy = shearDisp / rise_steps;
 
     using StepInt = std::int64_t;
     constexpr StepInt TOTAL_FRAMES = 2400;

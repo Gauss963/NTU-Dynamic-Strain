@@ -2,5 +2,12 @@
     "files.associations": {
         "complex": "cpp",
         "iomanip": "cpp"
-    }
+    },
+    "python-envs.pythonProjects": [
+        {
+            "path": "",
+            "envManager": "ms-python.python:conda",
+            "packageManager": "ms-python.python:conda"
+        }
+    ]
 }

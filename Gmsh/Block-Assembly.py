@@ -5,7 +5,7 @@ def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
     # PMMA_THICKNESSES = [50, 100]
-    mesh_size = 5
+    mesh_size = 2
 
     initial_offdet = 1 # gap, in mm
 
@@ -57,7 +57,7 @@ def main():
 
         gmsh.option.setNumber("Mesh.Optimize", 1)
         gmsh.option.setNumber("Mesh.OptimizeNetgen", 1)
-        gmsh.option.setNumber("Mesh.Smoothing", 10)
+        gmsh.option.setNumber("Mesh.Smoothing", 40)
         gmsh.model.occ.synchronize()
         gmsh.model.mesh.generate(3)
         gmsh.model.mesh.optimize("Netgen")

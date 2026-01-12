@@ -13,18 +13,20 @@ material elastic [
 ]
 
 contact_detector [
-  type = explicit		 			
-  master = stationary-block-back
-  slave = moving-block-front
-  projection_tolerance = 1e-10
+  type = explicit
+  master = moving-block-front
+  slave = stationary-block-back
+  projection_tolerance = 5e-4
   max_iterations = 1000
   extension_tolerance = 1e-5
 ]
 
-contact_resolution penalty_linear [
-  name = moving-block-front
-  mu = 0.6
-  epsilon_n = 4e13
-  epsilon_t = 1e12
+contact_resolution ntn_linear_slip_weakening [
+  name = fault
+  mu_s = 0.6
+  mu_d = 0.3
+  dc   = 3.0e-3
+  epsilon_n = 1e10
+  epsilon_t = 1e5
   is_master_deformable = true
 ]

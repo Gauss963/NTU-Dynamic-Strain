@@ -278,7 +278,7 @@ boost_headers_DIR:PATH=/home/gauss112/softwares/boost-1.82.0/lib/cmake/boost_hea
 ########################
 
 //List of akantu necessary libraries
-AKANTU_LIBRARIES:INTERNAL=akantu;akantu;akantu;akantu;akantu;akantu
+AKANTU_LIBRARIES:INTERNAL=akantu;akantu;akantu;akantu;akantu;akantu;akantu
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
