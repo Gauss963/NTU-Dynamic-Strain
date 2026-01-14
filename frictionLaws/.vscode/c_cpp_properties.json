@@ -1,0 +1,24 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "NCHC-Linux",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/home/gauss112/softwares/include",
+        "/home/gauss112/softwares/akantu-build/include",
+        "/home/gauss112/softwares/akantu-build/include/akantu",
+        "/home/gauss112/softwares/akantu-build/include/akantu_iterators",
+        "/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/",
+        "/home/gauss112/softwares/akantu-build/include/iohelper/",
+        "/home/gauss112/softwares/eigen3/include/eigen3",
+        "/home/gauss112/softwares/include/matplot/"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ]
+}

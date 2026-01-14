@@ -3,6 +3,9 @@
 
 CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-weakening-LSW.cc \
   /usr/include/stdc-predef.h \
+  /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh \
+  /home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh \
+  /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh \
   /home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_compatibilty_with_cpp_standard.hh \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iterator \
@@ -504,7 +507,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iostream \
   /home/gauss112/softwares/akantu-build/include/akantu/aka_constexpr_map.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/aka_common_inline_impl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cmath \
   /usr/include/math.h \
   /usr/include/bits/math-vector.h \
@@ -541,9 +543,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_conv.h \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/quoted_string.h \
   /home/gauss112/softwares/akantu-build/include/akantu/aka_fwd.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition_functor.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/fe_engine.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/element_type_map.hh \
@@ -998,23 +997,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper_paraview.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array_inline_impl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact_inline_impl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_friction.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb_tmpl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening_tmpl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/dumper_text.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction_tmpl.hh \
-  /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/parse_numbers.h
@@ -1025,18 +1007,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_base_friction.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friction.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact_inline_impl.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper_paraview.hh:
 
@@ -1087,8 +1057,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/synchronizer_registry.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb_tmpl.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/constitutive_law_non_local_interface.hh:
 
@@ -1157,8 +1125,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/akantu-build/include/akantu/synchronizer_impl.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/dof_manager_inline_impl.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening_tmpl.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/aka_factory.hh:
 
@@ -1235,8 +1201,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/akantu-build/include/akantu/communicator_inline_impl.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/element_class_quadrangle_8_inline_impl.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu/synchronized_array.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/element_class_quadrangle_4_inline_impl.hh:
 
@@ -1564,8 +1528,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control/expr_if.hpp:
 
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb.hh:
-
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/facilities/identity.hpp:
 
 /usr/include/bits/posix1_lim.h:
@@ -1826,10 +1788,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /usr/include/bits/wordsize.h:
 
-/home/gauss112/.local/include/eigen3/Eigen/src/Core/Solve.h:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/numbers:
-
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/max_size_type.h:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/regex_automaton.h:
@@ -1841,10 +1799,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/functional_hash.h:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_tempbuf.h:
-
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_iterators.hh:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/logical/bitand.hpp:
 
 /home/gauss112/softwares/akantu-build/include/akantu/contact_detector_inline_impl.hh:
 
@@ -1868,6 +1822,22 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_heap.h:
 
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_facets.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/std_abs.h:
+
+/home/gauss112/softwares/akantu-build/include/akantu/model_inline_impl.hh:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/tuple/size.hpp:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tuple:
+
+/usr/include/locale.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/tuple/limits/reverse_64.hpp:
+
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/localefwd.h:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/slot.hpp:
@@ -1882,27 +1852,11 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stream_iterator.h:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/hash_bytes.h:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_set.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/reverse.hpp:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/cxxabi_init_exception.h:
-
-/usr/include/bits/byteswap.h:
-
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/arithmetic/limits/dec_256.hpp:
 
 /usr/include/bits/types/FILE.h:
 
 /usr/include/bits/types/__FILE.h:
-
-/usr/include/bits/sched.h:
-
-/home/gauss112/softwares/akantu-build/include/iohelper/field.hh:
-
-/usr/include/features.h:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ext/alloc_traits.h:
 
@@ -1910,13 +1864,11 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/uniform_int_dist.h:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tuple:
+/home/gauss112/softwares/akantu-build/include/iohelper/field.hh:
 
-/usr/include/locale.h:
+/usr/include/features.h:
 
-/usr/include/bits/stdlib-float.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/tuple/limits/reverse_64.hpp:
+/usr/include/bits/sched.h:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor.hpp:
 
@@ -1952,24 +1904,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /usr/include/bits/getopt_posix.h:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ext/string_conversions.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/array/replace.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/mesh_io_msh_struct.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh:
-
-/usr/include/endian.h:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/std_function.h:
-
-/usr/include/stdint.h:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
-
-/pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdarg.h:
-
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/os_defines.h:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/detail/auto_rec.hpp:
@@ -1992,17 +1926,33 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control/limits/while_256.hpp:
 
-/usr/include/bits/types/__locale_t.h:
+/home/gauss112/softwares/akantu-build/include/akantu/group_manager.hh:
 
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/fold_left.hpp:
+/home/gauss112/softwares/akantu-build/include/akantu/dumper_field.hh:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ostream_insert.h:
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/functional:
+
+/home/gauss112/softwares/akantu-build/include/akantu/mesh_iterators.hh:
+
+/usr/include/bits/waitflags.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/exception.h:
+
+/usr/include/ctype.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control.hpp:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/char_traits.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/cpp_type_traits.h:
+
+/home/gauss112/softwares/akantu-build/include/akantu/element_class_hermite_inline_impl.hh:
+
+/home/gauss112/softwares/akantu-build/include/akantu/element_class_tetrahedron_10_inline_impl.hh:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ranges_algobase.h:
 
 /usr/include/bits/floatn-common.h:
-
-/home/gauss112/.local/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control/detail/while.hpp:
 
 /usr/include/string.h:
 
@@ -2034,22 +1984,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/push_front.hpp:
 
-/pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/mmintrin.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/detail/limits/fold_right_256.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_repeat_iterator.hh:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/bits/wctype-wchar.h:
-
-/home/gauss112/softwares/akantu-build/include/akantu/element_class_helper.hh:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tr1/modified_bessel_func.tcc:
-
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_compatibilty_with_cpp_standard.hh:
-
 /home/gauss112/softwares/akantu-build/include/akantu/communication_descriptor.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/fe_engine_template_tmpl.hh:
@@ -2068,27 +2002,45 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /usr/include/asm/unistd_64.h:
 
-/home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/algorithm:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/char_traits.h:
-
 /home/gauss112/softwares/akantu-build/include/akantu/model_solver.hh:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/basic_string.h:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tr1/ell_integral.tcc:
-
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/for_each.hpp:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/cpp_type_traits.h:
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tr1/ell_integral.tcc:
 
-/home/gauss112/softwares/akantu-build/include/akantu/element_class_hermite_inline_impl.hh:
+/home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh:
 
-/home/gauss112/softwares/akantu-build/include/akantu/element_class_tetrahedron_10_inline_impl.hh:
+/home/gauss112/softwares/akantu-build/include/akantu/non_local_manager.hh:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ranges_algobase.h:
+/home/gauss112/.local/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+/home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh:
+
+/usr/include/bits/types/__locale_t.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/fold_left.hpp:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ostream_insert.h:
+
+/pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdarg.h:
+
+/pkg/compiler/gcc/11.2.0/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/mmintrin.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/detail/limits/fold_right_256.hpp:
+
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_repeat_iterator.hh:
+
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/bits/wctype-wchar.h:
+
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_compatibilty_with_cpp_standard.hh:
+
+/home/gauss112/softwares/akantu-build/include/akantu/element_class_helper.hh:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tr1/modified_bessel_func.tcc:
 
 /home/gauss112/.local/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
 
@@ -2099,8 +2051,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/pstl/pstl_config.h:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/punctuation/remove_parens.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/dumper_text.hh:
 
 /home/gauss112/softwares/akantu-build/include/iohelper/dumper_text.hh:
 
@@ -2123,6 +2073,22 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
 
 /usr/include/bits/types/timer_t.h:
+
+/home/gauss112/.local/include/eigen3/Eigen/src/Core/Solve.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/numbers:
+
+/usr/include/bits/types/error_t.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ranges_base.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/array/reverse.hpp:
+
+/home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/logical/limits/bool_256.hpp:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/for_each_product.hpp:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -2156,21 +2122,45 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/repetition/deduce_r.hpp:
 
-/home/gauss112/softwares/akantu-build/include/akantu/group_manager.hh:
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/algorithm:
 
-/home/gauss112/softwares/akantu-build/include/akantu/dumper_field.hh:
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_enumerate_iterator.hh:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/functional:
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/comparison/equal.hpp:
 
-/home/gauss112/softwares/akantu-build/include/akantu/mesh_iterators.hh:
+/usr/include/bits/types/struct_timeval.h:
 
-/usr/include/bits/waitflags.h:
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq.hpp:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/exception.h:
+/home/gauss112/softwares/akantu-build/include/akantu/element_class_segment_2_inline_impl.hh:
 
-/usr/include/ctype.h:
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_str_hash.hh:
 
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control.hpp:
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ext/string_conversions.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/array/replace.hpp:
+
+/home/gauss112/softwares/akantu-build/include/akantu/mesh_io_msh_struct.hh:
+
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_iterator_tools.hh:
+
+/usr/include/endian.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/std_function.h:
+
+/usr/include/stdint.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/hash_bytes.h:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_set.h:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/reverse.hpp:
+
+/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/cxxabi_init_exception.h:
+
+/usr/include/bits/byteswap.h:
 
 /usr/include/bits/locale.h:
 
@@ -2278,18 +2268,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/stl_function.h:
 
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/iterators/aka_enumerate_iterator.hh:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/comparison/equal.hpp:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/element_class_segment_2_inline_impl.hh:
-
-/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_str_hash.hh:
-
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ptr_traits.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
@@ -2360,8 +2338,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/array:
 
-/home/gauss112/softwares/akantu-build/include/akantu/synchronized_array_inline_impl.hh:
-
 /home/gauss112/.local/include/eigen3/Eigen/src/Core/SolverBase.h:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
@@ -2416,25 +2392,13 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/tr1/poly_laguerre.tcc:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_facets.h:
+/home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_iterators.hh:
 
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/std_abs.h:
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/logical/bitand.hpp:
 
-/home/gauss112/softwares/akantu-build/include/akantu/model_inline_impl.hh:
+/home/gauss112/.local/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
 
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/tuple/size.hpp:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/logical/limits/bool_256.hpp:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/list/for_each_product.hpp:
-
-/usr/include/bits/types/error_t.h:
-
-/pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/ranges_base.h:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/array/reverse.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh:
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/control/detail/while.hpp:
 
 /home/gauss112/softwares/akantu-build/include/akantu/sparse_matrix.hh:
 
@@ -2532,8 +2496,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/arithmetic/mod.hpp:
 
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh:
-
 /home/gauss112/softwares/akantu-build/include/akantu/grid_synchronizer.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/element_type_map.hh:
@@ -2551,8 +2513,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/push_back.hpp:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/array/elem.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/ntn_friction_tmpl.hh:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/iterator_concepts.h:
 
@@ -2782,6 +2742,10 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/seq.hpp:
 
+/home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh:
+
+/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/limits/elem_256.hpp:
+
 /home/gauss112/softwares/akantu-build/include/akantu/geometry_utils_inline_impl.hh:
 
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/limits/size_256.hpp:
@@ -2954,9 +2918,9 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cerrno:
 
-/usr/include/bits/stdio_lim.h:
-
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/variadic/elem.hpp:
+
+/usr/include/bits/stdio_lim.h:
 
 /home/gauss112/softwares/akantu-build/include/akantu/aka_common_inline_impl.hh:
 
@@ -3009,13 +2973,3 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/tuple/push_back.hpp:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_conv.h:
-
-/home/gauss112/softwares/akantu-build/include/akantu/non_local_manager.hh:
-
-/home/gauss112/.local/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
-
-/home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh:
-
-/home/gauss112/softwares/boost-1.82.0/include/boost/preprocessor/seq/limits/elem_256.hpp:
-
-/home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh:

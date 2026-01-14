@@ -14,15 +14,15 @@ material elastic [
 
 contact_detector [
   type = explicit		 			
-  master = stationary-block-back
-  slave = moving-block-front
-  projection_tolerance = 1e-10
+  master = contact-stationary
+  slave = contact-moving
+  projection_tolerance = 1e-6
   max_iterations = 1000
-  extension_tolerance = 1e-5
+  extension_tolerance = 2e-3
 ]
 
 contact_resolution penalty_linear [
-  name = moving-block-front
+  name = contact-moving
   mu = 0.6
   epsilon_n = 4e13
   epsilon_t = 1e12

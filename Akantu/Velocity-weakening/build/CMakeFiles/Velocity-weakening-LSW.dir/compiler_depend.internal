@@ -4,6 +4,9 @@
 CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/Velocity-weakening-LSW.cc
  /usr/include/stdc-predef.h
+ /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh
+ /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh
  /home/gauss112/softwares/akantu-build/include/akantu_iterators/aka_compatibilty_with_cpp_standard.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iterator
@@ -505,7 +508,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/iostream
  /home/gauss112/softwares/akantu-build/include/akantu/aka_constexpr_map.hh
  /home/gauss112/softwares/akantu-build/include/akantu/aka_common_inline_impl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/aka_common.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/cmath
  /usr/include/math.h
  /usr/include/bits/math-vector.h
@@ -542,9 +544,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/locale_conv.h
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/quoted_string.h
  /home/gauss112/softwares/akantu-build/include/akantu/aka_fwd.hh
- /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh
- /home/gauss112/softwares/akantu-build/include/akantu/contact_mechanics_model.hh
- /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition.hh
  /home/gauss112/softwares/akantu-build/include/akantu/boundary_condition_functor.hh
  /home/gauss112/softwares/akantu-build/include/akantu/fe_engine.hh
  /home/gauss112/softwares/akantu-build/include/akantu/element_type_map.hh
@@ -999,23 +998,6 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o
  /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh
  /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper_paraview.hh
  /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh
- /home/gauss112/softwares/akantu-build/include/akantu/solid_mechanics_model.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact.hh
- /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array.hh
- /home/gauss112/softwares/akantu-build/include/akantu/synchronized_array_inline_impl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_contact_inline_impl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_base_friction.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_coulomb_tmpl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friclaw_linear_slip_weakening_tmpl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/dumper_text.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_fricreg_no_regularisation.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_friction_tmpl.hh
- /home/gauss112/softwares/akantu-build/include/akantu/ntn_contact.hh
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio
  /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/bits/parse_numbers.h
