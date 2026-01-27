@@ -5,8 +5,9 @@ def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
     mesh_size = 2
+    scaling_factor = 1/10
 
-    initial_offdet = 1 # initial gap, in mm
+    initial_offdet = 0.5 * scaling_factor # initial gap, in mm
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -24,17 +25,30 @@ def main():
         gmsh.option.setNumber("Mesh.RecombineAll", 0)
         gmsh.model.add("ContactModel")
 
-        blk1 = Functions.create_block(origin=(0, 0, 0), dimensions=(200, 500, PMMA_thickness), mesh_size=mesh_size, block_name="moving-block", tag_prefix=1)
-        blk2 = Functions.create_block(origin=(200 + initial_offdet, 0, 0), dimensions=(145, 550, PMMA_thickness), mesh_size=mesh_size, block_name="stationary-block", tag_prefix=2)
+        blk1 = Functions.create_block(origin=(0, 0, 0), 
+                                      dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor), 
+                                      mesh_size=mesh_size, 
+                                      block_name="moving-block", 
+                                      tag_prefix=1)
+
+        blk2 = Functions.create_block(origin=(200 * scaling_factor + initial_offdet, 0, 0), 
+                                      dimensions=(145 * scaling_factor, 550 * scaling_factor, PMMA_thickness * scaling_factor), 
+                                      mesh_size=mesh_size, 
+                                      block_name="stationary-block", 
+                                      tag_prefix=2)
 
         mov_face = blk1["faces_geo"]["moving-block-front"]
         sta_face = blk2["faces_geo"]["stationary-block-back"]
 
-        gmsh.model.addPhysicalGroup(2, [mov_face], tag=1001)
-        gmsh.model.setPhysicalName(2, 1001, "contact-moving")
+        # gmsh.model.addPhysicalGroup(2, [mov_face], tag=1001)
+        # gmsh.model.setPhysicalName(2, 1001, "contact-moving")
 
-        gmsh.model.addPhysicalGroup(2, [sta_face], tag=1002)
-        gmsh.model.setPhysicalName(2, 1002, "contact-stationary")
+        # gmsh.model.addPhysicalGroup(2, [sta_face], tag=1002)
+        # gmsh.model.setPhysicalName(2, 1002, "contact-stationary")
+
+
+
+
         
 
         # blk1 = Functions.create_block(
@@ -88,7 +102,7 @@ def main():
 
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.msh")
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.brep")
-        # gmsh.fltk.run()
+        gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":

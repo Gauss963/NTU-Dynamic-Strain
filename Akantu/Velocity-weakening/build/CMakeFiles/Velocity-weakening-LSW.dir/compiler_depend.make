@@ -996,6 +996,7 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
   /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact_tmpl.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/coupler_solid_contact.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper_paraview.hh \
+  /home/gauss112/softwares/akantu-build/include/akantu/non_linear_solver.hh \
   /home/gauss112/softwares/akantu-build/include/akantu/mesh.hh \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono \
   /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio \
@@ -1007,6 +1008,8 @@ CMakeFiles/Velocity-weakening-LSW.dir/Velocity-weakening-LSW.cc.o: ../Velocity-w
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/ratio:
 
 /pkg/compiler/gcc/11.2.0/include/c++/11.2.0/chrono:
+
+/home/gauss112/softwares/akantu-build/include/akantu/non_linear_solver.hh:
 
 /home/gauss112/softwares/akantu-build/include/akantu/dumper_iohelper_paraview.hh:
 

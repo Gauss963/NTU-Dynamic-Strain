@@ -1,20 +1,18 @@
-#include "ntn_friclaw_linear_slip_weakening.hh"
-#include "solid_mechanics_model_cohesive.hh"
 #include "aka_common.hh"
 #include "mesh.hh"
-#include <iostream>
-#include <iomanip>
+#include "ntn_friclaw_linear_slip_weakening.hh"
+#include "solid_mechanics_model_cohesive.hh"
 #include <chrono>
+#include <iomanip>
+#include <iostream>
 
-
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     constexpr akantu::Int sd = 3;
     constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
     constexpr int PMMA_thickness = 50;
     constexpr akantu::Real time_factor = 0.5;
-    const std::string mesh_file =  "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
+    const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-PMMA-CZM.msh";
     const std::string mat_file = "../../../Materials/material-mm-MPa.dat";
 
     akantu::initialize(mat_file, argc, argv);
@@ -28,7 +26,6 @@ int main(int argc, char *argv[])
     // }
     // mesh.distribute();
 
-
     mesh.read(mesh_file);
 
     std::cout << "Load files successful." << std::endl;
@@ -41,8 +38,7 @@ int main(int argc, char *argv[])
         {{"moving-block", "moving-block"}, "non_interface"},
         {{"stationary-block", "stationary-block"}, "non_interface"},
         {{"moving-block", "stationary-block"}, "interface"},
-        {{"stationary-block", "moving-block"}, "interface"}
-    };
+        {{"stationary-block", "moving-block"}, "interface"}};
     std::cout << "Got material" << std::endl;
 
     auto cohesive_selector = std::make_shared<akantu::MaterialCohesiveRulesSelector>(model, rules);
@@ -52,7 +48,6 @@ int main(int argc, char *argv[])
     bulk_selector->setFallback(model.getMaterialSelector());
     model.setMaterialSelector(cohesive_selector);
     std::cout << "Set material selector" << std::endl;
-
 
     model.initFull(akantu::_analysis_method = akantu::_explicit_lumped_mass, akantu::_is_extrinsic = true);
 
@@ -86,14 +81,14 @@ int main(int argc, char *argv[])
     disp.set(0.);
     std::cout << "After setting vel and disp" << std::endl;
 
-    const akantu::Real normalStress  = 8.0;  // MPa
-    const akantu::Real shearStress   = 3.0;  // MPa
-    const akantu::Real displacement  = 3.0;  // mm
-    akantu::Real pushValue           = 0.0;  // mm
-    const akantu::Real riseEnd       = 0.70; // % of total time
+    const akantu::Real normalStress = 8.0; // MPa
+    const akantu::Real shearStress = 3.0;  // MPa
+    const akantu::Real displacement = 3.0; // mm
+    akantu::Real pushValue = 0.0;          // mm
+    const akantu::Real riseEnd = 0.70;     // % of total time
 
-    akantu::Vector<akantu::Real, 3> t_front{normalStress, 0.0, 0.0};  // MPa traction (+X)
-    akantu::Vector<akantu::Real, 3> t_left{0.0, shearStress, 0.0};    // MPa traction (+Y)
+    akantu::Vector<akantu::Real, 3> t_front{normalStress, 0.0, 0.0}; // MPa traction (+X)
+    akantu::Vector<akantu::Real, 3> t_left{0.0, shearStress, 0.0};   // MPa traction (+Y)
 
     model.applyBC(akantu::BC::Neumann::FromTraction(t_front), "moving-block-front");
     // model.applyBC(akantu::BC::Neumann::FromTraction(t_left), "moving-block-left");
@@ -110,7 +105,7 @@ int main(int argc, char *argv[])
     // const akantu::Int DUMP_INTERVAL = MAX_STEPS / TOTAL_FRAMES;
     const akantu::Int DUMP_INTERVAL = 3;
 
-        std::cout << "Starting time integration for " << (SIMULATION_TIME / ms) << " ms (" << MAX_STEPS << " steps)\n";
+    std::cout << "Starting time integration for " << (SIMULATION_TIME / ms) << " ms (" << MAX_STEPS << " steps)\n";
     std::cout << "Dumping every " << DUMP_INTERVAL << " steps (" << TOTAL_FRAMES << " frames)" << std::endl;
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -120,8 +115,7 @@ int main(int argc, char *argv[])
         if (progress < riseEnd) {
             akantu::Real alpha = progress / riseEnd;
             pushValue = alpha * displacement;
-        }
-        else {
+        } else {
             pushValue = displacement;
         }
         model.applyBC(akantu::BC::Dirichlet::FixedValue(pushValue, akantu::_y), "moving-block-left");
@@ -130,7 +124,6 @@ int main(int argc, char *argv[])
         if (s % DUMP_INTERVAL == 0) {
             model.dump();
         }
-
 
         auto current_time = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = current_time - start_time;
