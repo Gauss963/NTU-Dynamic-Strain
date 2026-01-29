@@ -12,20 +12,8 @@ material elastic [
   nu  = 0.20
 ]
 
-contact_detector [
-  type = explicit		 			
-  master = moving-block-front
-  slave  = stationary-block-back
-  projection_tolerance = 1e-6
-  max_iterations = 2000
-  extension_tolerance = 0.2
-  max_search_distance = 1.0
-]
-
-contact_resolution penalty_linear [
-  name = stationary-block-back
-  mu = 0.6
-  epsilon_n = 4e13
-  epsilon_t = 1e12
-  is_master_deformable = true
+friction linear_slip_weakening no_regularisation [
+  mu_s = 0.8
+  mu_k = 0.6
+  d_c  = 5.5
 ]

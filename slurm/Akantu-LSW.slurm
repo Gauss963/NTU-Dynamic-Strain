@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --account=MST113389
-#SBATCH --partition=hm448
+#SBATCH --partition=hm112
 #SBATCH --job-name=Akantu-LSW-50mm
 #SBATCH --output=/home/gauss112/outs/Akantu-%j.out
 #SBATCH --error=/home/gauss112/outs/Akantu-%j.err
-#SBATCH --ntasks=400
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --nodes=4
+#SBATCH --nodes=1
 #SBATCH --time=85:30:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=b09501028@ntu.edu.tw
