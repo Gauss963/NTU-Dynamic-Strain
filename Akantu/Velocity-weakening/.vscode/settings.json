@@ -64,7 +64,12 @@
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.includePath": [
         "${workspaceFolder}/**",
-        "/opt/homebrew/Caskroom/miniconda/base/envs/Akantu/include/**"
+        "/home/r14521220/softwares/akantu-install/include",
+        "/home/r14521220/softwares/akantu-install/include/akantu",
+        "/home/r14521220/softwares/akantu-install/include/akantu_iterators",
+        "/home/r14521220/softwares/akantu-install/include/akantu_iterators/iterators/",
+        "/home/r14521220/softwares/akantu-install/include/iohelper/",
+        "/home/r14521220/softwares/eigen-install/include"
     ],
     "C_Cpp.default.compilerPath": "/usr/bin/clang++",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
