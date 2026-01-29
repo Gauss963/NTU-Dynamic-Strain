@@ -90,7 +90,7 @@ def main():
 
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.msh")
         gmsh.write(f"../Models/{PMMA_thickness}mm-BS-PMMA.brep")
-        gmsh.fltk.run()
+        # gmsh.fltk.run()
         gmsh.finalize()
 
 if __name__ == "__main__":
