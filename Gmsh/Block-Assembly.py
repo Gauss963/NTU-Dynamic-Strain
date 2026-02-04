@@ -4,7 +4,7 @@ import Functions
 def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
-    mesh_size = 2
+    mesh_size = 0.5
     scaling_factor = 1/10
 
     initial_offdet = 0.0 * scaling_factor # initial gap, in mm
@@ -25,45 +25,45 @@ def main():
         gmsh.option.setNumber("Mesh.RecombineAll", 0)
         gmsh.model.add("ContactModel")
 
-        # blk1 = Functions.create_block(origin=(0, 0, 0), 
-        #                               dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor), 
-        #                               mesh_size=mesh_size, 
-        #                               block_name="moving-block", 
-        #                               tag_prefix=1)
+        blk1 = Functions.create_block(origin=(0, 0, 0), 
+                                      dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor), 
+                                      mesh_size=mesh_size, 
+                                      block_name="moving-block", 
+                                      tag_prefix=1)
 
-        # blk2 = Functions.create_block(origin=(200 * scaling_factor + initial_offdet, 0, 0), 
-        #                               dimensions=(145 * scaling_factor, 550 * scaling_factor, PMMA_thickness * scaling_factor), 
-        #                               mesh_size=mesh_size, 
-        #                               block_name="stationary-block", 
-        #                               tag_prefix=2)
+        blk2 = Functions.create_block(origin=(200 * scaling_factor + initial_offdet, 0, 0), 
+                                      dimensions=(145 * scaling_factor, 550 * scaling_factor, PMMA_thickness * scaling_factor), 
+                                      mesh_size=mesh_size, 
+                                      block_name="stationary-block", 
+                                      tag_prefix=2)
 
         
 
-        blk1 = Functions.create_block(
-            origin=(0, 0, 0),
-            dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor),
-            mesh_size=mesh_size,
-            block_name="moving-block",
-            tag_prefix=1
-        )
-        blk2a = Functions.create_block(
-            origin=(200 * scaling_factor, 0, 0),
-            dimensions=(145 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor),
-            mesh_size=mesh_size,
-            block_name="stationary-block",
-            tag_prefix=2
-        )
-        blk2b = Functions.create_block(
-            origin=(200 * scaling_factor, 500 * scaling_factor, 0),
-            dimensions=(145 * scaling_factor, 50 * scaling_factor, PMMA_thickness * scaling_factor),
-            mesh_size=mesh_size,
-            block_name="stationary-block-upper",
-            tag_prefix=3
-        )
+        # blk1 = Functions.create_block(
+        #     origin=(0, 0, 0),
+        #     dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor),
+        #     mesh_size=mesh_size,
+        #     block_name="moving-block",
+        #     tag_prefix=1
+        # )
+        # blk2a = Functions.create_block(
+        #     origin=(200 * scaling_factor, 0, 0),
+        #     dimensions=(145 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor),
+        #     mesh_size=mesh_size,
+        #     block_name="stationary-block",
+        #     tag_prefix=2
+        # )
+        # blk2b = Functions.create_block(
+        #     origin=(200 * scaling_factor, 500 * scaling_factor, 0),
+        #     dimensions=(145 * scaling_factor, 50 * scaling_factor, PMMA_thickness * scaling_factor),
+        #     mesh_size=mesh_size,
+        #     block_name="stationary-block-upper",
+        #     tag_prefix=3
+        # )
 
-        gmsh.model.occ.synchronize()
-        stationary_pg = gmsh.model.addPhysicalGroup(3, [blk2a["volume"], blk2b["volume"]], tag=221)
-        gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
+        # gmsh.model.occ.synchronize()
+        # stationary_pg = gmsh.model.addPhysicalGroup(3, [blk2a["volume"], blk2b["volume"]], tag=221)
+        # gmsh.model.setPhysicalName(3, stationary_pg, "stationary-block")
 
 
         gmsh.option.setNumber("Mesh.Optimize", 1)

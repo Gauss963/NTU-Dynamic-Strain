@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=MST113389
+#SBATCH --account=TRI900401
 #SBATCH --partition=hm112
 #SBATCH --job-name=Akantu-LSW-50mm
 #SBATCH --output=/home/gauss112/outs/Akantu-%j.out

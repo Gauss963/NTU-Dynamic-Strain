@@ -51,8 +51,12 @@ int main(int argc, char *argv[]) {
 
     auto solver_ntn = std::make_unique<akantu::NTNContactSolverCallback>(model, slave_surface, master_surface, normal_dir, TIME_FACTOR);
     auto contact = solver_ntn->getContact();
-    contact->addSurfacePair(slave_surface, master_surface, normal_dir);
+    auto friction = solver_ntn->getFriction();
+    auto &msh = model.getFEEngine().getMesh();
+
+    // contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
     if (prank == 0) {
+        std::cout << "[DBG] dt = " << model.getTimeStep() << std::endl;
         std::cout << "[DBG] nb_contact_nodes = " << contact->getNbContactNodes() << "\n";
         std::cout << "[DBG] masters size = " << contact->getMasters().size()
                   << " slaves size = " << contact->getSlaves().size() << "\n";
@@ -62,7 +66,7 @@ int main(int argc, char *argv[]) {
     contact->updateImpedance();
 
     // ---- DEBUG: surface group node counts + node-id intersection ----
-    auto &msh = model.getFEEngine().getMesh();
+    // auto &msh = model.getFEEngine().getMesh();
 
     const auto &s_nodes_aka = msh.getElementGroup(slave_surface).getNodeGroup().getNodes();
     const auto &m_nodes_aka = msh.getElementGroup(master_surface).getNodeGroup().getNodes();
@@ -95,9 +99,9 @@ int main(int argc, char *argv[]) {
                   << " slaves size = " << contact->getSlaves().size() << "\n";
     }
 
-    contact->updateNormals();
-    contact->updateLumpedBoundary();
-    contact->updateImpedance();
+    // contact->updateNormals();
+    // contact->updateLumpedBoundary();
+    // contact->updateImpedance();
 
     // akantu::Real dt = model.getStableTimeStep() * TIME_FACTOR;
     // if (prank == 0) {
@@ -110,6 +114,7 @@ int main(int argc, char *argv[]) {
 
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
     model.addDumpField("stress");
+    model.addDumpField("mass");
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("internal_force");
     model.addDumpFieldVector("external_force");
@@ -119,9 +124,13 @@ int main(int argc, char *argv[]) {
     constexpr akantu::Real shearDisp = 3.0;
     constexpr akantu::Real riseEnd = 0.30;
     constexpr akantu::Int TOTAL_FRAMES = 2400;
+    constexpr akantu::Real initial_gap = 0.05;
+    constexpr akantu::Real overclosure = 0.01;
 
     const akantu::Int SHEAR_STEPS = std::ceil(SIMULATION_TIME / dt);
     const akantu::Int PRESS_STEPS = SHEAR_STEPS;
+    const akantu::Real total_dx = initial_gap + overclosure;
+    const akantu::Real dx_step = total_dx / static_cast<akantu::Real>(PRESS_STEPS);
 
     const akantu::Int DUMP_INTERVAL = std::max<akantu::Int>(1, SHEAR_STEPS / TOTAL_FRAMES);
     const akantu::Int rise_steps = std::ceil(riseEnd * SHEAR_STEPS);
@@ -132,21 +141,49 @@ int main(int argc, char *argv[]) {
 
     model.dump();
 
+    //
+    constexpr akantu::Real NORMAL_STRESS = 16.0;
+    akantu::Vector<akantu::Real, 3> normal_traction{NORMAL_STRESS, 0.0, 0.0};
+    model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
+    //
+
     auto start_time = std::chrono::high_resolution_clock::now();
     if (prank == 0) {
         std::cout << "[SIM] Starting time integration for compression phase for "
                   << PRESS_STEPS << " steps\n";
     }
 
-    constexpr akantu::Real initial_gap = 0.05;
-    constexpr akantu::Real overclosure = 0.01;
-    const akantu::Real total_dx = initial_gap + overclosure;
-    const akantu::Real dx_step = total_dx / static_cast<akantu::Real>(PRESS_STEPS);
+    auto &displacement = model.getDisplacement();
+    auto &velocity = model.getVelocity();
+    auto &blocked = model.getBlockedDOFs();
+    auto &mesh_ref = model.getFEEngine().getMesh();
+    const auto &moving_nodes = mesh_ref.getElementGroup("moving-block-back").getNodeGroup().getNodes();
 
-    // auto contact = solver_ntn->getContact();
+    auto &increment = model.getIncrement();
+
+    //  /$$   /$$                                             /$$       /$$$$$$$  /$$
+    // | $$$ | $$                                            | $$      | $$__  $$| $$
+    // | $$$$| $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$ | $$      | $$  \ $$| $$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$
+    // | $$ $$ $$ /$$__  $$ /$$__  $$| $$_  $$_  $$ |____  $$| $$      | $$$$$$$/| $$__  $$ |____  $$ /$$_____/ /$$__  $$
+    // | $$  $$$$| $$  \ $$| $$  \__/| $$ \ $$ \ $$  /$$$$$$$| $$      | $$____/ | $$  \ $$  /$$$$$$$|  $$$$$$ | $$$$$$$$
+    // | $$\  $$$| $$  | $$| $$      | $$ | $$ | $$ /$$__  $$| $$      | $$      | $$  | $$ /$$__  $$ \____  $$| $$_____/
+    // | $$ \  $$|  $$$$$$/| $$      | $$ | $$ | $$|  $$$$$$$| $$      | $$      | $$  | $$|  $$$$$$$ /$$$$$$$/|  $$$$$$$
+    // |__/  \__/ \______/ |__/      |__/ |__/ |__/ \_______/|__/      |__/      |__/  |__/ \_______/|_______/  \_______/
 
     for (akantu::Int step_now = 0; step_now < PRESS_STEPS; ++step_now) {
-        model.applyBC(akantu::BC::Dirichlet::IncrementValue(dx_step, akantu::_x), "moving-block-back");
+        // model.applyBC(akantu::BC::Dirichlet::IncrementValue(dx_step, akantu::_x), "moving-block-back");
+        // model.solveStep(*solver_ntn, "explicit_lumped");
+
+        // increment.set(0.0);
+        // blocked.set(false);
+
+        // for (auto n : moving_nodes) {
+        //     displacement(n, akantu::_x) += dx_step;
+        //     velocity(n, akantu::_x) = dx_step / dt;
+        //     increment(n, akantu::_x) = dx_step;
+        //     blocked(n, akantu::_x) = true;
+        // }
+
         model.solveStep(*solver_ntn, "explicit_lumped");
 
         if (step_now % DUMP_INTERVAL == 0) {
@@ -162,22 +199,8 @@ int main(int argc, char *argv[]) {
         const double remaining = time_per_iter * SHEAR_STEPS - elapsed.count();
 
         if (prank == 0 && step_now % 100 == 0) {
-            // // 如果你的 contact 沒有 getGaps()，把這段註解掉即可
-            // auto &gaps = contact->getGaps();
-            // akantu::Real gmin = 1e30;
-            // akantu::Real gmax = -1e30;
-            // for (auto g : gaps) {
-            //     gmin = std::min(gmin, g);
-            //     gmax = std::max(gmax, g);
-            // }
-
             std::cout << "[SIM] Step " << std::setw(8) << step_now << "/"
                       << PRESS_STEPS
-                      //   << " | Gap.size() = " << std::setw(8) << gaps.size()
-                      //   << " | Max Gap: " << std::setw(12) << std::scientific
-                      //   << std::setprecision(5) << gmax
-                      //   << " | Min Gap: " << std::setw(12) << std::scientific
-                      //   << std::setprecision(5) << gmin
                       << " | Elapsed: " << std::fixed << std::setprecision(1)
                       << std::setw(8) << elapsed.count() << " s"
                       << " | Progress: " << std::setw(6) << std::fixed
@@ -192,6 +215,15 @@ int main(int argc, char *argv[]) {
                   << (SIMULATION_TIME / ms) << " ms (" << SHEAR_STEPS
                   << " steps)\n";
     }
+
+    //   /$$$$$$  /$$                                           /$$$$$$$  /$$
+    //  /$$__  $$| $$                                          | $$__  $$| $$
+    // | $$  \__/| $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$       | $$  \ $$| $$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$
+    // |  $$$$$$ | $$__  $$ /$$__  $$ |____  $$ /$$__  $$      | $$$$$$$/| $$__  $$ |____  $$ /$$_____/ /$$__  $$
+    //  \____  $$| $$  \ $$| $$$$$$$$  /$$$$$$$| $$  \__/      | $$____/ | $$  \ $$  /$$$$$$$|  $$$$$$ | $$$$$$$$
+    //  /$$  \ $$| $$  | $$| $$_____/ /$$__  $$| $$            | $$      | $$  | $$ /$$__  $$ \____  $$| $$_____/
+    // |  $$$$$$/| $$  | $$|  $$$$$$$|  $$$$$$$| $$            | $$      | $$  | $$|  $$$$$$$ /$$$$$$$/|  $$$$$$$
+    //  \______/ |__/  |__/ \_______/ \_______/|__/            |__/      |__/  |__/ \_______/|_______/  \_______/
 
     for (akantu::Int step_now = 0; step_now < SHEAR_STEPS; ++step_now) {
         model.applyBC(akantu::BC::Dirichlet::IncrementValue(dy, akantu::_y), "moving-block-right");
