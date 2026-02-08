@@ -1,5 +1,0 @@
-/home/gauss112/NTU-Dynamic-Strain/frictionLaws/build/CMakeFiles/rebuild_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/frictionLaws/build/CMakeFiles/edit_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/frictionLaws/build/src/CMakeFiles/rebuild_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/frictionLaws/build/src/CMakeFiles/edit_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/frictionLaws/build/src/CMakeFiles/frictionLaws.dir
