@@ -4,7 +4,6 @@ import Functions
 def main():
 
     mesh_size = 5
-    scaling_factor = 1
 
     gmsh.initialize()
     gmsh.option.setNumber("General.NumThreads", 10)
@@ -18,19 +17,15 @@ def main():
 
     Functions.create_block_2d_quad(
         origin=(0, 0, 0),
-        dimensions=(200 * scaling_factor,
-                    500 * scaling_factor,
-                    0),
+        dimensions=(200, 500, 0),
         mesh_size=mesh_size,
         block_name="moving-block",
         tag_prefix=1
     )
 
     Functions.create_block_2d_quad(
-        origin=(200 * scaling_factor, 0, 0),
-        dimensions=(145 * scaling_factor,
-                    550 * scaling_factor,
-                    0),
+        origin=(200, 0, 0),
+        dimensions=(145, 550, 0),
         mesh_size=mesh_size,
         block_name="stationary-block",
         tag_prefix=2

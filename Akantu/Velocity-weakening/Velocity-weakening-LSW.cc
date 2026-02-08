@@ -23,20 +23,26 @@
 // #include "faceRebuild.hh"
 
 int main(int argc, char *argv[]) {
-    constexpr akantu::Int sd = 3;
-    // constexpr akantu::Real us = 1e-6;
+    constexpr akantu::Int DIMENSION = 2;
+    constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
 
     constexpr akantu::Real TIME_FACTOR = 0.0020;
     constexpr akantu::Real SIMULATION_TIME = 0.2 * ms;
     constexpr int PMMA_thickness = 50;
 
-    const std::string mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-BS-PMMA.msh";
     const std::string mat_file = "../../../Materials/NTN-LSW.dat";
+    std::string mesh_file;
+    if (DIMENSION == 2) {
+        mesh_file = "../../../Models/2D-PMMA.msh";
+    } else {
+
+        mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-BS-PMMA.msh";
+    }
 
     akantu::initialize(mat_file, argc, argv);
 
-    akantu::Mesh mesh(sd);
+    akantu::Mesh mesh(DIMENSION);
     const auto &comm = akantu::Communicator::getStaticCommunicator();
     const akantu::Int prank = comm.whoAmI();
 
@@ -54,7 +60,7 @@ int main(int argc, char *argv[]) {
     auto solver_ntn = std::make_unique<akantu::NTNContactSolverCallback>(model, slave_surface, master_surface, normal_dir, TIME_FACTOR);
     auto contact = solver_ntn->getContact();
     contact->initParallel();
-    
+
     auto friction = solver_ntn->getFriction();
     auto &msh = model.getFEEngine().getMesh();
 
@@ -104,22 +110,19 @@ int main(int argc, char *argv[]) {
     // contact->updateLumpedBoundary();
     // contact->updateImpedance();
 
-    // akantu::Real dt = model.getStableTimeStep() * TIME_FACTOR;
-    // if (prank == 0) {
-    //     std::cout << "[SIM] dt = " << dt << " s (" << dt / us << " us)\n";
-    // }
-    // model.setTimeStep(dt);
-    // constexpr akantu::Real dt = 1.0e3 * us;
-    // akantu::Real dt = model.getStableTimeStep();
     akantu::Real dt = model.getTimeStep();
 
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
     model.addDumpField("stress");
     model.addDumpField("mass");
-    model.addDumpFieldVector("strain");
+    // model.addDumpFieldVector("strain");
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("internal_force");
     model.addDumpFieldVector("external_force");
+    if (DIMENSION == 3) {
+        model.addDumpFieldVector("strain");
+    }
+
     model.getVelocity().set(0.0);
     model.getDisplacement().set(0.0);
 
@@ -143,11 +146,15 @@ int main(int argc, char *argv[]) {
 
     model.dump();
 
-    //
+
     constexpr akantu::Real NORMAL_STRESS = 16.0;
-    akantu::Vector<akantu::Real, 3> normal_traction{NORMAL_STRESS, 0.0, 0.0};
+    // akantu::Vector<akantu::Real, 3> normal_traction{NORMAL_STRESS, 0.0, 0.0};
+    // model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
+    akantu::Vector<akantu::Real, DIMENSION> normal_traction;
+    normal_traction.set(0.0);
+    normal_traction(0) = NORMAL_STRESS;
     model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
-    //
+
 
     auto start_time = std::chrono::high_resolution_clock::now();
     if (prank == 0) {
