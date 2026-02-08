@@ -1,8 +1,8 @@
 {
 	"folders": [
 		{
-			"name": "code",
-			"path": "code"
+			"name": "CohesiveZoneModel",
+			"path": "CohesiveZoneModel"
 		},
 		{
 			"name": "Gmsh",
