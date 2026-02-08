@@ -4,7 +4,7 @@
 #SBATCH --job-name=Akantu-LSW-50mm
 #SBATCH --output=/home/gauss112/outs/Akantu-%j.out
 #SBATCH --error=/home/gauss112/outs/Akantu-%j.err
-#SBATCH --ntasks=1
+#SBATCH --ntasks=10
 #SBATCH --cpus-per-task=1
 #SBATCH --nodes=1
 #SBATCH --time=85:30:00

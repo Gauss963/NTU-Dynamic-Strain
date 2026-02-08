@@ -20,6 +20,8 @@
 #include "ntn_fricreg_no_regularisation.hh"
 #include "ntn_friction.hh"
 
+// #include "faceRebuild.hh"
+
 int main(int argc, char *argv[]) {
     constexpr akantu::Int sd = 3;
     // constexpr akantu::Real us = 1e-6;
@@ -51,10 +53,12 @@ int main(int argc, char *argv[]) {
 
     auto solver_ntn = std::make_unique<akantu::NTNContactSolverCallback>(model, slave_surface, master_surface, normal_dir, TIME_FACTOR);
     auto contact = solver_ntn->getContact();
+    contact->initParallel();
+    
     auto friction = solver_ntn->getFriction();
     auto &msh = model.getFEEngine().getMesh();
 
-    // contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
+    contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
     if (prank == 0) {
         std::cout << "[DBG] dt = " << model.getTimeStep() << std::endl;
         std::cout << "[DBG] nb_contact_nodes = " << contact->getNbContactNodes() << "\n";
@@ -64,9 +68,6 @@ int main(int argc, char *argv[]) {
     contact->updateNormals();
     contact->updateLumpedBoundary();
     contact->updateImpedance();
-
-    // ---- DEBUG: surface group node counts + node-id intersection ----
-    // auto &msh = model.getFEEngine().getMesh();
 
     const auto &s_nodes_aka = msh.getElementGroup(slave_surface).getNodeGroup().getNodes();
     const auto &m_nodes_aka = msh.getElementGroup(master_surface).getNodeGroup().getNodes();
@@ -115,6 +116,7 @@ int main(int argc, char *argv[]) {
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
     model.addDumpField("stress");
     model.addDumpField("mass");
+    model.addDumpFieldVector("strain");
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("internal_force");
     model.addDumpFieldVector("external_force");

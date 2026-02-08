@@ -4,8 +4,8 @@ import Functions
 def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
-    mesh_size = 0.5
-    scaling_factor = 1/10
+    mesh_size = 5
+    scaling_factor = 1
 
     initial_offdet = 0.0 * scaling_factor # initial gap, in mm
 
