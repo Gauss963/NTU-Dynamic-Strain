@@ -1,3 +1,0 @@
-/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/rebuild_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/edit_cache.dir
-/home/gauss112/NTU-Dynamic-Strain/Akantu/Velocity-weakening/build/CMakeFiles/Velocity-weakening-LSW.dir
