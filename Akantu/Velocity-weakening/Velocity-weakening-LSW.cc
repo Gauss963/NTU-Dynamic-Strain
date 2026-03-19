@@ -10,6 +10,9 @@
 
 #include "aka_common.hh"
 #include "mesh.hh"
+#include "mesh_partition_mesh_data.hh"
+#include "mesh_utils.hh"
+
 #include "solid_mechanics_model.hh"
 
 #include "ntn_base_contact.hh"
@@ -24,11 +27,11 @@
 
 int main(int argc, char *argv[]) {
     constexpr akantu::Int DIMENSION = 2;
-    constexpr akantu::Real us = 1e-6;
+    // constexpr akantu::Real us = 1e-6;
     constexpr akantu::Real ms = 1e-3;
 
-    constexpr akantu::Real TIME_FACTOR = 0.0020;
-    constexpr akantu::Real SIMULATION_TIME = 0.2 * ms;
+    constexpr akantu::Real TIME_FACTOR = 0.02;
+    constexpr akantu::Real SIMULATION_TIME = 20 * ms;
     constexpr int PMMA_thickness = 50;
 
     const std::string mat_file = "../../../Materials/NTN-LSW.dat";
@@ -36,7 +39,6 @@ int main(int argc, char *argv[]) {
     if (DIMENSION == 2) {
         mesh_file = "../../../Models/2D-PMMA.msh";
     } else {
-
         mesh_file = "../../../Models/" + std::to_string(PMMA_thickness) + "mm-BS-PMMA.msh";
     }
 
@@ -46,10 +48,32 @@ int main(int argc, char *argv[]) {
     const auto &comm = akantu::Communicator::getStaticCommunicator();
     const akantu::Int prank = comm.whoAmI();
 
+    // if (prank == 0) {
+    //     mesh.read(mesh_file);
+    // }
+    // mesh.distribute();
+    std::shared_ptr<akantu::MeshPartition> partitioner;
     if (prank == 0) {
         mesh.read(mesh_file);
+        const auto psize = comm.getNbProc();
+        const auto y_min = mesh.getLowerBounds()(akantu::_y);
+        const auto y_max = mesh.getUpperBounds()(akantu::_y);
+        const auto slice = (y_max - y_min) / static_cast<akantu::Real>(psize);
+        auto partition = std::make_shared<akantu::ElementTypeMapArray<akantu::Idx>>("partition");
+        partition->initialize(mesh, akantu::_spatial_dimension = DIMENSION, akantu::_with_nb_element = true);
+        akantu::for_each_element(
+            mesh,
+            [&](auto &&element) {
+                auto c = mesh.getBarycenter(element);
+                auto raw = static_cast<akantu::Idx>(std::floor((c(akantu::_y) - y_min) / slice));
+                auto proc = std::max<akantu::Idx>(0, std::min<akantu::Idx>(psize - 1, raw));
+                (*partition)(element) = proc;
+            },
+            akantu::_spatial_dimension = DIMENSION, akantu::_ghost_type = akantu::_not_ghost);
+        partitioner = std::make_shared<akantu::MeshPartitionMeshData>(mesh, partition, DIMENSION);
+        partitioner->partitionate(psize);
     }
-    mesh.distribute();
+    mesh.distribute(partitioner);
 
     akantu::SolidMechanicsModel model(mesh);
 
@@ -64,7 +88,7 @@ int main(int argc, char *argv[]) {
     auto friction = solver_ntn->getFriction();
     auto &msh = model.getFEEngine().getMesh();
 
-    contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
+    // contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
     if (prank == 0) {
         std::cout << "[DBG] dt = " << model.getTimeStep() << std::endl;
         std::cout << "[DBG] nb_contact_nodes = " << contact->getNbContactNodes() << "\n";
@@ -106,36 +130,34 @@ int main(int argc, char *argv[]) {
                   << " slaves size = " << contact->getSlaves().size() << "\n";
     }
 
-    // contact->updateNormals();
-    // contact->updateLumpedBoundary();
-    // contact->updateImpedance();
-
     akantu::Real dt = model.getTimeStep();
 
     model.setBaseName(std::to_string(PMMA_thickness) + "mm-PMMA-NTN-LSW");
+
+    if (DIMENSION == 3) {
+        model.addDumpFieldVector("strain");
+    } else {
+        model.addDumpField("strain");
+    }
     model.addDumpField("stress");
     model.addDumpField("mass");
-    // model.addDumpFieldVector("strain");
     model.addDumpFieldVector("displacement");
     model.addDumpFieldVector("internal_force");
     model.addDumpFieldVector("external_force");
-    if (DIMENSION == 3) {
-        model.addDumpFieldVector("strain");
-    }
 
     model.getVelocity().set(0.0);
     model.getDisplacement().set(0.0);
 
     constexpr akantu::Real shearDisp = 3.0;
     constexpr akantu::Real riseEnd = 0.30;
-    constexpr akantu::Int TOTAL_FRAMES = 2400;
-    constexpr akantu::Real initial_gap = 0.05;
-    constexpr akantu::Real overclosure = 0.01;
+    constexpr akantu::Int TOTAL_FRAMES = 24000;
+    // constexpr akantu::Real initial_gap = 0.05;
+    // constexpr akantu::Real overclosure = 0.01;
 
     const akantu::Int SHEAR_STEPS = std::ceil(SIMULATION_TIME / dt);
     const akantu::Int PRESS_STEPS = SHEAR_STEPS;
-    const akantu::Real total_dx = initial_gap + overclosure;
-    const akantu::Real dx_step = total_dx / static_cast<akantu::Real>(PRESS_STEPS);
+    // const akantu::Real total_dx = initial_gap + overclosure;
+    // const akantu::Real dx_step = total_dx / static_cast<akantu::Real>(PRESS_STEPS);
 
     const akantu::Int DUMP_INTERVAL = std::max<akantu::Int>(1, SHEAR_STEPS / TOTAL_FRAMES);
     const akantu::Int rise_steps = std::ceil(riseEnd * SHEAR_STEPS);
@@ -146,15 +168,19 @@ int main(int argc, char *argv[]) {
 
     model.dump();
 
+    const akantu::Real mu_s = 0.6;
 
     constexpr akantu::Real NORMAL_STRESS = 16.0;
-    // akantu::Vector<akantu::Real, 3> normal_traction{NORMAL_STRESS, 0.0, 0.0};
-    // model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
+    const akantu::Real SHEAR_STRESS  = (500  / 145) * mu_s;
     akantu::Vector<akantu::Real, DIMENSION> normal_traction;
+    akantu::Vector<akantu::Real, DIMENSION> shear_traction;
     normal_traction.set(0.0);
+    shear_traction.set(0.0);
     normal_traction(0) = NORMAL_STRESS;
-    model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
+    shear_traction(0) = SHEAR_STRESS;
 
+    model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
+    model.applyBC(akantu::BC::Neumann::FromTraction(shear_traction), "moving-block-right");
 
     auto start_time = std::chrono::high_resolution_clock::now();
     if (prank == 0) {
@@ -162,13 +188,13 @@ int main(int argc, char *argv[]) {
                   << PRESS_STEPS << " steps\n";
     }
 
-    auto &displacement = model.getDisplacement();
-    auto &velocity = model.getVelocity();
-    auto &blocked = model.getBlockedDOFs();
-    auto &mesh_ref = model.getFEEngine().getMesh();
-    const auto &moving_nodes = mesh_ref.getElementGroup("moving-block-back").getNodeGroup().getNodes();
+    // auto &displacement = model.getDisplacement();
+    // auto &velocity = model.getVelocity();
+    // auto &blocked = model.getBlockedDOFs();
+    // auto &mesh_ref = model.getFEEngine().getMesh();
+    // const auto &moving_nodes = mesh_ref.getElementGroup("moving-block-back").getNodeGroup().getNodes();
 
-    auto &increment = model.getIncrement();
+    // auto &increment = model.getIncrement();
 
     //  /$$   /$$                                             /$$       /$$$$$$$  /$$
     // | $$$ | $$                                            | $$      | $$__  $$| $$

@@ -5,9 +5,6 @@ def main():
 
     PMMA_THICKNESSES = [50, 100, 500]
     mesh_size = 5
-    scaling_factor = 1
-
-    initial_offdet = 0.0 * scaling_factor # initial gap, in mm
 
     for PMMA_thickness in PMMA_THICKNESSES:
 
@@ -26,13 +23,13 @@ def main():
         gmsh.model.add("ContactModel")
 
         blk1 = Functions.create_block(origin=(0, 0, 0), 
-                                      dimensions=(200 * scaling_factor, 500 * scaling_factor, PMMA_thickness * scaling_factor), 
+                                      dimensions=(200, 500, PMMA_thickness), 
                                       mesh_size=mesh_size, 
                                       block_name="moving-block", 
                                       tag_prefix=1)
 
-        blk2 = Functions.create_block(origin=(200 * scaling_factor + initial_offdet, 0, 0), 
-                                      dimensions=(145 * scaling_factor, 550 * scaling_factor, PMMA_thickness * scaling_factor), 
+        blk2 = Functions.create_block(origin=(200, 0, 0), 
+                                      dimensions=(145, 550, PMMA_thickness), 
                                       mesh_size=mesh_size, 
                                       block_name="stationary-block", 
                                       tag_prefix=2)

@@ -15,5 +15,5 @@ material elastic [
 friction linear_slip_weakening no_regularisation [
   mu_s = 0.8
   mu_k = 0.6
-  d_c  = 5.5
+  d_c  = 8
 ]
