@@ -48,32 +48,32 @@ int main(int argc, char *argv[]) {
     const auto &comm = akantu::Communicator::getStaticCommunicator();
     const akantu::Int prank = comm.whoAmI();
 
-    // if (prank == 0) {
-    //     mesh.read(mesh_file);
-    // }
-    // mesh.distribute();
-    std::shared_ptr<akantu::MeshPartition> partitioner;
     if (prank == 0) {
         mesh.read(mesh_file);
-        const auto psize = comm.getNbProc();
-        const auto y_min = mesh.getLowerBounds()(akantu::_y);
-        const auto y_max = mesh.getUpperBounds()(akantu::_y);
-        const auto slice = (y_max - y_min) / static_cast<akantu::Real>(psize);
-        auto partition = std::make_shared<akantu::ElementTypeMapArray<akantu::Idx>>("partition");
-        partition->initialize(mesh, akantu::_spatial_dimension = DIMENSION, akantu::_with_nb_element = true);
-        akantu::for_each_element(
-            mesh,
-            [&](auto &&element) {
-                auto c = mesh.getBarycenter(element);
-                auto raw = static_cast<akantu::Idx>(std::floor((c(akantu::_y) - y_min) / slice));
-                auto proc = std::max<akantu::Idx>(0, std::min<akantu::Idx>(psize - 1, raw));
-                (*partition)(element) = proc;
-            },
-            akantu::_spatial_dimension = DIMENSION, akantu::_ghost_type = akantu::_not_ghost);
-        partitioner = std::make_shared<akantu::MeshPartitionMeshData>(mesh, partition, DIMENSION);
-        partitioner->partitionate(psize);
     }
-    mesh.distribute(partitioner);
+    mesh.distribute();
+    // std::shared_ptr<akantu::MeshPartition> partitioner;
+    // if (prank == 0) {
+    //     mesh.read(mesh_file);
+    //     const auto psize = comm.getNbProc();
+    //     const auto y_min = mesh.getLowerBounds()(akantu::_y);
+    //     const auto y_max = mesh.getUpperBounds()(akantu::_y);
+    //     const auto slice = (y_max - y_min) / static_cast<akantu::Real>(psize);
+    //     auto partition = std::make_shared<akantu::ElementTypeMapArray<akantu::Idx>>("partition");
+    //     partition->initialize(mesh, akantu::_spatial_dimension = DIMENSION, akantu::_with_nb_element = true);
+    //     akantu::for_each_element(
+    //         mesh,
+    //         [&](auto &&element) {
+    //             auto c = mesh.getBarycenter(element);
+    //             auto raw = static_cast<akantu::Idx>(std::floor((c(akantu::_y) - y_min) / slice));
+    //             auto proc = std::max<akantu::Idx>(0, std::min<akantu::Idx>(psize - 1, raw));
+    //             (*partition)(element) = proc;
+    //         },
+    //         akantu::_spatial_dimension = DIMENSION, akantu::_ghost_type = akantu::_not_ghost);
+    //     partitioner = std::make_shared<akantu::MeshPartitionMeshData>(mesh, partition, DIMENSION);
+    //     partitioner->partitionate(psize);
+    // }
+    // mesh.distribute(partitioner);
 
     akantu::SolidMechanicsModel model(mesh);
 
@@ -87,6 +87,11 @@ int main(int argc, char *argv[]) {
 
     auto friction = solver_ntn->getFriction();
     auto &msh = model.getFEEngine().getMesh();
+
+    const akantu::Real mu_s = friction->get("mu_s");
+    const akantu::Real mu_k = friction->get("mu_k");
+    const akantu::Real d_c  = friction->get("d_c");
+    std::cout << "mu_s = " << mu_s << " | mu_k = " << mu_k << " | d_c = " << d_c << "\n";
 
     // contact->addSurfacePair(slave_surface, master_surface, normal_dir); // 20260203 Test NaN issue
     if (prank == 0) {
@@ -148,53 +153,43 @@ int main(int argc, char *argv[]) {
     model.getVelocity().set(0.0);
     model.getDisplacement().set(0.0);
 
-    constexpr akantu::Real shearDisp = 3.0;
+    // constexpr akantu::Real shearDisp = 3.0;
     constexpr akantu::Real riseEnd = 0.30;
-    constexpr akantu::Int TOTAL_FRAMES = 24000;
-    // constexpr akantu::Real initial_gap = 0.05;
-    // constexpr akantu::Real overclosure = 0.01;
+    constexpr akantu::Int TOTAL_FRAMES = 2400;
 
     const akantu::Int SHEAR_STEPS = std::ceil(SIMULATION_TIME / dt);
     const akantu::Int PRESS_STEPS = SHEAR_STEPS;
-    // const akantu::Real total_dx = initial_gap + overclosure;
-    // const akantu::Real dx_step = total_dx / static_cast<akantu::Real>(PRESS_STEPS);
 
     const akantu::Int DUMP_INTERVAL = std::max<akantu::Int>(1, SHEAR_STEPS / TOTAL_FRAMES);
-    const akantu::Int rise_steps = std::ceil(riseEnd * SHEAR_STEPS);
-    const akantu::Real dy = shearDisp / static_cast<akantu::Real>(rise_steps);
+
+    const akantu::Real tau_k = (500.0 / 145.0) * mu_k;
+    const akantu::Real tau_s = (500.0 / 145.0) * mu_s;
+
+    const akantu::Int rise_steps = std::max<akantu::Int>(1, std::ceil(riseEnd * SHEAR_STEPS));
+    const akantu::Real dtau = (tau_s - tau_k) / static_cast<akantu::Real>(rise_steps);
 
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_x), "stationary-block-front");
     model.applyBC(akantu::BC::Dirichlet::FixedValue(0., akantu::_y), "stationary-block-left");
 
     model.dump();
 
-    const akantu::Real mu_s = 0.6;
-
     constexpr akantu::Real NORMAL_STRESS = 16.0;
-    const akantu::Real SHEAR_STRESS  = (500  / 145) * mu_s;
     akantu::Vector<akantu::Real, DIMENSION> normal_traction;
-    akantu::Vector<akantu::Real, DIMENSION> shear_traction;
+    akantu::Vector<akantu::Real, DIMENSION> shear_traction_init;
     normal_traction.set(0.0);
-    shear_traction.set(0.0);
+    shear_traction_init.set(0.0);
+
     normal_traction(0) = NORMAL_STRESS;
-    shear_traction(0) = SHEAR_STRESS;
+    shear_traction_init(1) = tau_k;
 
     model.applyBC(akantu::BC::Neumann::FromTraction(normal_traction), "moving-block-back");
-    model.applyBC(akantu::BC::Neumann::FromTraction(shear_traction), "moving-block-right");
+    model.applyBC(akantu::BC::Neumann::FromTraction(shear_traction_init), "moving-block-right");
 
     auto start_time = std::chrono::high_resolution_clock::now();
     if (prank == 0) {
         std::cout << "[SIM] Starting time integration for compression phase for "
                   << PRESS_STEPS << " steps\n";
     }
-
-    // auto &displacement = model.getDisplacement();
-    // auto &velocity = model.getVelocity();
-    // auto &blocked = model.getBlockedDOFs();
-    // auto &mesh_ref = model.getFEEngine().getMesh();
-    // const auto &moving_nodes = mesh_ref.getElementGroup("moving-block-back").getNodeGroup().getNodes();
-
-    // auto &increment = model.getIncrement();
 
     //  /$$   /$$                                             /$$       /$$$$$$$  /$$
     // | $$$ | $$                                            | $$      | $$__  $$| $$
@@ -206,18 +201,6 @@ int main(int argc, char *argv[]) {
     // |__/  \__/ \______/ |__/      |__/ |__/ |__/ \_______/|__/      |__/      |__/  |__/ \_______/|_______/  \_______/
 
     for (akantu::Int step_now = 0; step_now < PRESS_STEPS; ++step_now) {
-        // model.applyBC(akantu::BC::Dirichlet::IncrementValue(dx_step, akantu::_x), "moving-block-back");
-        // model.solveStep(*solver_ntn, "explicit_lumped");
-
-        // increment.set(0.0);
-        // blocked.set(false);
-
-        // for (auto n : moving_nodes) {
-        //     displacement(n, akantu::_x) += dx_step;
-        //     velocity(n, akantu::_x) = dx_step / dt;
-        //     increment(n, akantu::_x) = dx_step;
-        //     blocked(n, akantu::_x) = true;
-        // }
 
         model.solveStep(*solver_ntn, "explicit_lumped");
 
@@ -261,7 +244,11 @@ int main(int argc, char *argv[]) {
     //  \______/ |__/  |__/ \_______/ \_______/|__/            |__/      |__/  |__/ \_______/|_______/  \_______/
 
     for (akantu::Int step_now = 0; step_now < SHEAR_STEPS; ++step_now) {
-        model.applyBC(akantu::BC::Dirichlet::IncrementValue(dy, akantu::_y), "moving-block-right");
+        // model.applyBC(akantu::BC::Dirichlet::IncrementValue(dy, akantu::_y), "moving-block-right");
+        akantu::Vector<akantu::Real, DIMENSION> shear_traction_increment;
+        shear_traction_increment.set(0.0);
+        shear_traction_increment(1) = dtau;
+        model.applyBC(akantu::BC::Neumann::FromTraction(shear_traction_increment), "moving-block-right");
 
         model.solveStep(*solver_ntn, "explicit_lumped");
 
@@ -276,8 +263,7 @@ int main(int argc, char *argv[]) {
         const double time_per_iter = elapsed.count() / denom;
         const double remaining = time_per_iter * SHEAR_STEPS - elapsed.count();
 
-        double percent_shear =
-            100.0 * static_cast<double>(step_now) / static_cast<double>(SHEAR_STEPS);
+        double percent_shear = 100.0 * static_cast<double>(step_now) / static_cast<double>(SHEAR_STEPS);
 
         if (prank == 0 && step_now % 100 == 0) {
             std::cout << "[SIM] Step " << std::setw(8) << step_now << "/"

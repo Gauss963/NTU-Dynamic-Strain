@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --account=MST113389
 #SBATCH --partition=hm112
-#SBATCH --job-name=Akantu-LSW-2D-2.0%dt-20ms-mpi4
+#SBATCH --job-name=Akantu-LSW-2D-2.0%dt-20ms
 #SBATCH --output=/home/gauss112/outs/Akantu-%j.out
 #SBATCH --error=/home/gauss112/outs/Akantu-%j.err
-#SBATCH --ntasks=4
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --nodes=1
 #SBATCH --time=95:59:59
